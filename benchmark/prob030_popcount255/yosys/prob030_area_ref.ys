@@ -1,0 +1,10 @@
+read_verilog -sv ref_original.sv
+hierarchy -check -top RefModule
+
+proc
+opt
+techmap
+opt
+
+abc -g AND,OR,XOR,XNOR,MUX
+stat -top RefModule

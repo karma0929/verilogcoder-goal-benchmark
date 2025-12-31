@@ -1,0 +1,4 @@
+read_verilog -sv ref_original.sv
+hierarchy -top RefModule
+proc; opt; techmap; opt
+stat

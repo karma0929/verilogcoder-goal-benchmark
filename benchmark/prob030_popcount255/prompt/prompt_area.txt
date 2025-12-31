@@ -1,0 +1,25 @@
+Problem:
+Implement a module named TopModule.
+
+Interface:
+- input  in  (255 bits)
+- output out (8 bits or sufficient width to represent the population count)
+
+Functionality:
+The module should count the number of '1' bits in the 255-bit input vector.
+
+Constraints / Area Optimization Goals:
+- Optimize for minimal logic area.
+- Favor simple, flat combinational logic.
+- Reuse intermediate results where possible.
+- Avoid deep adder trees or highly parallel structures.
+- Sequential logic is NOT allowed; implement purely combinational logic.
+- Do not introduce unnecessary wires or temporary signals.
+
+Guidance:
+- A linear accumulation or simple reduction approach is acceptable.
+- Prioritize reducing total gate count over speed.
+
+Deliverable:
+Provide a synthesizable SystemVerilog implementation of TopModule.
+Only include the TopModule definition.

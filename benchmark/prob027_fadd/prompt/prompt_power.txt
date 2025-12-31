@@ -1,0 +1,11 @@
+Design a 1-bit full adder.
+
+The module has the following ports:
+- input a
+- input b
+- input cin
+- output sum
+- output cout
+
+Optimize the design for low power consumption.
+Avoid unnecessary switching activity.

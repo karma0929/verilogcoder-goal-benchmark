@@ -1,0 +1,10 @@
+read_verilog -sv top_area_only.sv
+hierarchy -check -top TopModule
+
+proc
+opt
+techmap
+opt
+
+abc -g AND,OR,XOR,XNOR,MUX
+stat -top TopModule
