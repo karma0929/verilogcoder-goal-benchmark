@@ -6,21 +6,26 @@
  \----------------------------------------------------------------------------/
  Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
 
--- Executing script file `prob030_area_ref.ys' --
+-- Running command `
+read_verilog -sv src/top_ref.sv
+hierarchy -top TopModule
+proc; opt; techmap; opt
+stat
+' --
 
-1. Executing Verilog-2005 frontend: ref_original.sv
-Parsing SystemVerilog input from `ref_original.sv' to AST representation.
-verilog frontend filename ref_original.sv
-Generating RTLIL representation for module `\RefModule'.
+1. Executing Verilog-2005 frontend: src/top_ref.sv
+Parsing SystemVerilog input from `src/top_ref.sv' to AST representation.
+verilog frontend filename src/top_ref.sv
+Generating RTLIL representation for module `\TopModule'.
 Successfully finished Verilog frontend.
 
 2. Executing HIERARCHY pass (managing design hierarchy).
 
 2.1. Analyzing design hierarchy..
-Top module:  \RefModule
+Top module:  \TopModule
 
 2.2. Analyzing design hierarchy..
-Top module:  \RefModule
+Top module:  \TopModule
 Removed 0 unused modules.
 
 3. Executing PROC pass (convert processes to netlists).
@@ -43,80 +48,80 @@ Promoted 2 assignments to connections.
 Converted 0 switches.
 
 3.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\RefModule.$proc$ref_original.sv:7$3'.
+Creating decoders for process `\TopModule.$proc$src/top_ref.sv:7$3'.
 
 3.8. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\RefModule.\out' from process `\RefModule.$proc$ref_original.sv:7$3'.
-No latch inferred for signal `\RefModule.$fordecl_block$1.i' from process `\RefModule.$proc$ref_original.sv:7$3'.
+No latch inferred for signal `\TopModule.\out' from process `\TopModule.$proc$src/top_ref.sv:7$3'.
+No latch inferred for signal `\TopModule.$fordecl_block$1.i' from process `\TopModule.$proc$src/top_ref.sv:7$3'.
 
 3.9. Executing PROC_DFF pass (convert process syncs to FFs).
 
 3.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 3.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `RefModule.$proc$ref_original.sv:7$3'.
+Removing empty process `TopModule.$proc$src/top_ref.sv:7$3'.
 Cleaned up 0 empty switches.
 
 3.12. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 
 4. Executing OPT pass (performing simple optimizations).
 
 4.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 <suppressed ~1 debug messages>
 
 4.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 4.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \RefModule..
+Running muxtree optimizer on module \TopModule..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
 4.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \RefModule.
+  Optimizing cells in module \TopModule.
 Performed a total of 0 changes.
 
 4.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 4.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 4.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \RefModule..
+Finding unused cells or wires in module \TopModule..
 Removed 0 unused cells and 5 unused wires.
 <suppressed ~2 debug messages>
 
 4.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 
 4.9. Rerunning OPT passes. (Maybe there is more to do..)
 
 4.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \RefModule..
+Running muxtree optimizer on module \TopModule..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
 4.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \RefModule.
+  Optimizing cells in module \TopModule.
 Performed a total of 0 changes.
 
 4.12. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 4.13. Executing OPT_DFF pass (perform DFF optimizations).
 
 4.14. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \RefModule..
+Finding unused cells or wires in module \TopModule..
 
 4.15. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 
 4.16. Finished fast OPT passes. (There is nothing left to do.)
 
@@ -171,122 +176,79 @@ No more expansions possible.
 6. Executing OPT pass (performing simple optimizations).
 
 6.1. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 <suppressed ~16616 debug messages>
 
 6.2. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \RefModule..
+Running muxtree optimizer on module \TopModule..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
 6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \RefModule.
+  Optimizing cells in module \TopModule.
 Performed a total of 0 changes.
 
 6.5. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 6.6. Executing OPT_DFF pass (perform DFF optimizations).
 
 6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \RefModule..
+Finding unused cells or wires in module \TopModule..
 Removed 2745 unused cells and 15252 unused wires.
 <suppressed ~2746 debug messages>
 
 6.8. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 
 6.9. Rerunning OPT passes. (Maybe there is more to do..)
 
 6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
-Running muxtree optimizer on module \RefModule..
+Running muxtree optimizer on module \TopModule..
   Creating internal representation of mux trees.
   No muxes found in this module.
 Removed 0 multiplexer ports.
 
 6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
-  Optimizing cells in module \RefModule.
+  Optimizing cells in module \TopModule.
 Performed a total of 0 changes.
 
 6.12. Executing OPT_MERGE pass (detect identical cells).
-Finding identical cells in module `\RefModule'.
+Finding identical cells in module `\TopModule'.
 Removed a total of 0 cells.
 
 6.13. Executing OPT_DFF pass (perform DFF optimizations).
 
 6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
-Finding unused cells or wires in module \RefModule..
+Finding unused cells or wires in module \TopModule..
 
 6.15. Executing OPT_EXPR pass (perform const folding).
-Optimizing module RefModule.
+Optimizing module TopModule.
 
 6.16. Finished fast OPT passes. (There is nothing left to do.)
 
-7. Executing ABC pass (technology mapping using ABC).
+7. Printing statistics.
 
-7.1. Extracting gate netlist of module `\RefModule' to `<abc-temp-dir>/input.blif'..
-
-7.1.1. Executed ABC.
-Extracted 4261 gates and 4516 wires to a netlist network with 255 inputs and 8 outputs.
-Running ABC script: <abc-temp-dir>/abc.script
-ABC: 
-ABC: ======== ABC command line "source <abc-temp-dir>/abc.script"
-ABC: + read_blif <abc-temp-dir>/input.blif 
-ABC: + read_library /var/folders/84/yxkyg2bn48lgn4n2dz8thnmr0000gn/T/yosys-abc-fPqLlA/stdcells.genlib 
-ABC: + strash 
-ABC: + &get -n 
-ABC: + &fraig -x 
-ABC: + &put 
-ABC: + scorr 
-ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
-ABC: + dc2 
-ABC: + dretime 
-ABC: + strash 
-ABC: + &get -n 
-ABC: + &dch -f 
-ABC: + &nf 
-ABC: + &put 
-ABC: + write_blif <abc-temp-dir>/output.blif 
-
-7.1.2. Re-integrating ABC results.
-ABC RESULTS:               AND cells:     1252
-ABC RESULTS:               MUX cells:       29
-ABC RESULTS:               NOT cells:      830
-ABC RESULTS:                OR cells:      680
-ABC RESULTS:              XNOR cells:      383
-ABC RESULTS:               XOR cells:      917
-ABC RESULTS:        internal signals:     4253
-ABC RESULTS:           input signals:      255
-ABC RESULTS:          output signals:        8
-Removing temp directory.
-Removing global temp directory.
-
-8. Printing statistics.
-
-=== RefModule ===
+=== TopModule ===
 
         +----------Local Count, excluding submodules.
         | 
-     5605 wires
-    11165 wire bits
+     1259 wires
+     6819 wire bits
         2 public wires
       263 public wire bits
         2 ports
       263 port bits
-     4091 cells
-     1252   $_AND_
-       29   $_MUX_
-      830   $_NOT_
-      680   $_OR_
-      383   $_XNOR_
-      917   $_XOR_
+     4261 cells
+     2257   $_AND_
+     2004   $_XOR_
 
-End of script. Logfile hash: 9bf94dfc3c, CPU: user 0.45s system 0.03s, MEM: 145.72 MB peak
+End of script. Logfile hash: e73dee8d80, CPU: user 0.45s system 0.04s, MEM: 178.47 MB peak
 Yosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)
-Time spent: 70% 1x abc (1 sec), 9% 1x techmap (0 sec), ...
+Time spent: 28% 1x techmap (0 sec), 27% 9x opt_expr (0 sec), ...
