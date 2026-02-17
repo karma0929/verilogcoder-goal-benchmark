@@ -33,3 +33,4 @@ out = in[sel]
 ## Notes
 - All `top_*.sv` files contain **only the `TopModule` definition**
 - The testbench (`tb.sv`) and reference design (`ref_original.sv`) are unchanged and reused for all variants
+

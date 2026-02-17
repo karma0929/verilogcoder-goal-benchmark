@@ -1,0 +1,19 @@
+count10: Implement a module named TopModule with the following interface:
+- input  clk
+- input  reset
+- output reg [3:0] q
+
+The module implements a decade counter that cycles from 0 to 9.
+All state transitions occur on the positive edge of clk.
+The reset signal is active-high and synchronous.
+
+Optimize the design for minimum area (fewest logic resources):
+- Use the most compact state encoding; standard binary encoding (4-bit) is preferred
+  unless a smaller encoding demonstrably reduces total gate count.
+- Share logic between next-state computation and terminal-count detection wherever possible.
+- Avoid redundant flip-flops, unnecessary intermediate signals, or over-specified case statements.
+- Express the reset-to-zero and wrap-around (9→0) conditions using shared hardware rather
+  than separate logic cones.
+- Do not instantiate any unnecessary modules or generate unused signals.
+
+Do not modify the module interface or functional behavior.

@@ -1,0 +1,6 @@
+read_verilog -sv src/top_perf.sv
+hierarchy -top TopModule
+proc; opt; techmap; opt
+abc -liberty $::env(SKY130_LIB)
+stat -liberty $::env(SKY130_LIB)
+write_verilog build/yosys/top_perf_gate.v

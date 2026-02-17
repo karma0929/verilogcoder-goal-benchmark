@@ -1,0 +1,16 @@
+count10:Implement a module named TopModule with the following interface:
+
+- input  clk
+- input  reset
+- output reg [3:0] q
+
+The module implements a decade counter that cycles from 0 to 9.
+All state transitions occur on the positive edge of clk.
+The reset signal is active-high and synchronous.
+
+Optimize the design for performance:
+- Minimize the combinational logic depth in the clock-to-q path.
+- Keep comparisons and arithmetic simple and fast.
+- Favor designs that allow higher clock frequency.
+
+Do not modify the module interface or functional behavior.

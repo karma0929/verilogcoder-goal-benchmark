@@ -1,0 +1,8 @@
+read_verilog -sv src/top_perf.sv
+hierarchy -top TopModule
+proc; opt
+techmap; opt
+abc -g AND,OR,XOR,XNOR,MUX,AOI3,OAI3,AOI4,OAI4
+opt; clean
+stat
+write_verilog -noattr build/yosys/top_perf_gate_generic.v

@@ -1,0 +1,4 @@
+read_verilog -sv src/top_perf.sv
+hierarchy -top TopModule
+proc; opt; techmap; opt
+stat

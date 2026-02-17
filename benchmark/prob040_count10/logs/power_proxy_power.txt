@@ -1,0 +1,23 @@
+VCD: build/sim/wave_power.vcd
+Signals parsed: 18
+Total bit-toggles (proxy dynamic activity): 2075
+
+Top 20 signals by bit-toggles:
+       827  width=160   stats1 [159:0]
+       439  width=1     clk
+       151  width=4     q_ref [3:0]
+       151  width=4     q_dut [3:0]
+       151  width=4     q [3:0]
+       151  width=4     q [3:0]
+       148  width=4     q_next [3:0]
+        40  width=1     at9
+        17  width=1     reset
+         0  width=512   wavedrom_title [511:0]
+         0  width=1     wavedrom_enable
+         0  width=1     tb_match
+         0  width=512   wavedrom_title [511:0]
+         0  width=1     async
+         0  width=1     arfail
+         0  width=1     datafail
+         0  width=1     srfail
+         0  width=512   title [511:0]
