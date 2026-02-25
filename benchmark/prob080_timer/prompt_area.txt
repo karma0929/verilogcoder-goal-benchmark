@@ -1,0 +1,21 @@
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk,
+ - input  load,
+ - input  data (10 bits)
+ - output tc
+
+The module should implement a timer that counts down for a given number
+of clock cycles and asserts tc when the count reaches 0.
+
+Primary objective: minimize silicon area and total cell count.
+
+Design constraints:
+- Use the most compact implementation possible.
+- Avoid redundant logic and unnecessary comparators.
+- Use minimal hardware resources.
+- The counter must stop at 0 until load is asserted again.
+- Sequential logic must be triggered on the positive edge of clk.
+- Return only synthesizable SystemVerilog code for TopModule.

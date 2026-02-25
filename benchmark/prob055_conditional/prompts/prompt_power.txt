@@ -1,0 +1,8 @@
+Implement TopModule exactly matching the required functionality and interface.
+
+Primary objective: minimize dynamic power / switching activity.
+Guidelines:
+- Avoid unnecessary toggling and glitch-prone reconvergent logic.
+- Prefer structured compare-update flow; do not add registers.
+- Keep logic simple, avoid duplicated computations.
+Return ONLY SystemVerilog code for TopModule.

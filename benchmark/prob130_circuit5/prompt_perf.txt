@@ -1,0 +1,22 @@
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  a (4 bits)
+ - input  b (4 bits)
+ - input  c (4 bits)
+ - input  d (4 bits)
+ - input  e (4 bits)
+ - output q (4 bits)
+
+The module should implement a combinational circuit. Read the simulation
+waveforms to determine what the circuit does, then implement it.
+
+Primary objective: maximize performance by minimizing critical path delay.
+
+Constraints:
+- Keep combinational depth as shallow as possible.
+- Prefer a single-stage mux/case structure; avoid cascaded if-else chains when possible.
+- Keep control decode minimal and balanced.
+- No sequential logic.
+- Output only the synthesizable SystemVerilog code for TopModule.
