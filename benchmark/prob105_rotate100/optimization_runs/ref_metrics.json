@@ -1,0 +1,31 @@
+{
+  "copied_metric_artifacts": {},
+  "copied_snapshot_artifacts": {},
+  "metric_source_files": {
+    "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_ref/reports/base/3_global_place.rpt",
+    "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_ref/logs/base/3_5_place_dp.log",
+    "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_ref/reports/base/synth_stat.txt"
+  },
+  "metrics": {
+    "final_hpwl_um": 3972.7,
+    "place_area_um2": 1079.0,
+    "synth_area_um2": 966.644,
+    "tns_ns": 0.0,
+    "worst_slack_ns": 0.0
+  },
+  "metrics_may_be_stale": false,
+  "orfs_cmd": null,
+  "orfs_cwd": null,
+  "orfs_returncode": null,
+  "orfs_stderr_tail": "",
+  "orfs_stdout_tail": "",
+  "prepared_design": {},
+  "problem_key": "prob105",
+  "problem_name": "prob105_rotate100",
+  "run_orfs": false,
+  "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_ref",
+  "saved_run_existed_before": true,
+  "saved_run_exists": true,
+  "stale_metrics_from_saved_run": false,
+  "version": "ref"
+}

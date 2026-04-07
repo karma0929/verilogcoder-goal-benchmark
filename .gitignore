@@ -1,0 +1,15 @@
+# simulation outputs
+*.vcd
+sim_*
+*.vpp
+
+# yosys temp
+abc_temp*
+work/
+
+# python
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store

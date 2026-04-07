@@ -1,0 +1,48 @@
+{
+  "copied_metric_artifacts": {
+    "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+    "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+    "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+  },
+  "copied_snapshot_artifacts": {
+    "clock_period": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/clock_period.txt",
+    "design_config": null,
+    "design_wrapper": null,
+    "generated_config": null,
+    "generated_src": null,
+    "global_place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_3_place_gp.log",
+    "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+    "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+    "place_odb": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.odb",
+    "synth_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/1_synth.log",
+    "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt",
+    "yosys_netlist": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/1_2_yosys.v"
+  },
+  "metric_source_files": {
+    "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/3_global_place.rpt",
+    "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/logs/base/3_5_place_dp.log",
+    "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/synth_stat.txt"
+  },
+  "metrics": {
+    "final_hpwl_um": 4269.9,
+    "place_area_um2": 1128.0,
+    "synth_area_um2": 1027.292,
+    "tns_ns": 0.0,
+    "worst_slack_ns": 0.0
+  },
+  "metrics_may_be_stale": false,
+  "orfs_cmd": null,
+  "orfs_cwd": null,
+  "orfs_returncode": null,
+  "orfs_stderr_tail": "",
+  "orfs_stdout_tail": "",
+  "prepared_design": {},
+  "problem_key": "prob105",
+  "problem_name": "prob105_rotate100",
+  "run_orfs": false,
+  "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf",
+  "saved_run_existed_before": true,
+  "saved_run_exists": true,
+  "stale_metrics_from_saved_run": false,
+  "version": "perf"
+}

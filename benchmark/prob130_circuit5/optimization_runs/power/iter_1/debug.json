@@ -1,0 +1,12 @@
+{
+  "exception": "",
+  "functional_success": false,
+  "module_tb_detected": true,
+  "paths_used": {
+    "test_sv": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv",
+    "test_vpp": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.vpp",
+    "verilog": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.v",
+    "wave": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/wave.vcd",
+    "workdir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp"
+  }
+}

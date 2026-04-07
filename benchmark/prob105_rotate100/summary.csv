@@ -1,0 +1,6 @@
+problem_name,target,iteration,functional_success,openroad_returncode,metrics_may_be_stale,synth_area_um2,place_area_um2,worst_slack_ns,tns_ns,final_hpwl_um,stop_reason,is_best
+prob105_rotate100,area,0,False,,False,,,,,,functional_retry,False
+prob105_rotate100,area,1,True,,False,966.644,1079.0,0.0,0.0,3972.7,reference_beaten,True
+prob105_rotate100,perf,0,True,,False,1027.292,1128.0,0.0,0.0,4269.9,continue,True
+prob105_rotate100,perf,1,True,,False,1027.292,1128.0,0.0,0.0,4269.9,no_improvement,False
+prob105_rotate100,power,0,True,,False,944.566,1031.0,0.0,0.0,3696.5,reference_beaten,True

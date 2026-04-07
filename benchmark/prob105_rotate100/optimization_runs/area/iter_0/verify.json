@@ -1,0 +1,7 @@
+{
+  "compiled_success": true,
+  "functional_success": false,
+  "generation_success": false,
+  "module_available": true,
+  "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has 3292 mismatches. First mismatch occurred at time 60.\nHint: Total mismatched samples is 3292 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 3292 in 4005 samples\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!"
+}

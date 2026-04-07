@@ -1,0 +1,18 @@
+{
+  "debug_attempts": [
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 135,
+      "result": "Fail",
+      "stagnated": true,
+      "stop_reason": "same_rtl,same_mismatch_count"
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 92,
+      "result": "Fail",
+      "stagnated": true,
+      "stop_reason": "same_mismatch_count"
+    }
+  ]
+}

@@ -1,0 +1,300 @@
+{
+  "problem_name": "prob105_rotate100",
+  "targets": {
+    "area": [
+      {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_0",
+        "iteration": 0,
+        "metrics": {},
+        "openroad_eval": {
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "problem_name": "prob105_rotate100",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "version": "area"
+        },
+        "stop_reason": "functional_retry",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has 3292 mismatches. First mismatch occurred at time 60.\nHint: Total mismatched samples is 3292 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 3292 in 4005 samples\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!"
+        }
+      },
+      {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1",
+        "iteration": 1,
+        "metrics": {
+          "final_hpwl_um": 3972.7,
+          "place_area_um2": 1079.0,
+          "synth_area_um2": 966.644,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "clock_period": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/clock_period.txt",
+            "design_config": null,
+            "design_wrapper": null,
+            "generated_config": null,
+            "generated_src": null,
+            "global_place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_3_place_gp.log",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "place_odb": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.odb",
+            "synth_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/1_synth.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt",
+            "yosys_netlist": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/area/iter_1/openroad_artifacts/1_2_yosys.v"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_area/reports/base/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_area/logs/base/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_area/reports/base/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 3972.7,
+            "place_area_um2": 1079.0,
+            "synth_area_um2": 966.644,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": false,
+          "orfs_cmd": null,
+          "orfs_cwd": null,
+          "orfs_returncode": null,
+          "orfs_stderr_tail": "",
+          "orfs_stdout_tail": "",
+          "prepared_design": {},
+          "problem_key": "prob105",
+          "problem_name": "prob105_rotate100",
+          "run_orfs": false,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_area",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": false,
+          "version": "area"
+        },
+        "stop_reason": "reference_beaten",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 0 in 4005 samples\n"
+        }
+      }
+    ],
+    "perf": [
+      {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0",
+        "iteration": 0,
+        "metrics": {
+          "final_hpwl_um": 4269.9,
+          "place_area_um2": 1128.0,
+          "synth_area_um2": 1027.292,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "clock_period": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/clock_period.txt",
+            "design_config": null,
+            "design_wrapper": null,
+            "generated_config": null,
+            "generated_src": null,
+            "global_place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_3_place_gp.log",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "place_odb": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.odb",
+            "synth_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/1_synth.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt",
+            "yosys_netlist": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_0/openroad_artifacts/1_2_yosys.v"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/logs/base/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 4269.9,
+            "place_area_um2": 1128.0,
+            "synth_area_um2": 1027.292,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": false,
+          "orfs_cmd": null,
+          "orfs_cwd": null,
+          "orfs_returncode": null,
+          "orfs_stderr_tail": "",
+          "orfs_stdout_tail": "",
+          "prepared_design": {},
+          "problem_key": "prob105",
+          "problem_name": "prob105_rotate100",
+          "run_orfs": false,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": false,
+          "version": "perf"
+        },
+        "stop_reason": "continue",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 0 in 4005 samples\n"
+        }
+      },
+      {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1",
+        "iteration": 1,
+        "metrics": {
+          "final_hpwl_um": 4269.9,
+          "place_area_um2": 1128.0,
+          "synth_area_um2": 1027.292,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "clock_period": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/clock_period.txt",
+            "design_config": null,
+            "design_wrapper": null,
+            "generated_config": null,
+            "generated_src": null,
+            "global_place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_3_place_gp.log",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "place_odb": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/3_5_place_dp.odb",
+            "synth_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/1_synth.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/synth_stat.txt",
+            "yosys_netlist": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/perf/iter_1/openroad_artifacts/1_2_yosys.v"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/logs/base/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf/reports/base/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 4269.9,
+            "place_area_um2": 1128.0,
+            "synth_area_um2": 1027.292,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": false,
+          "orfs_cmd": null,
+          "orfs_cwd": null,
+          "orfs_returncode": null,
+          "orfs_stderr_tail": "",
+          "orfs_stdout_tail": "",
+          "prepared_design": {},
+          "problem_key": "prob105",
+          "problem_name": "prob105_rotate100",
+          "run_orfs": false,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_perf",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": false,
+          "version": "perf"
+        },
+        "stop_reason": "no_improvement",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 0 in 4005 samples\n"
+        }
+      }
+    ],
+    "power": [
+      {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0",
+        "iteration": 0,
+        "metrics": {
+          "final_hpwl_um": 3696.5,
+          "place_area_um2": 1031.0,
+          "synth_area_um2": 944.566,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "clock_period": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/clock_period.txt",
+            "design_config": null,
+            "design_wrapper": null,
+            "generated_config": null,
+            "generated_src": null,
+            "global_place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_3_place_gp.log",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "place_odb": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.odb",
+            "synth_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/1_synth.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt",
+            "yosys_netlist": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/power/iter_0/openroad_artifacts/1_2_yosys.v"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_power/reports/base/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_power/logs/base/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_power/reports/base/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 3696.5,
+            "place_area_um2": 1031.0,
+            "synth_area_um2": 944.566,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": false,
+          "orfs_cmd": null,
+          "orfs_cwd": null,
+          "orfs_returncode": null,
+          "orfs_stderr_tail": "",
+          "orfs_stdout_tail": "",
+          "prepared_design": {},
+          "problem_key": "prob105",
+          "problem_name": "prob105_rotate100",
+          "run_orfs": false,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob105_power",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": false,
+          "version": "power"
+        },
+        "stop_reason": "reference_beaten",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob105_rotate100/optimization_runs/_internal/tmp/test.sv:25: $finish called at 20026 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 4005 samples\n\nSimulation finished at 20026 ps\nMismatches: 0 in 4005 samples\n"
+        }
+      }
+    ]
+  }
+}

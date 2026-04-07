@@ -1,0 +1,7 @@
+{
+  "compiled_success": false,
+  "functional_success": false,
+  "generation_success": false,
+  "module_available": false,
+  "raw_report": "No completed RTL was available after the VerilogCoder run."
+}

@@ -1,0 +1,535 @@
+{
+  "benchmark_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5",
+  "config": {
+    "functional_failure_limit": 2,
+    "max_iterations": 2,
+    "min_area_improvement_um2": 1.0,
+    "min_power_proxy_improvement_um2": 0.5,
+    "min_slack_improvement_ns": 0.01,
+    "no_improvement_limit": 1,
+    "run_openroad": true
+  },
+  "final_candidates": {
+    "area": {
+      "best_iteration": 1,
+      "locally_optimal": false,
+      "metrics": {
+        "final_hpwl_um": 844.0,
+        "place_area_um2": 77.0,
+        "synth_area_um2": 33.516,
+        "tns_ns": 0.0,
+        "worst_slack_ns": 0.0
+      },
+      "stop_reason": "openroad_failed_saved_run_stale"
+    },
+    "perf": {
+      "best_iteration": 0,
+      "locally_optimal": false,
+      "metrics": {
+        "final_hpwl_um": 770.1,
+        "place_area_um2": 76.0,
+        "synth_area_um2": 31.654,
+        "tns_ns": 0.0,
+        "worst_slack_ns": 0.0
+      },
+      "stop_reason": "openroad_failed_saved_run_stale"
+    },
+    "power": {
+      "best_iteration": 0,
+      "locally_optimal": false,
+      "metrics": {
+        "final_hpwl_um": 844.0,
+        "place_area_um2": 77.0,
+        "synth_area_um2": 33.516,
+        "tns_ns": 0.0,
+        "worst_slack_ns": 0.0
+      },
+      "stop_reason": "openroad_failed_saved_run_stale"
+    }
+  },
+  "optimization_root": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs",
+  "problem_name": "prob130_circuit5",
+  "reference": {
+    "copied_metric_artifacts": {},
+    "copied_snapshot_artifacts": {},
+    "metric_source_files": {
+      "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_ref/reports/3_global_place.rpt",
+      "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_ref/logs/3_5_place_dp.log",
+      "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_ref/reports/synth_stat.txt"
+    },
+    "metrics": {
+      "final_hpwl_um": 832.5,
+      "place_area_um2": 77.0,
+      "synth_area_um2": 33.516,
+      "tns_ns": 0.0,
+      "worst_slack_ns": 0.0
+    },
+    "metrics_may_be_stale": false,
+    "orfs_cmd": null,
+    "orfs_cwd": null,
+    "orfs_returncode": null,
+    "orfs_stderr_tail": "",
+    "orfs_stdout_tail": "",
+    "prepared_design": {},
+    "problem_key": "prob130",
+    "problem_name": "prob130_circuit5",
+    "run_orfs": false,
+    "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_ref",
+    "saved_run_existed_before": true,
+    "saved_run_exists": true,
+    "stale_metrics_from_saved_run": false,
+    "version": "ref"
+  },
+  "targets": {
+    "area": {
+      "best_result": {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1",
+        "iteration": 1,
+        "metrics": {
+          "final_hpwl_um": 844.0,
+          "place_area_um2": 77.0,
+          "synth_area_um2": 33.516,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/config.mk",
+            "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/wrapper.sv",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/generated_candidate.sv",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/reports/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/logs/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/reports/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 844.0,
+            "place_area_um2": 77.0,
+            "synth_area_um2": 33.516,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": true,
+          "orfs_cmd": [
+            "make",
+            "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/config.generated.mk"
+          ],
+          "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+          "orfs_returncode": 2,
+          "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+          "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+          "prepared_design": {
+            "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/generated_candidate.sv"
+          },
+          "problem_key": "prob130",
+          "problem_name": "prob130_circuit5",
+          "run_orfs": true,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": true,
+          "version": "area"
+        },
+        "stop_reason": "openroad_failed_saved_run_stale",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+        }
+      },
+      "iteration_history": [
+        {
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_0",
+          "iteration": 0,
+          "metrics": {},
+          "openroad_eval": {
+            "metrics": {},
+            "metrics_may_be_stale": false,
+            "problem_name": "prob130_circuit5",
+            "run_orfs": false,
+            "status": "skipped_functional_failure",
+            "version": "area"
+          },
+          "stop_reason": "functional_retry",
+          "verification": {
+            "compiled_success": true,
+            "functional_success": false,
+            "generation_success": false,
+            "module_available": true,
+            "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has 92 mismatches. First mismatch occurred at time 40.\nHint: Total mismatched samples is 92 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 92 in 141 samples\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!"
+          }
+        },
+        {
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1",
+          "iteration": 1,
+          "metrics": {
+            "final_hpwl_um": 844.0,
+            "place_area_um2": 77.0,
+            "synth_area_um2": 33.516,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "openroad_eval": {
+            "copied_metric_artifacts": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt"
+            },
+            "copied_snapshot_artifacts": {
+              "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/config.mk",
+              "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/wrapper.sv",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/generated_candidate.sv",
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/area/iter_1/openroad_artifacts/synth_stat.txt"
+            },
+            "metric_source_files": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/reports/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/logs/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area/reports/synth_stat.txt"
+            },
+            "metrics": {
+              "final_hpwl_um": 844.0,
+              "place_area_um2": 77.0,
+              "synth_area_um2": 33.516,
+              "tns_ns": 0.0,
+              "worst_slack_ns": 0.0
+            },
+            "metrics_may_be_stale": true,
+            "orfs_cmd": [
+              "make",
+              "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/config.generated.mk"
+            ],
+            "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+            "orfs_returncode": 2,
+            "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+            "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+            "prepared_design": {
+              "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_area/generated_candidate.sv"
+            },
+            "problem_key": "prob130",
+            "problem_name": "prob130_circuit5",
+            "run_orfs": true,
+            "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_area",
+            "saved_run_existed_before": true,
+            "saved_run_exists": true,
+            "stale_metrics_from_saved_run": true,
+            "version": "area"
+          },
+          "stop_reason": "openroad_failed_saved_run_stale",
+          "verification": {
+            "compiled_success": true,
+            "functional_success": true,
+            "generation_success": true,
+            "module_available": true,
+            "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+          }
+        }
+      ],
+      "locally_optimal": false
+    },
+    "perf": {
+      "best_result": {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0",
+        "iteration": 0,
+        "metrics": {
+          "final_hpwl_um": 770.1,
+          "place_area_um2": 76.0,
+          "synth_area_um2": 31.654,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/config.mk",
+            "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/wrapper.sv",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/generated_candidate.sv",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/reports/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/logs/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/reports/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 770.1,
+            "place_area_um2": 76.0,
+            "synth_area_um2": 31.654,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": true,
+          "orfs_cmd": [
+            "make",
+            "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/config.generated.mk"
+          ],
+          "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+          "orfs_returncode": 2,
+          "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+          "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+          "prepared_design": {
+            "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/generated_candidate.sv"
+          },
+          "problem_key": "prob130",
+          "problem_name": "prob130_circuit5",
+          "run_orfs": true,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": true,
+          "version": "perf"
+        },
+        "stop_reason": "openroad_failed_saved_run_stale",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+        }
+      },
+      "iteration_history": [
+        {
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0",
+          "iteration": 0,
+          "metrics": {
+            "final_hpwl_um": 770.1,
+            "place_area_um2": 76.0,
+            "synth_area_um2": 31.654,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "openroad_eval": {
+            "copied_metric_artifacts": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+            },
+            "copied_snapshot_artifacts": {
+              "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/config.mk",
+              "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/wrapper.sv",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/generated_candidate.sv",
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/perf/iter_0/openroad_artifacts/synth_stat.txt"
+            },
+            "metric_source_files": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/reports/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/logs/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf/reports/synth_stat.txt"
+            },
+            "metrics": {
+              "final_hpwl_um": 770.1,
+              "place_area_um2": 76.0,
+              "synth_area_um2": 31.654,
+              "tns_ns": 0.0,
+              "worst_slack_ns": 0.0
+            },
+            "metrics_may_be_stale": true,
+            "orfs_cmd": [
+              "make",
+              "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/config.generated.mk"
+            ],
+            "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+            "orfs_returncode": 2,
+            "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+            "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+            "prepared_design": {
+              "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_perf/generated_candidate.sv"
+            },
+            "problem_key": "prob130",
+            "problem_name": "prob130_circuit5",
+            "run_orfs": true,
+            "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_perf",
+            "saved_run_existed_before": true,
+            "saved_run_exists": true,
+            "stale_metrics_from_saved_run": true,
+            "version": "perf"
+          },
+          "stop_reason": "openroad_failed_saved_run_stale",
+          "verification": {
+            "compiled_success": true,
+            "functional_success": true,
+            "generation_success": true,
+            "module_available": true,
+            "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+          }
+        }
+      ],
+      "locally_optimal": false
+    },
+    "power": {
+      "best_result": {
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0",
+        "iteration": 0,
+        "metrics": {
+          "final_hpwl_um": 844.0,
+          "place_area_um2": 77.0,
+          "synth_area_um2": 33.516,
+          "tns_ns": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "openroad_eval": {
+          "copied_metric_artifacts": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "copied_snapshot_artifacts": {
+            "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/config.mk",
+            "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/wrapper.sv",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/generated_candidate.sv",
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt"
+          },
+          "metric_source_files": {
+            "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/reports/3_global_place.rpt",
+            "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/logs/3_5_place_dp.log",
+            "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/reports/synth_stat.txt"
+          },
+          "metrics": {
+            "final_hpwl_um": 844.0,
+            "place_area_um2": 77.0,
+            "synth_area_um2": 33.516,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "metrics_may_be_stale": true,
+          "orfs_cmd": [
+            "make",
+            "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/config.generated.mk"
+          ],
+          "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+          "orfs_returncode": 2,
+          "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+          "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+          "prepared_design": {
+            "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power",
+            "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/config.generated.mk",
+            "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/generated_candidate.sv"
+          },
+          "problem_key": "prob130",
+          "problem_name": "prob130_circuit5",
+          "run_orfs": true,
+          "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power",
+          "saved_run_existed_before": true,
+          "saved_run_exists": true,
+          "stale_metrics_from_saved_run": true,
+          "version": "power"
+        },
+        "stop_reason": "openroad_failed_saved_run_stale",
+        "verification": {
+          "compiled_success": true,
+          "functional_success": true,
+          "generation_success": true,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+        }
+      },
+      "iteration_history": [
+        {
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0",
+          "iteration": 0,
+          "metrics": {
+            "final_hpwl_um": 844.0,
+            "place_area_um2": 77.0,
+            "synth_area_um2": 33.516,
+            "tns_ns": 0.0,
+            "worst_slack_ns": 0.0
+          },
+          "openroad_eval": {
+            "copied_metric_artifacts": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt"
+            },
+            "copied_snapshot_artifacts": {
+              "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/config.mk",
+              "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/wrapper.sv",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/generated_candidate.sv",
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/power/iter_0/openroad_artifacts/synth_stat.txt"
+            },
+            "metric_source_files": {
+              "global_place_rpt": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/reports/3_global_place.rpt",
+              "place_log": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/logs/3_5_place_dp.log",
+              "synth_stat": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power/reports/synth_stat.txt"
+            },
+            "metrics": {
+              "final_hpwl_um": 844.0,
+              "place_area_um2": 77.0,
+              "synth_area_um2": 33.516,
+              "tns_ns": 0.0,
+              "worst_slack_ns": 0.0
+            },
+            "metrics_may_be_stale": true,
+            "orfs_cmd": [
+              "make",
+              "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/config.generated.mk"
+            ],
+            "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+            "orfs_returncode": 2,
+            "orfs_stderr_tail": "Traceback (most recent call last):\n  File \"/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/scripts/defaults.py\", line 4, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\nmake: *** [check-yosys] Error 1\n",
+            "orfs_stdout_tail": "YOSYS_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/yosys/bin/yosys', but it is either not found or not executable.\n",
+            "prepared_design": {
+              "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power",
+              "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/config.generated.mk",
+              "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob130_power/generated_candidate.sv"
+            },
+            "problem_key": "prob130",
+            "problem_name": "prob130_circuit5",
+            "run_orfs": true,
+            "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob130_power",
+            "saved_run_existed_before": true,
+            "saved_run_exists": true,
+            "stale_metrics_from_saved_run": true,
+            "version": "power"
+          },
+          "stop_reason": "openroad_failed_saved_run_stale",
+          "verification": {
+            "compiled_success": true,
+            "functional_success": true,
+            "generation_success": true,
+            "module_available": true,
+            "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob130_circuit5/optimization_runs/_internal/tmp/test.sv:35: $finish called at 705 (1ps)\nHint: Output 'q' has no mismatches.\nHint: Total mismatched samples is 0 out of 141 samples\n\nSimulation finished at 705 ps\nMismatches: 0 in 141 samples\n"
+          }
+        }
+      ],
+      "locally_optimal": false
+    }
+  }
+}
