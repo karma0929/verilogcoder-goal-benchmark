@@ -1,0 +1,18 @@
+Task: Implement TopModule (SystemVerilog)
+
+Interface:
+- input  a
+- input  b
+- input  c
+- output out
+
+Functionality:
+out is 0 only when (a,b,c) = 3'b000; otherwise out = 1.
+
+Optimization Goal: Power efficiency (combinational)
+- Avoid redundant logic and unnecessary internal switching.
+- Prefer compact expression mapping to simple gates.
+
+Constraints:
+- Do not modify the module interface.
+- Purely combinational and synthesizable.

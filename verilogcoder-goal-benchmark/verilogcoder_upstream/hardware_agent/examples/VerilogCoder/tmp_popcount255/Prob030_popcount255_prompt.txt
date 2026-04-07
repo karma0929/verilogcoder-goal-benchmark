@@ -1,0 +1,25 @@
+Problem:
+Implement a module named TopModule.
+
+Interface:
+- input  in  (255 bits)
+- output out (8 bits or sufficient width to represent the population count)
+
+Functionality:
+The module should count the number of '1' bits in the 255-bit input vector.
+
+Constraints / Power Optimization Goals:
+- Optimize for low switching activity and reduced dynamic power.
+- Avoid unnecessary signal toggling.
+- Prefer conditional accumulation or segmented computation.
+- Reduce simultaneous switching of large logic blocks.
+- Sequential logic is NOT allowed; implement purely combinational logic.
+
+Guidance:
+- Structure the logic to minimize switching when inputs change sparsely.
+- Conditional or staged accumulation is preferred over full parallel trees.
+- Avoid wide fan-in logic where possible.
+
+Deliverable:
+Provide a synthesizable SystemVerilog implementation of TopModule.
+Only include the TopModule definition.

@@ -1,0 +1,12 @@
+[options]
+mode prove
+depth 50
+
+[engines]
+smtbmc yices
+
+[script]
+read_verilog -sv prob080_timer/ref/ref.sv prob080_timer/src/top.sv prob080_timer/sby/equiv.sv
+prep -top miter
+smtbmc -noprogress -reset
+

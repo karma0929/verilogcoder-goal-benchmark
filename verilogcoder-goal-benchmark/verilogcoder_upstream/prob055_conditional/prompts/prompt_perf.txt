@@ -1,0 +1,8 @@
+Implement TopModule exactly matching the required functionality and interface.
+
+Primary objective: maximize performance (minimize critical path delay).
+Guidelines:
+- Minimize comparator chain depth; prefer balanced compare tree.
+- Avoid redundant logic and unnecessary inversions.
+- Keep the design combinational; do not add registers.
+Return ONLY SystemVerilog code for TopModule.

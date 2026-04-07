@@ -1,0 +1,1578 @@
+{
+  "creator": "Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)",
+  "modules": {
+    "prob155_power_top": {
+      "attributes": {
+        "hdlname": "prob155_power_top",
+        "top": "00000000000000000000000000000001",
+        "src": "./designs/nangate45/prob155_power/wrapper.sv:1.1-25.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "areset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "bump_left": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "bump_right": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "ground": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "dig": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "walk_left": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "walk_right": {
+          "direction": "output",
+          "bits": [ 9 ]
+        },
+        "aaah": {
+          "direction": "output",
+          "bits": [ 10 ]
+        },
+        "digging": {
+          "direction": "output",
+          "bits": [ 11 ]
+        }
+      },
+      "cells": {
+        "$auto$alumacc.cc:106:get_cf$1130": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:63.17-63.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$1127": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:63.17-63.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17, 18 ],
+            "B": [ "0", "0", "1", "0", "1" ],
+            "BI": [ "1" ],
+            "CI": [ "1" ],
+            "CO": [ 19, 20, 21, 22, 12 ],
+            "X": [ 23, 24, 25, 26, 27 ],
+            "Y": [ 28, 29, 30, 31, 32 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$1140": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:64.33-64.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 14, 15, 16, 17, 18 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 33, 34, 35, 36, 37 ],
+            "X": [ 38, 39, 40, 41, 42 ],
+            "Y": [ 43, 44, 45, 46, 47 ]
+          }
+        },
+        "$auto$alumacc.cc:548:replace_alu$1138": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 48, 49 ],
+            "Y": [ 50 ]
+          }
+        },
+        "$auto$alumacc.cc:82:get_gt$1134": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13 ],
+            "B": [ 49 ],
+            "Y": [ 51 ]
+          }
+        },
+        "$auto$alumacc.cc:83:get_gt$1136": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:63.17-63.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 51 ],
+            "Y": [ 48 ]
+          }
+        },
+        "$auto$alumacc.cc:92:get_eq$1132": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:63.17-63.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23, 24, 25, 26, 27 ],
+            "Y": [ 49 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$1108": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000001",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 52 ],
+            "EN": [ 53 ],
+            "Q": [ 54 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$1111": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000001",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 55 ],
+            "EN": [ 56 ],
+            "Q": [ 57 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$1125": {
+          "hide_name": 1,
+          "type": "$sdffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000000",
+            "SRST_POLARITY": "00000000000000000000000000000000",
+            "SRST_VALUE": "00000",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:61.5-68.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output",
+            "SRST": "input"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 43, 44, 45, 46, 47 ],
+            "EN": [ 12 ],
+            "Q": [ 14, 15, 16, 17, 18 ],
+            "SRST": [ 58 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1110": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 59, 58 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 53 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1113": {
+          "hide_name": 1,
+          "type": "$reduce_bool",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60, 61 ],
+            "Y": [ 62 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$1123": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000110",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 63, 64, 65, 66, 62, 6 ],
+            "Y": [ 56 ]
+          }
+        },
+        "$auto$opt_dff.cc:81:create_not$1114": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7 ],
+            "Y": [ 66 ]
+          }
+        },
+        "$auto$opt_dff.cc:81:create_not$1116": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 59 ],
+            "Y": [ 65 ]
+          }
+        },
+        "$auto$opt_dff.cc:81:create_not$1118": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54 ],
+            "Y": [ 64 ]
+          }
+        },
+        "$auto$opt_dff.cc:81:create_not$1120": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58 ],
+            "Y": [ 63 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53$997": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.26-53.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 67 ],
+            "B": [ 4 ],
+            "Y": [ 61 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55$998": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55.26-55.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 57 ],
+            "B": [ 5 ],
+            "Y": [ 60 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1004": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 68 ],
+            "B": [ 69 ],
+            "Y": [ 70 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1006": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.56"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 70 ],
+            "B": [ 71 ],
+            "Y": [ 72 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1008": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 72 ],
+            "B": [ 67 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:71$1014": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:71.25-71.64"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 72 ],
+            "B": [ 57 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:72$1016": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:72.25-72.41"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 68 ],
+            "B": [ 58 ],
+            "Y": [ 10 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:73$1018": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:73.25-73.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 68 ],
+            "B": [ 54 ],
+            "Y": [ 11 ]
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53$996": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.26-53.30"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 57 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1002": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.30"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 59 ],
+            "Y": [ 68 ]
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1003": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.34-70.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 58 ],
+            "Y": [ 69 ]
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1005": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.46-70.56"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54 ],
+            "Y": [ 71 ]
+          }
+        },
+        "$flatten\\dut.$procdff$1100": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 73 ],
+            "Q": [ 58 ]
+          }
+        },
+        "$flatten\\dut.$procdff$1106": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 74 ],
+            "Q": [ 59 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1026": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:33.21-33.42|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:33.17-41.20"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 50 ],
+            "Y": [ 75 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1028": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:32.17-32.23|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:32.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 75 ],
+            "S": [ 6 ],
+            "Y": [ 76 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1030": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:31.22-31.29|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:31.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 76 ],
+            "S": [ 58 ],
+            "Y": [ 77 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1033": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.22-26.26|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 77 ],
+            "B": [ "1" ],
+            "S": [ 59 ],
+            "Y": [ 74 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1036": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:51.26-51.29|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:51.22-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 7 ],
+            "Y": [ 78 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1039": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:49.17-49.24|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:49.13-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 78 ],
+            "S": [ 6 ],
+            "Y": [ 79 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1042": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:44.17-44.24|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:44.13-47.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ "1" ],
+            "S": [ 6 ],
+            "Y": [ 80 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1044": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:43.22-43.31|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:43.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79 ],
+            "B": [ 80 ],
+            "S": [ 54 ],
+            "Y": [ 81 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1049": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:32.17-32.23|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:32.13-42.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "0" ],
+            "S": [ 6 ],
+            "Y": [ 82 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1051": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:31.22-31.29|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:31.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 81 ],
+            "B": [ 82 ],
+            "S": [ 58 ],
+            "Y": [ 83 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1054": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.22-26.26|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 83 ],
+            "B": [ "0" ],
+            "S": [ 59 ],
+            "Y": [ 52 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1057": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:49.17-49.24|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:49.13-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ "0" ],
+            "S": [ 6 ],
+            "Y": [ 84 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1072": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.22-26.26|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:26.18-58.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 84 ],
+            "B": [ "0" ],
+            "S": [ 59 ],
+            "Y": [ 73 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1074": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55.26-55.43|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55.22-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "0" ],
+            "S": [ 60 ],
+            "Y": [ 85 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1077": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.26-53.43|/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.22-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 85 ],
+            "B": [ "1" ],
+            "S": [ 61 ],
+            "Y": [ 55 ]
+          }
+        },
+        "dut": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "./designs/nangate45/prob155_power/wrapper.sv:13.15-24.6",
+            "module": "TopModule",
+            "module_hdlname": "TopModule",
+            "module_src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:1.1-75.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$auto$alumacc.cc:448:extract_cmp_alu$1126": {
+          "hide_name": 1,
+          "bits": [ 28, 29, 30, 31, 32 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$1128": {
+          "hide_name": 1,
+          "bits": [ 23, 24, 25, 26, 27 ],
+          "attributes": {
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$1141": {
+          "hide_name": 1,
+          "bits": [ 38, 39, 40, 41, 42 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$1129": {
+          "hide_name": 1,
+          "bits": [ 19, 20, 21, 22, 12 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$1142": {
+          "hide_name": 1,
+          "bits": [ 33, 34, 35, 36, 37 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1109": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1112": {
+          "hide_name": 1,
+          "bits": [ 62 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$1122": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1115": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1117": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1119": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1121": {
+          "hide_name": 1,
+          "bits": [ 63 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1131": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1137": {
+          "hide_name": 1,
+          "bits": [ 48 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3342:ReduceAnd$1133": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3343:ReduceOr$1139": {
+          "hide_name": 1,
+          "bits": [ 50 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3387:Or$1135": {
+          "hide_name": 1,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$0\\dead[0:0]": {
+          "hide_name": 1,
+          "bits": [ 74 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          }
+        },
+        "$flatten\\dut.$0\\digging_r[0:0]": {
+          "hide_name": 1,
+          "bits": [ 52 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          }
+        },
+        "$flatten\\dut.$0\\falling[0:0]": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:20.5-59.8"
+          }
+        },
+        "$flatten\\dut.$add$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:64$1001_Y": {
+          "hide_name": 1,
+          "bits": [ 43, 44, 45, 46, 47 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:64.33-64.52"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53$997_Y": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.26-53.43"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55$998_Y": {
+          "hide_name": 1,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:55.26-55.43"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1004_Y": {
+          "hide_name": 1,
+          "bits": [ 70 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.42"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1006_Y": {
+          "hide_name": 1,
+          "bits": [ 72 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.56"
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53$996_Y": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:53.26-53.30"
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1002_Y": {
+          "hide_name": 1,
+          "bits": [ 68 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.25-70.30"
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1003_Y": {
+          "hide_name": 1,
+          "bits": [ 69 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.34-70.42"
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70$1005_Y": {
+          "hide_name": 1,
+          "bits": [ 71 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:70.46-70.56"
+          }
+        },
+        "$flatten\\dut.$procmux$1026_Y": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1028_Y": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1030_Y": {
+          "hide_name": 1,
+          "bits": [ 77 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1036_Y": {
+          "hide_name": 1,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1039_Y": {
+          "hide_name": 1,
+          "bits": [ 79 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1042_Y": {
+          "hide_name": 1,
+          "bits": [ 80 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1044_Y": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1049_Y": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1051_Y": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1057_Y": {
+          "hide_name": 1,
+          "bits": [ 84 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1074_Y": {
+          "hide_name": 1,
+          "bits": [ 85 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$procmux$1077_Y": {
+          "hide_name": 1,
+          "bits": [ 55 ],
+          "attributes": {
+          }
+        },
+        "aaah": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:10.12-10.16"
+          }
+        },
+        "areset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:3.12-3.18"
+          }
+        },
+        "bump_left": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:4.12-4.21"
+          }
+        },
+        "bump_right": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:5.12-5.22"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:2.12-2.15"
+          }
+        },
+        "dig": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:7.12-7.15"
+          }
+        },
+        "digging": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:11.12-11.19"
+          }
+        },
+        "dut.aaah": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "dut aaah",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:10.12-10.16"
+          }
+        },
+        "dut.areset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "dut areset",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:3.12-3.18"
+          }
+        },
+        "dut.bump_left": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "dut bump_left",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:4.12-4.21"
+          }
+        },
+        "dut.bump_right": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "dut bump_right",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:5.12-5.22"
+          }
+        },
+        "dut.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "dut clk",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:2.12-2.15"
+          }
+        },
+        "dut.dead": {
+          "hide_name": 0,
+          "bits": [ 59 ],
+          "attributes": {
+            "hdlname": "dut dead",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:17.9-17.13"
+          }
+        },
+        "dut.dig": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "dut dig",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:7.12-7.15"
+          }
+        },
+        "dut.digging": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "hdlname": "dut digging",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:11.12-11.19"
+          }
+        },
+        "dut.digging_r": {
+          "hide_name": 0,
+          "bits": [ 54 ],
+          "attributes": {
+            "hdlname": "dut digging_r",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:16.9-16.18"
+          }
+        },
+        "dut.dir": {
+          "hide_name": 0,
+          "bits": [ 57 ],
+          "attributes": {
+            "hdlname": "dut dir",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:14.9-14.12"
+          }
+        },
+        "dut.fall_counter": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17, 18 ],
+          "attributes": {
+            "hdlname": "dut fall_counter",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:18.15-18.27"
+          }
+        },
+        "dut.falling": {
+          "hide_name": 0,
+          "bits": [ 58 ],
+          "attributes": {
+            "hdlname": "dut falling",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:15.9-15.16"
+          }
+        },
+        "dut.ground": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "dut ground",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:6.12-6.18"
+          }
+        },
+        "dut.walk_left": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "dut walk_left",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:8.12-8.21"
+          }
+        },
+        "dut.walk_right": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "dut walk_right",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_power.sv:9.12-9.22"
+          }
+        },
+        "ground": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:6.12-6.18"
+          }
+        },
+        "walk_left": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:8.12-8.21"
+          }
+        },
+        "walk_right": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_power/wrapper.sv:9.12-9.22"
+          }
+        }
+      }
+    }
+  }
+}

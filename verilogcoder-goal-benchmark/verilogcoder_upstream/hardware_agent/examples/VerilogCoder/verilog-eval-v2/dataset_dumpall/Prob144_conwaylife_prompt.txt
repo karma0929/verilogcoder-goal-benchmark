@@ -1,0 +1,31 @@
+Implement a module named TopModule with the following interface:
+
+- input  clk
+- input  load
+- input  data [255:0]
+- output q    [255:0]
+
+This module implements Conway’s Game of Life on a 16×16 toroidal grid.
+
+Each cell updates its state at every timestep based on the number of live
+neighbors:
+
+- 0 or 1 neighbors: cell becomes 0
+- exactly 2 neighbors: cell retains its current state
+- exactly 3 neighbors: cell becomes 1
+- 4 or more neighbors: cell becomes 0
+
+The grid wraps around at all boundaries. The 16×16 grid is represented as
+a 256-bit vector, with rows stored consecutively.
+
+Functional behavior:
+- On the rising edge of clk:
+  - If load is high, q is synchronously loaded with data.
+  - Otherwise, q advances by one timestep.
+
+Design goal:
+- Emphasize power efficiency.
+- Reduce unnecessary switching activity in combinational logic.
+- Avoid toggling signals when cell state does not change.
+- Favor stable signal paths and conditional updates where appropriate.
+- Do not sacrifice functional correctness for power reduction.

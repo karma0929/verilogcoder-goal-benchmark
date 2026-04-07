@@ -1,0 +1,103 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob105_power_top/base/2_floorplan.odb
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+global_placement -skip_io -density 0.4 -pad_left 0 -pad_right 0
+[INFO GPL-0001] ---- Initialize GPL Main Data Structures
+[INFO GPL-0002] DBU: 2000
+[INFO GPL-0003] SiteSize: (  0.190  1.400 ) um
+[INFO GPL-0004] CoreBBox: (  2.090  2.800 ) ( 38.000 37.800 ) um
+[INFO GPL-0036] Movable instances area:        944.566 um^2
+[INFO GPL-0037] Total instances area:          957.866 um^2
+[INFO GPL-0035] Pin density area adjust:       119.333 um^2
+[INFO GPL-0032] ---- Initialize Region: Top-level
+[INFO GPL-0006] Number of instances:               530
+[INFO GPL-0007] Movable instances:                 480
+[INFO GPL-0008] Fixed instances:                    50
+[INFO GPL-0009] Dummy instances:                     0
+[INFO GPL-0010] Number of nets:                    684
+[INFO GPL-0011] Number of pins:                   1966
+[INFO GPL-0012] Die BBox:  (  0.000  0.000 ) ( 40.000 40.000 ) um
+[INFO GPL-0013] Core BBox: (  2.090  2.800 ) ( 38.000 37.800 ) um
+[INFO GPL-0016] Core area:                    1256.850 um^2
+[INFO GPL-0014] Region name: top-level.
+[INFO GPL-0015] Region area:                  1256.850 um^2
+[INFO GPL-0017] Fixed instances area:           13.300 um^2
+[INFO GPL-0018] Movable instances area:       1063.899 um^2
+[INFO GPL-0019] Utilization:                    85.553 %
+[INFO GPL-0020] Standard cells area:          1063.899 um^2
+[INFO GPL-0021] Large instances area:            0.000 um^2
+[INFO GPL-0005] ---- Execute Conjugate Gradient Initial Placement.
+[INFO GPL-0051] Source of initial instance position counters:
+	Odb location = 0	Core center = 480	Region center = 0
+[INFO GPL-0033] ---- Initialize Nesterov Region: Top-level
+[WARNING GPL-0302] Target density 0.4000 is too low for the available free area.
+Automatically adjusting to uniform density 0.8600.
+[INFO GPL-0023] Placement target density:       0.8600
+[INFO GPL-0024] Movable insts average area:      2.216 um^2
+[INFO GPL-0025] Ideal bin area:                  2.577 um^2
+[INFO GPL-0026] Ideal bin count:                   487
+[INFO GPL-0027] Total bin area:               1256.850 um^2
+[INFO GPL-0028] Bin count (X, Y):          16 ,     16
+[INFO GPL-0029] Bin size (W * H):       2.244 *  2.188 um
+[INFO GPL-0030] Number of bins:                    256
+[INFO GPL-0007] ---- Execute Nesterov Global Placement.
+[INFO GPL-0031] HPWL: Half-Perimeter Wirelength
+Iteration | Overflow |     HPWL (um) |  HPWL(%) |   Penalty | Group
+---------------------------------------------------------------
+        0 |   0.9759 |  6.062985e+02 |   +0.00% |  2.98e-14 |      
+       10 |   0.9810 |  3.633515e+02 |  -40.07% |  4.85e-14 |      
+       20 |   0.9809 |  3.620955e+02 |   -0.35% |  7.90e-14 |      
+       30 |   0.9810 |  3.619175e+02 |   -0.05% |  1.29e-13 |      
+       40 |   0.9809 |  3.620370e+02 |   +0.03% |  2.10e-13 |      
+       50 |   0.9809 |  3.620340e+02 |   -0.00% |  3.42e-13 |      
+       60 |   0.9809 |  3.621595e+02 |   +0.03% |  5.56e-13 |      
+       70 |   0.9809 |  3.622840e+02 |   +0.03% |  9.06e-13 |      
+       80 |   0.9808 |  3.626085e+02 |   +0.09% |  1.48e-12 |      
+       90 |   0.9807 |  3.631650e+02 |   +0.15% |  2.40e-12 |      
+      100 |   0.9804 |  3.640895e+02 |   +0.25% |  3.92e-12 |      
+      110 |   0.9795 |  3.662920e+02 |   +0.60% |  6.38e-12 |      
+      120 |   0.9730 |  3.738585e+02 |   +2.07% |  1.04e-11 |      
+      130 |   0.9677 |  4.197075e+02 |  +12.26% |  1.69e-11 |      
+      140 |   0.9421 |  5.676985e+02 |  +35.26% |  2.76e-11 |      
+      150 |   0.9041 |  6.529225e+02 |  +15.01% |  4.49e-11 |      
+      160 |   0.8808 |  7.465205e+02 |  +14.34% |  7.32e-11 |      
+      170 |   0.8399 |  8.836160e+02 |  +18.36% |  1.19e-10 |      
+      180 |   0.8183 |  9.474520e+02 |   +7.22% |  1.94e-10 |      
+      190 |   0.7778 |  1.039409e+03 |   +9.71% |  3.16e-10 |      
+      200 |   0.7299 |  1.142303e+03 |   +9.90% |  5.15e-10 |      
+      210 |   0.6967 |  1.225879e+03 |   +7.32% |  8.39e-10 |      
+      220 |   0.6376 |  1.332089e+03 |   +8.66% |  1.37e-09 |      
+      230 |   0.5978 |  1.419743e+03 |   +6.58% |  2.23e-09 |      
+      240 |   0.5538 |  1.524603e+03 |   +7.39% |  3.63e-09 |      
+      250 |   0.5085 |  1.621912e+03 |   +6.38% |  5.91e-09 |      
+      260 |   0.4696 |  1.702908e+03 |   +4.99% |  9.62e-09 |      
+      270 |   0.4227 |  1.781085e+03 |   +4.59% |  1.57e-08 |      
+      280 |   0.3887 |  1.856111e+03 |   +4.21% |  2.55e-08 |      
+      290 |   0.3477 |  1.907640e+03 |   +2.78% |  4.16e-08 |      
+      300 |   0.3151 |  1.943137e+03 |   +1.86% |  6.19e-08 |      
+      310 |   0.2854 |  1.980904e+03 |   +1.94% |  9.11e-08 |      
+      320 |   0.2523 |  2.010804e+03 |   +1.51% |  1.34e-07 |      
+      330 |   0.2201 |  2.034740e+03 |   +1.19% |  1.98e-07 |      
+      340 |   0.1923 |  2.053493e+03 |   +0.92% |  2.91e-07 |      
+      350 |   0.1593 |  2.073576e+03 |   +0.98% |  4.29e-07 |      
+      360 |   0.1309 |  2.095713e+03 |   +1.07% |  6.32e-07 |      
+      370 |   0.1107 |  2.104068e+03 |   +0.40% |  9.31e-07 |      
+      375 |   0.0985 |  2.103737e+03 |          |  1.18e-06 |      
+---------------------------------------------------------------
+[INFO GPL-1001] Global placement finished at iteration 375
+[INFO GPL-1002] Placed Cell Area             1063.8985
+[INFO GPL-1003] Available Free Area          1243.5500
+[INFO GPL-1004] Minimum Feasible Density        0.8600 (cell_area / free_area)
+[INFO GPL-1006]   Suggested Target Densities:
+[INFO GPL-1007]     - For 90% usage of free space: 0.9506
+[INFO GPL-1008]     - For 80% usage of free space: 1.0694
+[INFO GPL-1014] Final placement area: 1063.90 (+0.00%)
+write_db ./results/nangate45/prob105_power_top/base/3_1_place_gp_skip_io.odb
+Elapsed time: 0:00.75[h:]min:sec. CPU time: user 1.95 sys 0.05 (265%). Peak memory: 133352KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+3_1_place_gp_skip_io               0            130 15389bb58df38f453f5d

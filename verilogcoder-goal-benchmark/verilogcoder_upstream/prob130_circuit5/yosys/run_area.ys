@@ -1,0 +1,5 @@
+read_verilog -sv prob130_circuit5/src/top_area.sv
+hierarchy -top TopModule
+proc; opt; techmap; opt
+stat
+write_verilog -noattr prob130_circuit5/build/yosys/top_area_gate_generic.v

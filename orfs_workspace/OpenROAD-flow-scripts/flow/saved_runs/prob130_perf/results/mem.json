@@ -1,0 +1,1529 @@
+{
+  "creator": "Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)",
+  "modules": {
+    "prob130_perf_top": {
+      "attributes": {
+        "hdlname": "prob130_perf_top",
+        "top": "00000000000000000000000000000001",
+        "src": "./designs/nangate45/prob130_perf/wrapper.sv:1.1-12.10"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 6, 7, 8, 9 ]
+        },
+        "c": {
+          "direction": "input",
+          "bits": [ 10, 11, 12, 13 ]
+        },
+        "d": {
+          "direction": "input",
+          "bits": [ 14, 15, 16, 17 ]
+        },
+        "e": {
+          "direction": "input",
+          "bits": [ 18, 19, 20, 21 ]
+        },
+        "q": {
+          "direction": "output",
+          "bits": [ 22, 23, 24, 25 ]
+        }
+      },
+      "cells": {
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$998": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.13-13.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26 ],
+            "B": [ 27 ],
+            "Y": [ 28 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14$1001": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14.13-14.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 29 ],
+            "B": [ 30 ],
+            "Y": [ 31 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14$1003": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14.13-14.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B": [ 32 ],
+            "Y": [ 26 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14$1004": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14.13-14.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 26 ],
+            "B": [ 10 ],
+            "Y": [ 33 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15$1008": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15.13-15.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 31 ],
+            "B": [ 11 ],
+            "Y": [ 34 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15$1010": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15.13-15.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34 ],
+            "B": [ 27 ],
+            "Y": [ 35 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:16$1015": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:16.13-16.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 34 ],
+            "B": [ 10 ],
+            "Y": [ 36 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1019": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.25-19.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 6 ],
+            "Y": [ 37 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1020": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.39-19.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 33 ],
+            "B": [ 18 ],
+            "Y": [ 38 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1022": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.53-19.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 2 ],
+            "Y": [ 39 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1024": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.67-19.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36 ],
+            "B": [ 14 ],
+            "Y": [ 40 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1027": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.25-20.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 7 ],
+            "Y": [ 41 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1028": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.39-20.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 33 ],
+            "B": [ 19 ],
+            "Y": [ 42 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1030": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.53-20.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 3 ],
+            "Y": [ 43 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1032": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.67-20.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36 ],
+            "B": [ 15 ],
+            "Y": [ 44 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1035": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.25-21.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 8 ],
+            "Y": [ 45 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1036": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.39-21.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 33 ],
+            "B": [ 20 ],
+            "Y": [ 46 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1038": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.53-21.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 4 ],
+            "Y": [ 47 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1040": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.67-21.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36 ],
+            "B": [ 16 ],
+            "Y": [ 48 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1043": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.25-22.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 9 ],
+            "Y": [ 49 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1044": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.39-22.48"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 33 ],
+            "B": [ 21 ],
+            "Y": [ 50 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1046": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.53-22.62"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 35 ],
+            "B": [ 5 ],
+            "Y": [ 51 ]
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1048": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.67-22.76"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 36 ],
+            "B": [ 17 ],
+            "Y": [ 52 ]
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$993": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.21-13.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12 ],
+            "Y": [ 30 ]
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$995": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.29-13.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 11 ],
+            "Y": [ 32 ]
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$997": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.37-13.42"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10 ],
+            "Y": [ 27 ]
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14$999": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:14.13-14.18"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13 ],
+            "Y": [ 29 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17$1016": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17.16-17.23"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28 ],
+            "B": [ 33 ],
+            "Y": [ 53 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17$1017": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17.16-17.28"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 53 ],
+            "B": [ 35 ],
+            "Y": [ 54 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17$1018": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17.16-17.33"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54 ],
+            "B": [ 36 ],
+            "Y": [ 55 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1021": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37 ],
+            "B": [ 38 ],
+            "Y": [ 56 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1023": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.63"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 56 ],
+            "B": [ 39 ],
+            "Y": [ 57 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1025": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 57 ],
+            "B": [ 40 ],
+            "Y": [ 58 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1029": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 41 ],
+            "B": [ 42 ],
+            "Y": [ 59 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1031": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.63"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 59 ],
+            "B": [ 43 ],
+            "Y": [ 60 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1033": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "B": [ 44 ],
+            "Y": [ 61 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1037": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 45 ],
+            "B": [ 46 ],
+            "Y": [ 62 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1039": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.63"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62 ],
+            "B": [ 47 ],
+            "Y": [ 63 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1041": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 63 ],
+            "B": [ 48 ],
+            "Y": [ 64 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1045": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.49"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 49 ],
+            "B": [ 50 ],
+            "Y": [ 65 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1047": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.63"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 65 ],
+            "B": [ 51 ],
+            "Y": [ 66 ]
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1049": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.77"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 66 ],
+            "B": [ 52 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$flatten\\dut.$ternary$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1026": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.15-19.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 58 ],
+            "S": [ 55 ],
+            "Y": [ 22 ]
+          }
+        },
+        "$flatten\\dut.$ternary$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1034": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.15-20.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 61 ],
+            "S": [ 55 ],
+            "Y": [ 23 ]
+          }
+        },
+        "$flatten\\dut.$ternary$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1042": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.15-21.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 64 ],
+            "S": [ 55 ],
+            "Y": [ 24 ]
+          }
+        },
+        "$flatten\\dut.$ternary$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1050": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.15-22.85"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 67 ],
+            "S": [ 55 ],
+            "Y": [ 25 ]
+          }
+        },
+        "dut": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "./designs/nangate45/prob130_perf/wrapper.sv:9.15-11.6",
+            "module": "TopModule",
+            "module_hdlname": "TopModule",
+            "module_src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:1.1-24.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$994_Y": {
+          "hide_name": 1,
+          "bits": [ 31 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.13-13.26"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$996_Y": {
+          "hide_name": 1,
+          "bits": [ 26 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.13-13.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15$1008_Y": {
+          "hide_name": 1,
+          "bits": [ 34 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:15.13-15.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1019_Y": {
+          "hide_name": 1,
+          "bits": [ 37 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.25-19.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1020_Y": {
+          "hide_name": 1,
+          "bits": [ 38 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.39-19.48"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1022_Y": {
+          "hide_name": 1,
+          "bits": [ 39 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.53-19.62"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1024_Y": {
+          "hide_name": 1,
+          "bits": [ 40 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.67-19.76"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1027_Y": {
+          "hide_name": 1,
+          "bits": [ 41 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.25-20.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1028_Y": {
+          "hide_name": 1,
+          "bits": [ 42 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.39-20.48"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1030_Y": {
+          "hide_name": 1,
+          "bits": [ 43 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.53-20.62"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1032_Y": {
+          "hide_name": 1,
+          "bits": [ 44 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.67-20.76"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1035_Y": {
+          "hide_name": 1,
+          "bits": [ 45 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.25-21.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1036_Y": {
+          "hide_name": 1,
+          "bits": [ 46 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.39-21.48"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1038_Y": {
+          "hide_name": 1,
+          "bits": [ 47 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.53-21.62"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1040_Y": {
+          "hide_name": 1,
+          "bits": [ 48 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.67-21.76"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1043_Y": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.25-22.34"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1044_Y": {
+          "hide_name": 1,
+          "bits": [ 50 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.39-22.48"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1046_Y": {
+          "hide_name": 1,
+          "bits": [ 51 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.53-22.62"
+          }
+        },
+        "$flatten\\dut.$and$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1048_Y": {
+          "hide_name": 1,
+          "bits": [ 52 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.67-22.76"
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$992_Y": {
+          "hide_name": 1,
+          "bits": [ 29 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.13-13.18"
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$993_Y": {
+          "hide_name": 1,
+          "bits": [ 30 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.21-13.26"
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$995_Y": {
+          "hide_name": 1,
+          "bits": [ 32 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.29-13.34"
+          }
+        },
+        "$flatten\\dut.$not$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13$997_Y": {
+          "hide_name": 1,
+          "bits": [ 27 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:13.37-13.42"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17$1016_Y": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17.16-17.23"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17$1017_Y": {
+          "hide_name": 1,
+          "bits": [ 54 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:17.16-17.28"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1021_Y": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.49"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1023_Y": {
+          "hide_name": 1,
+          "bits": [ 57 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.63"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19$1025_Y": {
+          "hide_name": 1,
+          "bits": [ 58 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:19.24-19.77"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1029_Y": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.49"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1031_Y": {
+          "hide_name": 1,
+          "bits": [ 60 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.63"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20$1033_Y": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:20.24-20.77"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1037_Y": {
+          "hide_name": 1,
+          "bits": [ 62 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.49"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1039_Y": {
+          "hide_name": 1,
+          "bits": [ 63 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.63"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21$1041_Y": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:21.24-21.77"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1045_Y": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.49"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1047_Y": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.63"
+          }
+        },
+        "$flatten\\dut.$or$/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22$1049_Y": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:22.24-22.77"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:2.18-2.19"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:3.18-3.19"
+          }
+        },
+        "c": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:4.18-4.19"
+          }
+        },
+        "d": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:5.18-5.19"
+          }
+        },
+        "dut.a": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "hdlname": "dut a",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:2.18-2.19"
+          }
+        },
+        "dut.b": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9 ],
+          "attributes": {
+            "hdlname": "dut b",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:3.18-3.19"
+          }
+        },
+        "dut.c": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12, 13 ],
+          "attributes": {
+            "hdlname": "dut c",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:4.18-4.19"
+          }
+        },
+        "dut.d": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17 ],
+          "attributes": {
+            "hdlname": "dut d",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:5.18-5.19"
+          }
+        },
+        "dut.e": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21 ],
+          "attributes": {
+            "hdlname": "dut e",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:6.18-6.19"
+          }
+        },
+        "dut.q": {
+          "hide_name": 0,
+          "bits": [ 22, 23, 24, 25 ],
+          "attributes": {
+            "hdlname": "dut q",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:7.18-7.19"
+          }
+        },
+        "dut.s0": {
+          "hide_name": 0,
+          "bits": [ 28 ],
+          "attributes": {
+            "hdlname": "dut s0",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:10.6-10.8"
+          }
+        },
+        "dut.s1": {
+          "hide_name": 0,
+          "bits": [ 33 ],
+          "attributes": {
+            "hdlname": "dut s1",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:10.10-10.12"
+          }
+        },
+        "dut.s2": {
+          "hide_name": 0,
+          "bits": [ 35 ],
+          "attributes": {
+            "hdlname": "dut s2",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:10.14-10.16"
+          }
+        },
+        "dut.s3": {
+          "hide_name": 0,
+          "bits": [ 36 ],
+          "attributes": {
+            "hdlname": "dut s3",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:10.18-10.20"
+          }
+        },
+        "dut.valid": {
+          "hide_name": 0,
+          "bits": [ 55 ],
+          "attributes": {
+            "hdlname": "dut valid",
+            "src": "/workspace/benchmark/prob130_circuit5/src/top_perf.sv:11.6-11.11"
+          }
+        },
+        "e": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:6.18-6.19"
+          }
+        },
+        "q": {
+          "hide_name": 0,
+          "bits": [ 22, 23, 24, 25 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob130_perf/wrapper.sv:7.18-7.19"
+          }
+        }
+      }
+    }
+  }
+}

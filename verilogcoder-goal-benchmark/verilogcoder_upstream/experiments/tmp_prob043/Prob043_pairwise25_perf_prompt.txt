@@ -1,0 +1,28 @@
+Task: Implement TopModule (SystemVerilog)
+
+Interface:
+- input  a
+- input  b
+- input  c
+- input  d
+- input  e
+- output out [24:0]
+
+Functionality:
+Compute a 5×5 equality matrix (25 one-bit comparisons) between the five 1-bit inputs.
+Each output bit is 1 iff the compared bits are equal (XNOR).
+Bit ordering (row-major):
+- out[24:20] = compare a with {a,b,c,d,e}
+- out[19:15] = compare b with {a,b,c,d,e}
+- out[14:10] = compare c with {a,b,c,d,e}
+- out[ 9: 5] = compare d with {a,b,c,d,e}
+- out[ 4: 0] = compare e with {a,b,c,d,e}
+
+Optimization Goal: Performance
+- Minimize logic depth per output bit (prefer direct XNOR).
+- Avoid multi-level shared logic that increases critical path.
+- Keep the implementation purely combinational.
+
+Constraints:
+- Do not change the module interface.
+- Must be synthesizable.

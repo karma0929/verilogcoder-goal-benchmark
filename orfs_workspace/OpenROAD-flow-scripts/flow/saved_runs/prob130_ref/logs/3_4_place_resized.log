@@ -1,0 +1,36 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob130_ref_top/base/3_3_place_gp.odb
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |        60
+       10 |     +0.0% |       0 |       0 |             0 |        50
+       20 |     +0.0% |       0 |       0 |             0 |        40
+       30 |     +0.0% |       0 |       0 |             0 |        30
+       40 |     +0.0% |       0 |       0 |             0 |        20
+       50 |     +0.0% |       0 |       0 |             0 |        10
+       60 |     +0.0% |       0 |       0 |             0 |         0
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+Floating nets: 
+Report metrics stage 3, resizer...
+No registers in design
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 77 um^2 2% utilization.
+Instance count before 142, after 142
+Pin count before 112, after 112
+write_db ./results/nangate45/prob130_ref_top/base/3_4_place_resized.odb
+Elapsed time: 0:00.67[h:]min:sec. CPU time: user 0.64 sys 0.06 (105%). Peak memory: 165496KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+3_4_place_resized                  0            161 3d10ad7fde280bcf3e4a

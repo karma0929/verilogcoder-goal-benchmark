@@ -1,0 +1,261 @@
+
+==========================================================================
+floorplan final report_tns
+--------------------------------------------------------------------------
+tns max 0.00
+
+==========================================================================
+floorplan final report_wns
+--------------------------------------------------------------------------
+wns max 0.00
+
+==========================================================================
+floorplan final report_worst_slack
+--------------------------------------------------------------------------
+worst slack max 7.84
+
+==========================================================================
+floorplan final report_clock_min_period
+--------------------------------------------------------------------------
+core_clock period_min = 2.16 fmax = 463.17
+
+==========================================================================
+floorplan final report_checks -path_delay min
+--------------------------------------------------------------------------
+Startpoint: areset (input port clocked by core_clock)
+Endpoint: dut.dir$_DFFE_PP0P_
+          (removal check against rising-edge clock core_clock)
+Path Group: asynchronous
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     1    1.55    0.00    0.00    2.00 v areset (in)
+                                         areset (net)
+                  0.00    0.00    2.00 v _77_/A (INV_X1)
+     5    8.47    0.02    0.03    2.03 ^ _77_/ZN (INV_X1)
+                                         _08_ (net)
+                  0.02    0.00    2.03 ^ dut.dir$_DFFE_PP0P_/RN (DFFR_X1)
+                                  2.03   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ dut.dir$_DFFE_PP0P_/CK (DFFR_X1)
+                          0.21    0.21   library removal time
+                                  0.21   data required time
+-----------------------------------------------------------------------------
+                                  0.21   data required time
+                                 -2.03   data arrival time
+-----------------------------------------------------------------------------
+                                  1.82   slack (MET)
+
+
+Startpoint: dut.mode[3]$_DFF_PP0_
+            (rising edge-triggered flip-flop clocked by core_clock)
+Endpoint: dut.mode[3]$_DFF_PP0_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: min
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                  0.00    0.00    0.00 ^ dut.mode[3]$_DFF_PP0_/CK (DFFR_X1)
+     2    7.38    0.01    0.09    0.09 v dut.mode[3]$_DFF_PP0_/Q (DFFR_X1)
+                                         dut.mode[3] (net)
+                  0.01    0.00    0.09 v _72_/A (INV_X1)
+     1    1.67    0.01    0.01    0.11 ^ _72_/ZN (INV_X1)
+                                         _30_ (net)
+                  0.01    0.00    0.11 ^ _74_/A (OAI21_X1)
+     1    1.05    0.01    0.01    0.12 v _74_/ZN (OAI21_X1)
+                                         _03_ (net)
+                  0.01    0.00    0.12 v dut.mode[3]$_DFF_PP0_/D (DFFR_X1)
+                                  0.12   data arrival time
+
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          0.00    0.00   clock reconvergence pessimism
+                                  0.00 ^ dut.mode[3]$_DFF_PP0_/CK (DFFR_X1)
+                          0.00    0.00   library hold time
+                                  0.00   data required time
+-----------------------------------------------------------------------------
+                                  0.00   data required time
+                                 -0.12   data arrival time
+-----------------------------------------------------------------------------
+                                  0.12   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -path_delay max
+--------------------------------------------------------------------------
+Startpoint: areset (input port clocked by core_clock)
+Endpoint: dut.mode[0]$_DFF_PP1_
+          (recovery check against rising-edge clock core_clock)
+Path Group: asynchronous
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     1    1.55    0.00    0.00    2.00 v areset (in)
+                                         areset (net)
+                  0.00    0.00    2.00 v _77_/A (INV_X1)
+     5    8.47    0.02    0.03    2.03 ^ _77_/ZN (INV_X1)
+                                         _08_ (net)
+                  0.02    0.00    2.03 ^ dut.mode[0]$_DFF_PP1_/SN (DFFS_X1)
+                                  2.03   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ dut.mode[0]$_DFF_PP1_/CK (DFFS_X1)
+                          0.04   10.04   library recovery time
+                                 10.04   data required time
+-----------------------------------------------------------------------------
+                                 10.04   data required time
+                                 -2.03   data arrival time
+-----------------------------------------------------------------------------
+                                  8.02   slack (MET)
+
+
+Startpoint: dig (input port clocked by core_clock)
+Endpoint: dut.dir$_DFFE_PP0P_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     3    4.42    0.00    0.00    2.00 v dig (in)
+                                         dig (net)
+                  0.00    0.00    2.00 v _59_/A (INV_X1)
+     2    2.62    0.01    0.01    2.01 ^ _59_/ZN (INV_X1)
+                                         _21_ (net)
+                  0.01    0.00    2.01 ^ _60_/A2 (AND3_X1)
+     1    1.66    0.01    0.04    2.05 ^ _60_/ZN (AND3_X1)
+                                         _22_ (net)
+                  0.01    0.00    2.05 ^ _62_/B1 (OAI21_X1)
+     1    1.48    0.01    0.01    2.07 v _62_/ZN (OAI21_X1)
+                                         _24_ (net)
+                  0.01    0.00    2.07 v _63_/B (MUX2_X2)
+     1    1.05    0.01    0.05    2.12 v _63_/Z (MUX2_X2)
+                                         _09_ (net)
+                  0.01    0.00    2.12 v dut.dir$_DFFE_PP0P_/D (DFFR_X1)
+                                  2.12   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ dut.dir$_DFFE_PP0P_/CK (DFFR_X1)
+                         -0.04    9.96   library setup time
+                                  9.96   data required time
+-----------------------------------------------------------------------------
+                                  9.96   data required time
+                                 -2.12   data arrival time
+-----------------------------------------------------------------------------
+                                  7.84   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_checks -unconstrained
+--------------------------------------------------------------------------
+Startpoint: areset (input port clocked by core_clock)
+Endpoint: dut.mode[0]$_DFF_PP1_
+          (recovery check against rising-edge clock core_clock)
+Path Group: asynchronous
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     1    1.55    0.00    0.00    2.00 v areset (in)
+                                         areset (net)
+                  0.00    0.00    2.00 v _77_/A (INV_X1)
+     5    8.47    0.02    0.03    2.03 ^ _77_/ZN (INV_X1)
+                                         _08_ (net)
+                  0.02    0.00    2.03 ^ dut.mode[0]$_DFF_PP1_/SN (DFFS_X1)
+                                  2.03   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ dut.mode[0]$_DFF_PP1_/CK (DFFS_X1)
+                          0.04   10.04   library recovery time
+                                 10.04   data required time
+-----------------------------------------------------------------------------
+                                 10.04   data required time
+                                 -2.03   data arrival time
+-----------------------------------------------------------------------------
+                                  8.02   slack (MET)
+
+
+Startpoint: dig (input port clocked by core_clock)
+Endpoint: dut.dir$_DFFE_PP0P_
+          (rising edge-triggered flip-flop clocked by core_clock)
+Path Group: core_clock
+Path Type: max
+
+Fanout     Cap    Slew   Delay    Time   Description
+-----------------------------------------------------------------------------
+                  0.00    0.00    0.00   clock core_clock (rise edge)
+                          0.00    0.00   clock network delay (ideal)
+                          2.00    2.00 v input external delay
+     3    4.42    0.00    0.00    2.00 v dig (in)
+                                         dig (net)
+                  0.00    0.00    2.00 v _59_/A (INV_X1)
+     2    2.62    0.01    0.01    2.01 ^ _59_/ZN (INV_X1)
+                                         _21_ (net)
+                  0.01    0.00    2.01 ^ _60_/A2 (AND3_X1)
+     1    1.66    0.01    0.04    2.05 ^ _60_/ZN (AND3_X1)
+                                         _22_ (net)
+                  0.01    0.00    2.05 ^ _62_/B1 (OAI21_X1)
+     1    1.48    0.01    0.01    2.07 v _62_/ZN (OAI21_X1)
+                                         _24_ (net)
+                  0.01    0.00    2.07 v _63_/B (MUX2_X2)
+     1    1.05    0.01    0.05    2.12 v _63_/Z (MUX2_X2)
+                                         _09_ (net)
+                  0.01    0.00    2.12 v dut.dir$_DFFE_PP0P_/D (DFFR_X1)
+                                  2.12   data arrival time
+
+                  0.00   10.00   10.00   clock core_clock (rise edge)
+                          0.00   10.00   clock network delay (ideal)
+                          0.00   10.00   clock reconvergence pessimism
+                                 10.00 ^ dut.dir$_DFFE_PP0P_/CK (DFFR_X1)
+                         -0.04    9.96   library setup time
+                                  9.96   data required time
+-----------------------------------------------------------------------------
+                                  9.96   data required time
+                                 -2.12   data arrival time
+-----------------------------------------------------------------------------
+                                  7.84   slack (MET)
+
+
+
+==========================================================================
+floorplan final report_power
+--------------------------------------------------------------------------
+Group                  Internal  Switching    Leakage      Total
+                          Power      Power      Power      Power (Watts)
+----------------------------------------------------------------
+Sequential             6.93e-06   2.60e-07   7.96e-07   7.99e-06  72.7%
+Combinational          1.08e-06   6.82e-07   1.23e-06   3.00e-06  27.3%
+Clock                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Macro                  0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+Pad                    0.00e+00   0.00e+00   0.00e+00   0.00e+00   0.0%
+----------------------------------------------------------------
+Total                  8.02e-06   9.43e-07   2.03e-06   1.10e-05 100.0%
+                          73.0%       8.6%      18.4%

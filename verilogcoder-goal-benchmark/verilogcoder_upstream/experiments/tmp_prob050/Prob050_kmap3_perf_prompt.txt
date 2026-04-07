@@ -1,0 +1,21 @@
+Task: Implement TopModule (SystemVerilog)
+
+Interface:
+- input  a
+- input  b
+- input  c
+- output out
+
+Functionality:
+Implement the combinational logic described by the 3-variable Karnaugh map.
+The truth table implied by the map is:
+out = 0 only when (a,b,c) = (0,0,0); otherwise out = 1.
+
+Optimization Goal: Performance
+- Minimize logic depth (critical path) for out.
+- Prefer a single-level implementation if possible.
+- Keep the design purely combinational and synthesizable.
+
+Constraints:
+- Do not modify the module interface.
+- Do not change functional behavior.

@@ -1,0 +1,1419 @@
+{
+  "creator": "Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)",
+  "modules": {
+    "prob155_area_top": {
+      "attributes": {
+        "hdlname": "prob155_area_top",
+        "top": "00000000000000000000000000000001",
+        "src": "./designs/nangate45/prob155_area/wrapper.sv:1.1-25.10"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "areset": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "bump_left": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "bump_right": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "ground": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "dig": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "walk_left": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "walk_right": {
+          "direction": "output",
+          "bits": [ 9 ]
+        },
+        "aaah": {
+          "direction": "output",
+          "bits": [ 10 ]
+        },
+        "digging": {
+          "direction": "output",
+          "bits": [ 11 ]
+        }
+      },
+      "cells": {
+        "$auto$alumacc.cc:106:get_cf$1175": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:72.17-72.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 12 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$1172": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:72.17-72.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 14, 15, 16, 17, 18 ],
+            "B": [ "0", "0", "1", "0", "1" ],
+            "BI": [ "1" ],
+            "CI": [ "1" ],
+            "CO": [ 19, 20, 21, 22, 12 ],
+            "X": [ 23, 24, 25, 26, 27 ],
+            "Y": [ 28, 29, 30, 31, 32 ]
+          }
+        },
+        "$auto$alumacc.cc:512:replace_alu$1185": {
+          "hide_name": 1,
+          "type": "$alu",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:73.33-73.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "BI": "input",
+            "CI": "input",
+            "CO": "output",
+            "X": "output",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "1" ],
+            "B": [ 14, 15, 16, 17, 18 ],
+            "BI": [ "0" ],
+            "CI": [ "0" ],
+            "CO": [ 33, 34, 35, 36, 37 ],
+            "X": [ 38, 39, 40, 41, 42 ],
+            "Y": [ 43, 44, 45, 46, 47 ]
+          }
+        },
+        "$auto$alumacc.cc:548:replace_alu$1183": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 48, 49 ],
+            "Y": [ 50 ]
+          }
+        },
+        "$auto$alumacc.cc:82:get_gt$1179": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13 ],
+            "B": [ 49 ],
+            "Y": [ 51 ]
+          }
+        },
+        "$auto$alumacc.cc:83:get_gt$1181": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:72.17-72.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 51 ],
+            "Y": [ 48 ]
+          }
+        },
+        "$auto$alumacc.cc:92:get_eq$1177": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000101",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:72.17-72.37"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 23, 24, 25, 26, 27 ],
+            "Y": [ 49 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$1158": {
+          "hide_name": 1,
+          "type": "$adffe",
+          "parameters": {
+            "ARST_POLARITY": "00000000000000000000000000000001",
+            "ARST_VALUE": "0",
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000001",
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:60.5-68.8"
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 52 ],
+            "EN": [ 53 ],
+            "Q": [ 54 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$1170": {
+          "hide_name": 1,
+          "type": "$sdffe",
+          "parameters": {
+            "CLK_POLARITY": "00000000000000000000000000000001",
+            "EN_POLARITY": "00000000000000000000000000000000",
+            "SRST_POLARITY": "00000000000000000000000000000000",
+            "SRST_VALUE": "00000",
+            "WIDTH": "00000000000000000000000000000101"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:70.5-77.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "EN": "input",
+            "Q": "output",
+            "SRST": "input"
+          },
+          "connections": {
+            "CLK": [ 2 ],
+            "D": [ 43, 44, 45, 46, 47 ],
+            "EN": [ 12 ],
+            "Q": [ 14, 15, 16, 17, 18 ],
+            "SRST": [ 10 ]
+          }
+        },
+        "$auto$fsm_map.cc:105:implement_pattern_cache$1150": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 55, 11, 10 ],
+            "Y": [ 56 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1132": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 57 ],
+            "B": [ 55 ],
+            "Y": [ 58 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1136": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 59 ],
+            "B": [ 10 ],
+            "Y": [ 60 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1141": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61 ],
+            "B": [ 55 ],
+            "Y": [ 62 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1145": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "B": [ 11 ],
+            "Y": [ 63 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1152": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 64 ],
+            "B": [ 56 ],
+            "Y": [ 65 ]
+          }
+        },
+        "$auto$fsm_map.cc:121:implement_pattern_cache$1156": {
+          "hide_name": 1,
+          "type": "$and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 66 ],
+            "B": [ 10 ],
+            "Y": [ 67 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$1137": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60, 58 ],
+            "Y": [ 68 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$1146": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 63, 62 ],
+            "Y": [ 69 ]
+          }
+        },
+        "$auto$fsm_map.cc:144:implement_pattern_cache$1157": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 67, 70 ],
+            "Y": [ 71 ]
+          }
+        },
+        "$auto$fsm_map.cc:172:map_fsm$1126": {
+          "hide_name": 1,
+          "type": "$adff",
+          "parameters": {
+            "ARST_POLARITY": "1",
+            "ARST_VALUE": "0001",
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000000100"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "ARST": "input",
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "ARST": [ 3 ],
+            "CLK": [ 2 ],
+            "D": [ 68, 69, 65, 71 ],
+            "Q": [ 55, 11, 10, 70 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$1130": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7 ],
+            "B": [ "1" ],
+            "Y": [ 57 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$1134": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 50 ],
+            "B": [ "1" ],
+            "Y": [ 59 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$1139": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7 ],
+            "B": [ "1", "1" ],
+            "Y": [ 61 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$1148": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6 ],
+            "Y": [ 64 ]
+          }
+        },
+        "$auto$fsm_map.cc:77:implement_pattern_cache$1154": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 50 ],
+            "B": [ "1", "1" ],
+            "Y": [ 66 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1160": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 72 ],
+            "Y": [ 73 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1162": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 55 ],
+            "B": [ "0", "1" ],
+            "Y": [ 74 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1164": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000010",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 7, 55 ],
+            "B": [ "1", "1" ],
+            "Y": [ 75 ]
+          }
+        },
+        "$auto$opt_dff.cc:235:make_patterns_logic$1166": {
+          "hide_name": 1,
+          "type": "$ne",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 76, 77, 55 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 78 ]
+          }
+        },
+        "$auto$opt_dff.cc:252:make_patterns_logic$1168": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 78, 75, 74, 73 ],
+            "Y": [ 53 ]
+          }
+        },
+        "$auto$opt_reduce.cc:131:opt_pmux$1117": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000011",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 11, 10, 70 ],
+            "Y": [ 72 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33$995": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33.26-33.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79 ],
+            "B": [ 4 ],
+            "Y": [ 77 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35$996": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35.26-35.43"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54 ],
+            "B": [ 5 ],
+            "Y": [ 76 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:79$1007": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:79.25-79.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 55 ],
+            "B": [ 79 ],
+            "Y": [ 8 ]
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:80$1009": {
+          "hide_name": 1,
+          "type": "$logic_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:80.25-80.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 55 ],
+            "B": [ 54 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:79$1006": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000000001",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:79.48-79.52"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 54 ],
+            "Y": [ 79 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1034": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35.26-35.43|/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35.22-36.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ "0" ],
+            "S": [ 76 ],
+            "Y": [ 80 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1051": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33.26-33.43|/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33.22-36.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 80 ],
+            "B": [ "1" ],
+            "S": [ 77 ],
+            "Y": [ 81 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1076": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:31.26-31.29|/workspace/benchmark/prob155_lemmings4/src/top_area.sv:31.22-36.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 81 ],
+            "B": [ "x" ],
+            "S": [ 7 ],
+            "Y": [ 82 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1095": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:29.21-29.28|/workspace/benchmark/prob155_lemmings4/src/top_area.sv:29.17-36.34"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ 82 ],
+            "S": [ 6 ],
+            "Y": [ 83 ]
+          }
+        },
+        "$flatten\\dut.$procmux$1099": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:47.16-47.16|/workspace/benchmark/prob155_lemmings4/src/top_area.sv:27.9-57.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "x" ],
+            "B": [ 83 ],
+            "S": [ 55 ],
+            "Y": [ 52 ]
+          }
+        },
+        "dut": {
+          "hide_name": 0,
+          "type": "$scopeinfo",
+          "parameters": {
+            "TYPE": "module"
+          },
+          "attributes": {
+            "cell_module_not_derived": "00000000000000000000000000000001",
+            "cell_src": "./designs/nangate45/prob155_area/wrapper.sv:13.15-24.6",
+            "module": "TopModule",
+            "module_hdlname": "TopModule",
+            "module_src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:1.1-84.10"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$auto$alumacc.cc:448:extract_cmp_alu$1171": {
+          "hide_name": 1,
+          "bits": [ 28, 29, 30, 31, 32 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$1173": {
+          "hide_name": 1,
+          "bits": [ 23, 24, 25, 26, 27 ],
+          "attributes": {
+          }
+        },
+        "$auto$alumacc.cc:528:replace_alu$1186": {
+          "hide_name": 1,
+          "bits": [ 38, 39, 40, 41, 42 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$1174": {
+          "hide_name": 1,
+          "bits": [ 19, 20, 21, 22, 12 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3"
+          }
+        },
+        "$auto$alumacc.cc:529:replace_alu$1187": {
+          "hide_name": 1,
+          "bits": [ 33, 34, 35, 36, 37 ],
+          "attributes": {
+            "unused_bits": "0 1 2 3 4"
+          }
+        },
+        "$auto$fsm_map.cc:102:implement_pattern_cache$1149": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1131": {
+          "hide_name": 1,
+          "bits": [ 58 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1135": {
+          "hide_name": 1,
+          "bits": [ 60 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1140": {
+          "hide_name": 1,
+          "bits": [ 62 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1144": {
+          "hide_name": 1,
+          "bits": [ 63 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1151": {
+          "hide_name": 1,
+          "bits": [ 65 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:118:implement_pattern_cache$1155": {
+          "hide_name": 1,
+          "bits": [ 67 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:170:map_fsm$1125": {
+          "hide_name": 1,
+          "bits": [ 68, 69, 65, 71 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$1129": {
+          "hide_name": 1,
+          "bits": [ 57 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$1133": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$1138": {
+          "hide_name": 1,
+          "bits": [ 61 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$1147": {
+          "hide_name": 1,
+          "bits": [ 64 ],
+          "attributes": {
+          }
+        },
+        "$auto$fsm_map.cc:74:implement_pattern_cache$1153": {
+          "hide_name": 1,
+          "bits": [ 66 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1159": {
+          "hide_name": 1,
+          "bits": [ 73 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1161": {
+          "hide_name": 1,
+          "bits": [ 74 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1163": {
+          "hide_name": 1,
+          "bits": [ 75 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:234:make_patterns_logic$1165": {
+          "hide_name": 1,
+          "bits": [ 78 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_dff.cc:251:make_patterns_logic$1167": {
+          "hide_name": 1,
+          "bits": [ 53 ],
+          "attributes": {
+          }
+        },
+        "$auto$opt_reduce.cc:137:opt_pmux$1118": {
+          "hide_name": 1,
+          "bits": [ 72 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1176": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3339:Not$1182": {
+          "hide_name": 1,
+          "bits": [ 48 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3342:ReduceAnd$1178": {
+          "hide_name": 1,
+          "bits": [ 49 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3343:ReduceOr$1184": {
+          "hide_name": 1,
+          "bits": [ 50 ],
+          "attributes": {
+          }
+        },
+        "$auto$rtlil.cc:3387:Or$1180": {
+          "hide_name": 1,
+          "bits": [ 51 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\dut.$2\\dir_n[0:0]": {
+          "hide_name": 1,
+          "bits": [ 83 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:23.5-58.8"
+          }
+        },
+        "$flatten\\dut.$3\\dir_n[0:0]": {
+          "hide_name": 1,
+          "bits": [ 82 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:23.5-58.8"
+          }
+        },
+        "$flatten\\dut.$4\\dir_n[0:0]": {
+          "hide_name": 1,
+          "bits": [ 81 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:23.5-58.8"
+          }
+        },
+        "$flatten\\dut.$5\\dir_n[0:0]": {
+          "hide_name": 1,
+          "bits": [ 80 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:23.5-58.8"
+          }
+        },
+        "$flatten\\dut.$add$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:73$1004_Y": {
+          "hide_name": 1,
+          "bits": [ 43, 44, 45, 46, 47 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:73.33-73.52"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33$995_Y": {
+          "hide_name": 1,
+          "bits": [ 77 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33.26-33.43"
+          }
+        },
+        "$flatten\\dut.$logic_and$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35$996_Y": {
+          "hide_name": 1,
+          "bits": [ 76 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:35.26-35.43"
+          }
+        },
+        "$flatten\\dut.$logic_not$/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33$994_Y": {
+          "hide_name": 1,
+          "bits": [ 79 ],
+          "attributes": {
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:33.26-33.30"
+          }
+        },
+        "aaah": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:10.12-10.16"
+          }
+        },
+        "areset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:3.12-3.18"
+          }
+        },
+        "bump_left": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:4.12-4.21"
+          }
+        },
+        "bump_right": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:5.12-5.22"
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:2.12-2.15"
+          }
+        },
+        "dig": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:7.12-7.15"
+          }
+        },
+        "digging": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:11.12-11.19"
+          }
+        },
+        "dut.aaah": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+            "hdlname": "dut aaah",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:10.12-10.16"
+          }
+        },
+        "dut.areset": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "hdlname": "dut areset",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:3.12-3.18"
+          }
+        },
+        "dut.bump_left": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "hdlname": "dut bump_left",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:4.12-4.21"
+          }
+        },
+        "dut.bump_right": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "hdlname": "dut bump_right",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:5.12-5.22"
+          }
+        },
+        "dut.clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "hdlname": "dut clk",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:2.12-2.15"
+          }
+        },
+        "dut.dig": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "hdlname": "dut dig",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:7.12-7.15"
+          }
+        },
+        "dut.digging": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+            "hdlname": "dut digging",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:11.12-11.19"
+          }
+        },
+        "dut.dir": {
+          "hide_name": 0,
+          "bits": [ 54 ],
+          "attributes": {
+            "hdlname": "dut dir",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:20.9-20.12"
+          }
+        },
+        "dut.dir_n": {
+          "hide_name": 0,
+          "bits": [ 52 ],
+          "attributes": {
+            "hdlname": "dut dir_n",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:20.14-20.19"
+          }
+        },
+        "dut.fall_counter": {
+          "hide_name": 0,
+          "bits": [ 14, 15, 16, 17, 18 ],
+          "attributes": {
+            "hdlname": "dut fall_counter",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:21.15-21.27"
+          }
+        },
+        "dut.ground": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "hdlname": "dut ground",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:6.12-6.18"
+          }
+        },
+        "dut.mode": {
+          "hide_name": 0,
+          "bits": [ 55, 11, 10, 70 ],
+          "attributes": {
+            "onehot": "00000000000000000000000000000001"
+          }
+        },
+        "dut.walk_left": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "hdlname": "dut walk_left",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:8.12-8.21"
+          }
+        },
+        "dut.walk_right": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "hdlname": "dut walk_right",
+            "src": "/workspace/benchmark/prob155_lemmings4/src/top_area.sv:9.12-9.22"
+          }
+        },
+        "ground": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:6.12-6.18"
+          }
+        },
+        "walk_left": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:8.12-8.21"
+          }
+        },
+        "walk_right": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "./designs/nangate45/prob155_area/wrapper.sv:9.12-9.22"
+          }
+        }
+      }
+    }
+  }
+}

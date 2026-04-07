@@ -1,0 +1,5 @@
+read_verilog -sv prob080_timer/src/top_ref.sv
+hierarchy -top TopModule
+proc; opt; techmap; opt
+stat
+write_verilog -noattr prob080_timer/build/yosys_top_ref_gate_generic.v

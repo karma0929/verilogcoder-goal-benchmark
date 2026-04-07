@@ -1,0 +1,25 @@
+I would like you to implement a module named TopModule with the following interface.
+All input and output ports are one bit unless otherwise specified.
+
+ - input  a   (8 bits)
+ - input  b   (8 bits)
+ - input  c   (8 bits)
+ - input  d   (8 bits)
+ - output min (8 bits)
+
+Objective:
+The primary goal is to optimize for performance (minimum critical path delay).
+
+Design Requirements:
+1. The implementation must minimize logic depth.
+2. Comparisons should be structured in parallel rather than sequentially.
+3. Avoid cascaded conditional operators that increase combinational delay.
+4. Structure the design as a balanced comparison tree.
+5. Do not use iterative or sequential comparison chains.
+
+Guidelines:
+- Compare (a, b) and (c, d) in parallel.
+- Then compare the two intermediate results.
+- Keep combinational depth as small as possible.
+
+The module should compute the minimum of the four unsigned 8-bit inputs.

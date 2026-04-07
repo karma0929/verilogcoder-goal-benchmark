@@ -1,0 +1,21 @@
+Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)
+Using ABC speed script.
+Extracting clock period from SDC file: ./results/nangate45/prob130_area_top/base/clock_period.txt
+Setting clock period to 10
+1. Executing Liberty frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+2. Executing Liberty frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+3. Executing Verilog-2005 frontend: ./designs/nangate45/prob130_area/wrapper.sv
+4. Executing Verilog-2005 frontend: /workspace/benchmark/prob130_circuit5/src/top_area.sv
+5. Executing Verilog-2005 frontend: /OpenROAD-flow-scripts/flow/platforms/nangate45/cells_clkgate.v
+6. Executing HIERARCHY pass (managing design hierarchy).
+7. Executing AST frontend in derive mode using pre-parsed AST for module `\prob130_area_top'.
+7.1. Analyzing design hierarchy..
+7.2. Executing AST frontend in derive mode using pre-parsed AST for module `\TopModule'.
+7.3. Analyzing design hierarchy..
+7.4. Analyzing design hierarchy..
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+9. Executing RTLIL backend.
+End of script. Logfile hash: 22ce98b64c, CPU: user 0.16s system 0.01s, MEM: 47.51 MB peak
+Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)
+Time spent: 60% 4x read_liberty (0 sec), 11% 1x hierarchy (0 sec), ...
+Elapsed time: 0:00.32[h:]min:sec. CPU time: user 0.30 sys 0.01 (97%). Peak memory: 54720KB.

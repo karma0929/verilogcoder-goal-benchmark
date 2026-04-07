@@ -1,0 +1,24 @@
+Yosys 0.63+post (git sha1 UNKNOWN-dirty, g++ 11.4.0-1ubuntu1~22.04.3 -fPIC -O3)
+Using ABC speed script.
+Extracting clock period from SDC file: ./results/nangate45/prob155_ref_top/base/clock_period.txt
+Setting clock period to 10
+1. Executing RTLIL frontend.
+2. Executing HIERARCHY pass (managing design hierarchy).
+2.1. Analyzing design hierarchy..
+2.2. Analyzing design hierarchy..
+3. Executing SYNTH pass.
+3.1. Executing HIERARCHY pass (managing design hierarchy).
+3.1.1. Analyzing design hierarchy..
+3.1.2. Analyzing design hierarchy..
+3.2. Executing PROC pass (convert processes to netlists).
+3.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+3.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+3.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+3.2.4. Executing PROC_INIT pass (extract init attributes).
+3.2.5. Executing PROC_ARST pass (detect async resets in processes).
+3.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+3.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+3.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+ERROR: Latch inferred for signal `\RefModule.\next' from always_comb process `\RefModule.$proc$/workspace/benchmark/prob155_lemmings4/src/ref_original.sv:21$992'.
+Command terminated by signal 5
+Elapsed time: 0:00.25[h:]min:sec. CPU time: user 0.24 sys 0.01 (98%). Peak memory: 31412KB.

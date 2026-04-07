@@ -1,0 +1,37 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob155_ref_top/base/3_3_place_gp.odb
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |        87
+       10 |     +0.0% |       0 |       0 |             0 |        77
+       20 |     +0.0% |       0 |       0 |             0 |        67
+       30 |     +0.0% |       0 |       0 |             0 |        57
+       40 |     +0.0% |       0 |       0 |             0 |        47
+       50 |     +0.0% |       0 |       0 |             0 |        37
+       60 |     +0.0% |       0 |       0 |             0 |        27
+       70 |     +0.0% |       0 |       0 |             0 |        17
+       80 |     +0.0% |       0 |       0 |             0 |         7
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 153 um^2 3% utilization.
+Instance count before 170, after 170
+Pin count before 240, after 240
+write_db ./results/nangate45/prob155_ref_top/base/3_4_place_resized.odb
+Elapsed time: 0:00.68[h:]min:sec. CPU time: user 0.64 sys 0.05 (103%). Peak memory: 165508KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+3_4_place_resized                  0            161 924a28e04bc77ce5a00c

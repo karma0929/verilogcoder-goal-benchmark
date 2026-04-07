@@ -1,0 +1,3 @@
+[submodule "verilogcoder_upstream"]
+	path = verilogcoder_upstream
+	url = https://github.com/NVlabs/VerilogCoder.git

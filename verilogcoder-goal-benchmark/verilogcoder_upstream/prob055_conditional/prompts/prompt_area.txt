@@ -1,0 +1,8 @@
+Implement TopModule exactly matching the required functionality and interface.
+
+Primary objective: minimize silicon area / gate count.
+Guidelines:
+- Prefer the simplest combinational logic; do not add registers.
+- Avoid duplicated comparators and redundant intermediate wires.
+- Keep the logic shallow and compact; use idiomatic SystemVerilog.
+Return ONLY SystemVerilog code for TopModule.

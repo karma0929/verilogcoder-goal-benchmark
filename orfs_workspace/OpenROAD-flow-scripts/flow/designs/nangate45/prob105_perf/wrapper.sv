@@ -1,0 +1,15 @@
+module prob105_perf_top (
+    input  clk,
+    input  load,
+    input  [1:0] ena,
+    input  [99:0] data,
+    output [99:0] q
+);
+    TopModule dut (
+        .clk(clk),
+        .load(load),
+        .ena(ena),
+        .data(data),
+        .q(q)
+    );
+endmodule

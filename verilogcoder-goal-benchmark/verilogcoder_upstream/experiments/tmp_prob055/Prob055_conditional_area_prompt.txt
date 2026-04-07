@@ -1,0 +1,25 @@
+I would like you to implement a module named TopModule with the following interface.
+All input and output ports are one bit unless otherwise specified.
+
+ - input  a   (8 bits)
+ - input  b   (8 bits)
+ - input  c   (8 bits)
+ - input  d   (8 bits)
+ - output min (8 bits)
+
+Objective:
+The primary goal is to minimize hardware area (gate count).
+
+Design Requirements:
+1. Reuse intermediate comparison results whenever possible.
+2. Prefer compact conditional structures over parallel comparator duplication.
+3. Avoid redundant comparators.
+4. Favor a sequential comparison chain to reduce duplicated logic.
+5. Do not replicate comparison logic unnecessarily.
+
+Guidelines:
+- Start by comparing two inputs.
+- Propagate the current minimum through the remaining comparisons.
+- Use a minimal number of comparison operators.
+
+The module should compute the minimum of the four unsigned 8-bit inputs.

@@ -1,0 +1,12 @@
+Optimization goal: minimize hardware area.
+
+Implement an IEEE-754 single-precision floating-point adder with a strong emphasis on reducing logic area.
+
+Design guidelines:
+	•	Favor resource sharing over parallelism, even if it increases combinational depth.
+	•	Use a single shared alignment and normalization datapath instead of duplicating logic.
+	•	Prefer serial or iterative-style logic for mantissa alignment and normalization where possible.
+	•	Avoid speculative or parallel fast paths.
+	•	Keep the control logic simple and compact.
+
+The design should be fully combinational except for the top-level interface, and correctness is required, but timing is not the primary concern.

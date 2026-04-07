@@ -1,0 +1,25 @@
+Task: Implement TopModule (SystemVerilog)
+
+Interface:
+- input  a
+- input  b
+- input  c
+- input  d
+- input  e
+- output out [24:0]
+
+Functionality:
+Compute 25 equality comparisons forming a 5×5 matrix (row-major ordering):
+out[24:20]: a=={a,b,c,d,e}
+out[19:15]: b=={a,b,c,d,e}
+out[14:10]: c=={a,b,c,d,e}
+out[ 9: 5]: d=={a,b,c,d,e}
+out[ 4: 0]: e=={a,b,c,d,e}
+
+Optimization Goal: Area
+- Minimize gate count by using vector replication/bitwise operations.
+- Encourage compact RTL that maps efficiently (e.g., replication + XOR + NOT / XNOR).
+
+Constraints:
+- Do not change the module interface.
+- Purely combinational and synthesizable.

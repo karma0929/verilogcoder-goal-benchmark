@@ -1,0 +1,17 @@
+I would like you to implement a module named TopModule with the following interface. All input and output ports are unsigned.
+
+- input  logic [7:0] a
+- input  logic [7:0] b
+- input  logic [7:0] c
+- input  logic [7:0] d
+- output logic [7:0] min
+
+Goal: optimize power/energy efficiency (reduce switching activity), while preserving correctness.
+Constraints:
+- Purely combinational; do NOT use always_ff, flip-flops, latches, or clock/reset.
+- Prefer structures that reduce unnecessary toggling (e.g., avoid redundant logic, minimize reconvergent fanout).
+- Avoid large multiplexor trees if they increase switching.
+- Use only synthesizable SystemVerilog.
+- Must be correct for all 8-bit unsigned inputs.
+
+Return only the SystemVerilog code for TopModule.
