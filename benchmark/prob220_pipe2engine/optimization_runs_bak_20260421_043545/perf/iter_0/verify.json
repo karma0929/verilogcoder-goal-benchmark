@@ -1,0 +1,22 @@
+{
+  "candidate_files": [],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/TopModule.sv",
+  "compile_argv": [],
+  "compiled_success": false,
+  "functional_success": false,
+  "generation_parse": {
+    "contract_mode": "multi",
+    "error": "Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+    "expected_files": [
+      "TopModule.sv",
+      "compute_core.sv",
+      "control_fsm.sv"
+    ],
+    "parse_mode": "file_blocks_required",
+    "parse_success": false
+  },
+  "generation_success": false,
+  "module_available": false,
+  "raw_report": "No completed RTL was available after the VerilogCoder run.",
+  "support_files": []
+}

@@ -1,0 +1,9 @@
+Implement the same functionality and interface as original.txt.
+
+Optimization direction: power-first.
+- reduce unnecessary switching when in_valid=0
+- keep idle behavior quiet
+- preserve exact functionality and 1-cycle pipeline timing
+
+Return synthesizable SystemVerilog for TopModule only.
+

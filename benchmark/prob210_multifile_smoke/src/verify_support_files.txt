@@ -1,0 +1,2 @@
+# Explicit deterministic order for helper RTL files used in functional verification.
+src/core_impl.sv

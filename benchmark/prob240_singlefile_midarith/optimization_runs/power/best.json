@@ -1,0 +1,181 @@
+{
+  "candidate_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+  ],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv",
+  "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0",
+  "iteration": 0,
+  "metrics": {
+    "final_hpwl_um": null,
+    "place_area_um2": null,
+    "synth_area_um2": null,
+    "tns_ns": null,
+    "worst_slack_ns": null
+  },
+  "openroad_eval": {
+    "candidate_rtl_files": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+    ],
+    "copied_metric_artifacts": {
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "copied_snapshot_artifacts": {
+      "design_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/openroad_artifacts/config.mk",
+      "design_wrapper": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/openroad_artifacts/wrapper.sv",
+      "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/openroad_artifacts/config.generated.mk",
+      "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/openroad_artifacts/candidate_00_rtl.sv",
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "metric_source_files": {
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "metrics": {
+      "final_hpwl_um": null,
+      "place_area_um2": null,
+      "synth_area_um2": null,
+      "tns_ns": null,
+      "worst_slack_ns": null
+    },
+    "metrics_may_be_stale": false,
+    "orfs_cmd": [
+      "make",
+      "DESIGN_CONFIG=/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/config.generated.mk"
+    ],
+    "orfs_cwd": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow",
+    "orfs_returncode": 2,
+    "orfs_stderr_tail": "make: *** [check-openroad] Error 1\n",
+    "orfs_stdout_tail": "OPENROAD_EXE is set to '/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/tools/install/OpenROAD/bin/openroad', but it is either not found or not executable.\n",
+    "orfs_verilog_files": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv"
+    ],
+    "pre_orfs_validation": {
+      "checks": {
+        "config_exists": true,
+        "constraint_exists": true,
+        "design_dir_exists": true,
+        "design_name_present": true,
+        "klayout_available": true,
+        "openroad_available": true,
+        "opensta_available": true,
+        "rtl_defines_topmodule": true,
+        "rtl_file_discovered": true,
+        "sdc_clk_port_is_clk": true,
+        "sdc_current_design_matches_design_name": true,
+        "sdc_has_create_clock": true,
+        "wrapper_exists": true,
+        "wrapper_has_clk_port": true,
+        "wrapper_instantiates_topmodule": true,
+        "wrapper_module_matches_design_name": true,
+        "yosys_available": true,
+        "yosys_synth_sanity": true
+      },
+      "config_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/config.mk",
+      "constraint_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/constraint.sdc",
+      "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power",
+      "design_name": "prob240_power",
+      "failure_messages": [],
+      "problem_name": "prob240_singlefile_midarith",
+      "requested_top_module": "TopModule",
+      "resolved_rtl_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv",
+      "resolved_rtl_paths": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv"
+      ],
+      "sdc_clk_port": "clk",
+      "sdc_current_design": "prob240_power",
+      "success": true,
+      "tool_paths": {
+        "DOCKER_EXE": "/Applications/Docker.app/Contents/Resources/bin/docker",
+        "KLAYOUT_CMD": null,
+        "OPENROAD_EXE": null,
+        "OPENSTA_EXE": null,
+        "YOSYS_EXE": "/opt/homebrew/Cellar/yosys/0.60/bin/yosys"
+      },
+      "version": "power",
+      "wrapper_instantiated_module": "TopModule",
+      "wrapper_module_name": "prob240_power",
+      "wrapper_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/wrapper.sv",
+      "yosys_cmd": [
+        "/opt/homebrew/Cellar/yosys/0.60/bin/yosys",
+        "-p",
+        "read_verilog -sv /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/wrapper.sv /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv; hierarchy -check -top prob240_power; proc; opt; stat"
+      ],
+      "yosys_returncode": 0,
+      "yosys_stderr_tail": "",
+      "yosys_stdout_tail": " `\\TopModule'.\nFinding identical cells in module `\\prob240_power'.\nRemoved a total of 0 cells.\n\n5.6. Executing OPT_DFF pass (perform DFF optimizations).\nAdding SRST signal on $procdff$49 ($dff) from module TopModule (D = $procmux$27_Y, Q = \\tag_counter, rval = 8'00000000).\nAdding EN signal on $auto$ff.cc:337:slice$50 ($sdff) from module TopModule (D = $add$/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv:55$10_Y, Q = \\tag_counter).\nAdding SRST signal on $procdff$48 ($dff) from module TopModule (D = \\in_valid, Q = \\out_valid, rval = 1'0).\nAdding SRST signal on $procdff$46 ($dff) from module TopModule (D = $procmux$14_Y, Q = \\out_y, rval = 0).\nAdding EN signal on $auto$ff.cc:337:slice$53 ($sdff) from module TopModule (D = \\compute_y, Q = \\out_y).\nAdding SRST signal on $procdff$47 ($dff) from module TopModule (D = $procmux$19_Y, Q = \\out_tag, rval = 8'00000000).\nAdding EN signal on $auto$ff.cc:337:slice$55 ($sdff) from module TopModule (D = \\tag_counter, Q = \\out_tag).\n\n5.7. Executing OPT_CLEAN pass (remove unused cells and wires).\nFinding unused cells or wires in module \\TopModule..\nFinding unused cells or wires in module \\prob240_power..\nRemoved 8 unused cells and 38 unused wires.\n<suppressed ~12 debug messages>\n\n5.8. Executing OPT_EXPR pass (perform const folding).\nOptimizing module TopModule.\nOptimizing module prob240_power.\n\n5.9. Rerunning OPT passes. (Maybe there is more to do..)\n\n5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).\nRunning muxtree optimizer on module \\TopModule..\n  Creating internal representation of mux trees.\n  Evaluating internal representation of mux trees.\n  Analyzing evaluation results.\nRunning muxtree optimizer on module \\prob240_power..\n  Creating internal representation of mux trees.\n  No muxes found in this module.\nRemoved 0 multiplexer ports.\n<suppressed ~8 debug messages>\n\n5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).\n  Optimizing cells in module \\TopModule.\n  Optimizing cells in module \\prob240_power.\nPerformed a total of 0 changes.\n\n5.12. Executing OPT_MERGE pass (detect identical cells).\nFinding identical cells in module `\\TopModule'.\nFinding identical cells in module `\\prob240_power'.\nRemoved a total of 0 cells.\n\n5.13. Executing OPT_DFF pass (perform DFF optimizations).\n\n5.14. Executing OPT_CLEAN pass (remove unused cells and wires).\nFinding unused cells or wires in module \\TopModule..\nFinding unused cells or wires in module \\prob240_power..\n\n5.15. Executing OPT_EXPR pass (perform const folding).\nOptimizing module TopModule.\nOptimizing module prob240_power.\n\n5.16. Finished fast OPT passes. (There is nothing left to do.)\n\n6. Printing statistics.\n\n=== TopModule ===\n\n        +----------Local Count, excluding submodules.\n        | \n       23 wires\n      324 wire bits\n       14 public wires\n      184 public wire bits\n        9 ports\n       78 port bits\n       17 cells\n        3   $add\n        3   $eq\n        1   $logic_not\n        1   $mul\n        3   $mux\n        1   $pmux\n        1   $sdff\n        3   $sdffe\n        1   $xor\n\n=== prob240_power ===\n\n        +----------Local Count, excluding submodules.\n        | \n        1 wires\n        1 wire bits\n        1 public wires\n        1 public wire bits\n        1 ports\n        1 port bits\n\n=== design hierarchy ===\n\n        +----------Count including submodules.\n        | \n        - prob240_power\n\n        +----------Count including submodules.\n        | \n        1 wires\n        1 wire bits\n        1 public wires\n        1 public wire bits\n        1 ports\n        1 port bits\n        - memories\n        - memory bits\n        - processes\n        - cells\n\nEnd of script. Logfile hash: ca23c90037, CPU: user 0.01s system 0.01s, MEM: 12.89 MB peak\nYosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)\nTime spent: 30% 4x opt_expr (0 sec), 14% 2x opt_dff (0 sec), ...\n"
+    },
+    "prepared_design": {
+      "bundled_candidate_files": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv"
+      ],
+      "bundled_support_files": [],
+      "candidate_sources": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+      ],
+      "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power",
+      "generated_config": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/config.generated.mk",
+      "generated_src": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv",
+      "orfs_verilog_files": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv"
+      ],
+      "support_sources": []
+    },
+    "primary_top_module": "TopModule",
+    "problem_key": "prob240",
+    "problem_name": "prob240_singlefile_midarith",
+    "run_orfs": true,
+    "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob240_power",
+    "saved_run_existed_before": false,
+    "saved_run_exists": false,
+    "stale_metrics_from_saved_run": false,
+    "support_rtl_files": [],
+    "tool_paths": {
+      "DOCKER_EXE": "/Applications/Docker.app/Contents/Resources/bin/docker",
+      "KLAYOUT_CMD": null,
+      "OPENROAD_EXE": null,
+      "OPENSTA_EXE": null,
+      "YOSYS_EXE": "/opt/homebrew/Cellar/yosys/0.60/bin/yosys"
+    },
+    "version": "power"
+  },
+  "stop_reason": "max_iterations",
+  "verification": {
+    "candidate_files": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+    ],
+    "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv",
+    "compile_argv": [
+      "iverilog",
+      "-Wall",
+      "-Winfloop",
+      "-Wno-timescale",
+      "-g2012",
+      "-s",
+      "tb",
+      "-o",
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.vpp",
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv"
+    ],
+    "compiled_success": true,
+    "failure_category": "pass",
+    "functional_success": true,
+    "generation_parse": {
+      "contract_mode": "single",
+      "error": "",
+      "expected_files": [
+        "rtl.sv"
+      ],
+      "parse_mode": "single",
+      "parse_success": true
+    },
+    "generation_success": true,
+    "module_available": true,
+    "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nPASS\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv:151: $finish called at 205000 (1ps)\n",
+    "support_files": []
+  }
+}

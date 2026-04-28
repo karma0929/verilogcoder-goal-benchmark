@@ -1,0 +1,25 @@
+{
+  "mode": "multi",
+  "top_module": "TopModule",
+  "enforce_structured_output": true,
+  "files": [
+    {
+      "name": "TopModule.sv",
+      "module": "TopModule",
+      "required": true,
+      "primary_top": true
+    },
+    {
+      "name": "compute_core.sv",
+      "module": "compute_core",
+      "required": true,
+      "primary_top": false
+    },
+    {
+      "name": "control_fsm.sv",
+      "module": "control_fsm",
+      "required": true,
+      "primary_top": false
+    }
+  ]
+}

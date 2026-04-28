@@ -1,0 +1,11 @@
+{
+  "candidate_rtl_files": [],
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob220_pipe2engine",
+  "run_orfs": false,
+  "status": "skipped_functional_failure",
+  "support_rtl_files": [],
+  "version": "area"
+}

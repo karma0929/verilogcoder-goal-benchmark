@@ -1,6 +1,6 @@
 export PLATFORM         = nangate45
 export DESIGN_NAME      = prob130_power_top
-export VERILOG_FILES    = ./designs/nangate45/prob130_power/wrapper.sv /workspace/benchmark/prob130_circuit5/src/top_power.sv
+export VERILOG_FILES    = ./designs/nangate45/prob200_power/wrapper.sv ./designs/nangate45/prob200_power/top_ref_synth.sv
 export SDC_FILE         = ./designs/nangate45/prob130_power/constraint.sdc
 
 export DIE_AREA         = 0 0 80 80

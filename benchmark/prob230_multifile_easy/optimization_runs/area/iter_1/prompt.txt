@@ -1,0 +1,23 @@
+Implement the same interface and behavior as `original.txt`.
+
+Area-first optimization goals:
+- minimize logic duplication
+- keep control/data logic compact
+- avoid unnecessary temporary signals
+
+Rules:
+- Keep exact ports and widths from `original.txt`.
+- Keep functionality identical.
+- Return synthesizable SystemVerilog only.
+
+[Optimization Feedback]
+{
+  "best_metrics_so_far": {},
+  "guidance": "Previous candidate did not pass functional verification. Preserve the required behavior, fix the functional bug first, and avoid changing the module interface.\nVerification feedback excerpt:\n[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 1\nHint: Total mismatched samples is 1 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+  "iteration": 1,
+  "previous_functional_success": false,
+  "previous_metrics": {},
+  "reference_baseline_enabled": false,
+  "reference_metrics": {},
+  "target_optimization_mode": "area"
+}

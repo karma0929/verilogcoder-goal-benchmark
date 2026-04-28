@@ -1,0 +1,11 @@
+Implement the same interface and behavior as `original.txt`.
+
+Area-first optimization goals:
+- minimize logic duplication
+- keep control/data logic compact
+- avoid unnecessary temporary signals
+
+Rules:
+- Keep exact ports and widths from `original.txt`.
+- Keep functionality identical.
+- Return synthesizable SystemVerilog only.

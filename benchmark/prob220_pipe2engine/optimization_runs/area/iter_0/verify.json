@@ -1,0 +1,46 @@
+{
+  "candidate_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/compute_core.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/control_fsm.sv"
+  ],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/compute_core.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/control_fsm.sv"
+  ],
+  "compiled_success": true,
+  "functional_success": false,
+  "generation_parse": {
+    "contract_mode": "multi",
+    "error": "",
+    "expected_files": [
+      "TopModule.sv",
+      "compute_core.sv",
+      "control_fsm.sv"
+    ],
+    "generated_files": [
+      "generated/TopModule.sv",
+      "generated/compute_core.sv",
+      "generated/control_fsm.sv"
+    ],
+    "parse_mode": "module_extract_fallback",
+    "parse_success": true,
+    "primary_top_file": "TopModule.sv",
+    "warning": "Expected FILE: <filename> structured multi-file output, but no file blocks were found. Falling back to module extraction."
+  },
+  "generation_success": false,
+  "module_available": true,
+  "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch: idx=0 exp_y=7 got_y=0 exp_tag=0 got_tag=0\nMismatch: idx=1 exp_y=18 got_y=0 exp_tag=1 got_tag=0\nMismatch: received_count=2 expected_count=5\nMismatches: 5\nHint: Total mismatched samples is 5 out of 14 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv:131: $finish called at 165000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+  "support_files": []
+}

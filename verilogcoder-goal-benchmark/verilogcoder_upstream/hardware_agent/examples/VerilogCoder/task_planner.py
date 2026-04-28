@@ -23,7 +23,16 @@ from hardware_agent.examples.VerilogCoder.verilog_tools_class import VerilogTool
 from hardware_agent.examples.VerilogCoder.verilog_examples_manager import VerilogCaseManager
 from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Type, TypeVar, Union, Annotated
 from hardware_agent.examples.VerilogCoder.verilog_tools_class import sequential_flipflop_latch_identify_tool
+from hardware_agent.examples.VerilogCoder.verilog_agent_configs import make_llm_config
 from autogen.agentchat.chat import ChatResult
+
+
+def _is_termination_msg(msg: Dict[str, Any]) -> bool:
+    content = msg.get("content", "")
+    if not isinstance(content, str):
+        return False
+    stripped = content.strip()
+    return stripped.startswith("TERMINATE") or stripped.endswith("TERMINATE")
 
 # Mark: Task planner agent and the knowledge graph entity extraction
 """
@@ -60,8 +69,7 @@ class TaskPlanAgent:
                                                                   'messages': [],
                                                                   'max_round': 100},
                                                    'chat_manager': {
-                                                       'is_termination_msg': lambda x: x.get("content", "") and x.get(
-                                                           "content", "").rstrip().endswith("TERMINATE"),
+                                                       'is_termination_msg': _is_termination_msg,
                                                        'llm_config': {"config_list": config_list, "cache_seed": None}},
                                                    }
 
@@ -71,23 +79,17 @@ class TaskPlanAgent:
              'base_agent_config': {'name': 'user',
                                    'description': 'User proxy who ask questions.',
                                    'human_input_mode': "NEVER",
-                                   'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
-                                                                                                  "").rstrip().endswith(
-                                       "TERMINATE"),
+                                   'is_termination_msg': _is_termination_msg,
                                    'max_consecutive_auto_reply': 20,
-                                   # 'code_execution_config': {"use_docker": False},
-                                   'code_execution_config': {"executor": code_executor},
+                                   'code_execution_config': False,
                                    }
              },
             {'type': 'AssistantAgent',
              'tools': ['sequential_flipflop_latch_identify_tool'],
              'base_agent_config': {'name': 'planner',
-                                   'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0.1,
-                                                  "top_p": 1},
+                                   'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0.1, top_p=1),
                                    'description': "Planner assistant to break down the task into subtasks for completing the verilog code.",
-                                   'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
-                                                                                                  "").rstrip().endswith(
-                                       "TERMINATE"),
+                                   'is_termination_msg': _is_termination_msg,
                                    'max_consecutive_auto_reply': 20,
                                    # the default system message of the AssistantAgent is overwritten here
                                    'system_message': "You are a verilog RTL designer. You suggest the verilog block implementation"
@@ -103,12 +105,9 @@ class TaskPlanAgent:
              },
             {'type': 'AssistantAgent',
              'base_agent_config': {'name': 'plan_verify_assistant',
-                                   'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0.1,
-                                                  "top_p": 1},
+                                   'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0.1, top_p=1),
                                    'description': "Assistant who verify the subtasks and plan from planner match the user instruction.",
-                                   'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
-                                                                                                  "").rstrip().endswith(
-                                       "TERMINATE"),
+                                   'is_termination_msg': _is_termination_msg,
                                    'max_consecutive_auto_reply': 20,
                                    # the default system message of the AssistantAgent is overwritten here
                                    'system_message': "You are a verilog RTL designer. You verify the subtasks and plan from planner.\nLet's think step by step."
@@ -129,8 +128,7 @@ class TaskPlanAgent:
                                                                   'messages': [],
                                                                   'max_round': 100},
                                                    'chat_manager': {
-                                                       'is_termination_msg': lambda x: x.get("content", "") and x.get(
-                                                           "content", "").rstrip().endswith("TERMINATE"),
+                                                       'is_termination_msg': _is_termination_msg,
                                                        'llm_config': {"config_list": config_list, "cache_seed": None}},
                                                    }
 
@@ -139,21 +137,16 @@ class TaskPlanAgent:
              'base_agent_config': {'name': 'user',
                                    'description': 'User proxy who ask questions.',
                                    'human_input_mode': "NEVER",
-                                   'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
-                                                                                                  "").rstrip().endswith(
-                                       "TERMINATE"),
+                                   'is_termination_msg': _is_termination_msg,
                                    'max_consecutive_auto_reply': 20,
-                                   'code_execution_config': {"use_docker": False},
+                                   'code_execution_config': False,
                                    }
              },
             {'type': 'AssistantAgent',
              'base_agent_config': {'name': 'verilog_engineer',
-                                   'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0,
-                                                  "top_p": 1},
+                                   'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0, top_p=1),
                                    'description': "verilog engineer extract the signal and signal transition into the json format.",
-                                   'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
-                                                                                                  "").rstrip().endswith(
-                                       "TERMINATE"),
+                                   'is_termination_msg': _is_termination_msg,
                                    'max_consecutive_auto_reply': 20,
                                    # the default system message of the AssistantAgent is overwritten here
                                    'system_message': "You are a verilog RTL designer. You identify the signal and original signal transition description from "
@@ -185,31 +178,104 @@ class TaskPlanAgent:
            Returns:
                list: A list of code blocks found in the text.
            """
-        # Regular expression to match code blocks enclosed in triple backticks
-        pattern = re.compile(r'```json(.*?)```', re.DOTALL)
-
-        # Todo: Find all matches of the pattern in the text for llama3; shouldn't happened...
+        if not isinstance(text, str):
+            return []
+        # Prefer explicitly typed json fences first.
+        pattern = re.compile(r"```(?:json)\s*(.*?)```", re.DOTALL | re.IGNORECASE)
         json_blocks = pattern.findall(text)
         if len(json_blocks) == 0:
-            pattern = re.compile(r'```\njson(.*?)```', re.DOTALL)
+            # Fallback for generic code fences.
+            pattern = re.compile(r"```(?:\w+)?\s*(.*?)```", re.DOTALL)
             json_blocks = pattern.findall(text)
-        if len(json_blocks) == 0:
-            pattern = re.compile(r'```(.*?)```', re.DOTALL)
-            json_blocks = pattern.findall(text)
+        return [block.strip() for block in json_blocks if isinstance(block, str) and block.strip() != ""]
 
-        return json_blocks
+    def extract_json_objects(self, text: str):
+        """
+        Extract top-level JSON object substrings from free-form text.
+        This handles planner replies that return raw JSON without fences.
+        """
+        if not isinstance(text, str):
+            return []
 
-    def json_parser(self, response: ChatResult) -> str:
+        objs = []
+        start = -1
+        depth = 0
+        in_string = False
+        escape = False
 
-        result = None
-        for k in reversed(range(len(response.chat_history))):
-            chat = response.chat_history[k]
-            content = self.extract_json(chat['content'])
-            if len(content) > 0:
-                result = content[-1]
-                break
-        assert (result is not None)
-        return result
+        for i, ch in enumerate(text):
+            if escape:
+                escape = False
+                continue
+            if ch == "\\":
+                escape = True
+                continue
+            if ch == "\"":
+                in_string = not in_string
+                continue
+            if in_string:
+                continue
+            if ch == "{":
+                if depth == 0:
+                    start = i
+                depth += 1
+            elif ch == "}":
+                if depth > 0:
+                    depth -= 1
+                    if depth == 0 and start >= 0:
+                        candidate = text[start:i + 1].strip()
+                        if candidate:
+                            objs.append(candidate)
+                        start = -1
+        return objs
+
+    def _try_parse_candidate(self, candidate: str, required_keys: Optional[List[str]] = None):
+        if not isinstance(candidate, str):
+            return None
+        candidate = candidate.strip()
+        if candidate == "":
+            return None
+        try:
+            parsed = json.loads(candidate)
+        except Exception:
+            return None
+        if required_keys:
+            if not isinstance(parsed, dict):
+                return None
+            for key in required_keys:
+                if key not in parsed:
+                    return None
+        return parsed
+
+    def json_parser(self, response: ChatResult, required_keys: Optional[List[str]] = None) -> Dict[str, Any]:
+        """
+        Robustly parse JSON from chat history.
+        Priority:
+        1) Non-user agent messages (planner/verification assistant)
+        2) User messages as last resort
+        """
+        prioritized = []
+        fallback = []
+        for chat in reversed(response.chat_history):
+            name = str(chat.get("name", "")).lower()
+            content = chat.get("content", "")
+            if not isinstance(content, str) or content.strip() == "":
+                continue
+            if name in {"user", "chat_manager"}:
+                fallback.append(content)
+            else:
+                prioritized.append(content)
+
+        for content in prioritized + fallback:
+            candidates = []
+            candidates.extend(self.extract_json(content))
+            candidates.extend(self.extract_json_objects(content))
+            for candidate in candidates:
+                parsed = self._try_parse_candidate(candidate, required_keys=required_keys)
+                if parsed is not None:
+                    return parsed
+
+        raise ValueError(f"Failed to parse valid JSON from chat history. required_keys={required_keys}")
 
 
     def _create_rough_plans(self, module: str):
@@ -223,14 +289,14 @@ class TaskPlanAgent:
                                                                  SubtaskExample=SUBTASK_FORMAT_EXAMPLE)
         # print("rough plan prompt: ", module_plan_prompt)
         rough_plan = self.plan_agent.initiate_chat(message=module_plan_prompt)
-        return json.loads(self.json_parser(rough_plan))
+        return self.json_parser(rough_plan, required_keys=["subtasks"])
 
     def _extract_entity(self, module: str):
         entity_extract_prompt = Verilog_Signal_Extract_Template_Prompt.format(ModulePrompt=module,
                                                                               SignalExtractRule=Verilog_signal_extraction_hint)
         # print("entity extraction prompt: ", entity_extract_prompt)
         entities = self.entity_extraction_agent.initiate_chat(message=entity_extract_prompt)
-        return json.loads(self.json_parser(entities))
+        return self.json_parser(entities, required_keys=["signal", "state_transitions_description", "signal_examples"])
 
     def make_plans(self, module: str):
 

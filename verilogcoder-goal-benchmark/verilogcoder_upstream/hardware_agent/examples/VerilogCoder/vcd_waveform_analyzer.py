@@ -243,19 +243,22 @@ def tabular_via_dataframe(vcd_path, offset: int, mismatch_columns: List[str], wi
 
 def parse_mismatch(test_output: str):
     mismatch = {}
-    prefix = "First mismatch occurred at time"
+    time_pattern = re.compile(r"First mismatch occurred at time\s+(\d+)\.?", re.IGNORECASE)
+    signal_pattern = re.compile(r"Output\s+['`\"]?([A-Za-z_][A-Za-z0-9_$\[\].]*)['`\"]?\s+mismatched\.?", re.IGNORECASE)
+    last_time = None
+
     for line in test_output.split('\n'):
-        if prefix in line:
-            # signal name
-            st = line.find("Output '")
-            ed = line.find("' ")
-            signal_name = line[st + 8:ed]
+        time_match = time_pattern.search(line)
+        if time_match:
+            last_time = int(time_match.group(1))
 
-            # timestep
-            st = line.find(prefix)
-            mismatch_timestep = int(line[st + len(prefix):-1].strip())
+        signal_matches = signal_pattern.findall(line)
+        for signal_name in signal_matches:
+            if last_time is not None and signal_name not in mismatch:
+                mismatch[signal_name] = last_time
 
-            mismatch[signal_name] = mismatch_timestep
+    if not mismatch:
+        raise ValueError("No mismatch signal/timestamp pair found in function_check_output.")
 
     first_mismatch_timestep = min(mismatch.values())
     return list(mismatch.keys()), first_mismatch_timestep
@@ -290,23 +293,7 @@ class WaveformTabular():
     def _run(self, vcd_path: str, test_output: str):
 
         def parse_mismatch(test_output: str):
-            mismatch = {}
-            prefix = "First mismatch occurred at time"
-            for line in test_output.split('\n'):
-                if prefix in line:
-                    # signal name
-                    st = line.find("Output '")
-                    ed = line.find("' ")
-                    signal_name = line[st + 8:ed]
-
-                    # timestep
-                    st = line.find(prefix)
-                    mismatch_timestep = int(line[st + len(prefix):-1].strip())
-
-                    mismatch[signal_name] = mismatch_timestep
-
-            first_mismatch_timestep = min(mismatch.values())
-            return list(mismatch.keys()), first_mismatch_timestep
+            return globals()["parse_mismatch"](test_output)
 
         def get_tabular(method: str, vcd_path: str):
             with open(vcd_path, 'r') as f:
@@ -352,4 +339,3 @@ if __name__ == '__main__':
                                       test_output=test_output)
     if isinstance(debug_wave, str):
         print(debug_wave)
-

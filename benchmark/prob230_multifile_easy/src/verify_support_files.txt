@@ -1,0 +1,2 @@
+# Deterministic helper RTL order for functional verification.
+src/core_ops.sv

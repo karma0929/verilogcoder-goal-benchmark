@@ -1,0 +1,21 @@
+Implement a module named TopModule with the following interface:
+
+- input  logic       clk
+- input  logic       reset
+- input  logic       in_valid
+- input  logic [7:0] in
+- output logic       out_valid
+- output logic [7:0] out
+
+Behavior requirements:
+1. Use a 1-cycle pipeline from accepted input to output.
+2. When in_valid is 1 at cycle N, out_valid must be 1 at cycle N+1 and out must equal (in + 8'd1) from cycle N.
+3. When in_valid is 0 at cycle N, out_valid must be 0 at cycle N+1.
+4. reset is active-high synchronous and clears all output registers.
+
+Implementation constraints:
+- Keep the module synthesizable.
+- Use only TopModule in this single-file benchmark.
+- Do not instantiate RefModule.
+- Keep exact port names and widths.
+

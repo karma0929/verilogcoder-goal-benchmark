@@ -1,0 +1,33 @@
+{
+  "candidate_files": [],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv"
+  ],
+  "compiled_success": false,
+  "functional_success": false,
+  "generation_parse": {
+    "contract_mode": "multi",
+    "error": "Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+    "expected_files": [
+      "TopModule.sv",
+      "compute_core.sv",
+      "control_fsm.sv"
+    ],
+    "parse_mode": "file_blocks_required",
+    "parse_success": false
+  },
+  "generation_success": false,
+  "module_available": true,
+  "raw_report": "Generated RTL could not be parsed into the expected candidate file set. Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+  "support_files": []
+}

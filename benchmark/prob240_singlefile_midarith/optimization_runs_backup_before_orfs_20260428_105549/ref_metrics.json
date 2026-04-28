@@ -1,0 +1,13 @@
+{
+  "candidate_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/src/top_ref_synth.sv"
+  ],
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob240_singlefile_midarith",
+  "run_orfs": false,
+  "status": "skipped_reference_baseline_disabled",
+  "support_rtl_files": [],
+  "version": "ref"
+}

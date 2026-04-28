@@ -1,0 +1,8 @@
+Implement the same functionality and interface as `original.txt`.
+
+Optimization direction: power-first.
+- reduce unnecessary switching when `in_valid=0`
+- keep hold/idle behavior simple and quiet
+- avoid extra activity in datapath/control
+
+Keep behavior identical and keep required module split (`TopModule`, `compute_core`, `control_fsm`).

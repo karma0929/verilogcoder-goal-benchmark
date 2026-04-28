@@ -1,0 +1,35 @@
+Design a synthesizable multi-file SystemVerilog implementation for `TopModule`.
+
+Required interface:
+```systemverilog
+module TopModule (
+    input  logic        clk,
+    input  logic        reset,
+    input  logic        in_valid,
+    input  logic [15:0] in_a,
+    input  logic [15:0] in_b,
+    input  logic [1:0]  in_mode,
+    output logic        out_valid,
+    output logic [31:0] out_y,
+    output logic [7:0]  out_tag
+);
+```
+
+Design intent:
+1. Two-stage pipeline flavor:
+   - stage 1 registers input operands/mode/tag when `in_valid=1`
+   - stage 2 outputs computed result with delayed valid/tag
+2. Split implementation across these modules:
+   - `TopModule`
+   - `compute_core` (arithmetic datapath)
+   - `control_fsm` (valid/tag sequencing)
+3. `compute_core` operation:
+   - mode `2'b00`: zero-extended add
+   - mode `2'b01`: zero-extended multiply
+   - mode `2'b10`: zero-extended xor
+   - mode `2'b11`: `(a << 1) + (b << 2)`
+4. `control_fsm` provides:
+   - delayed valid (`stage2_valid`)
+   - monotonically increasing issue tag for each accepted input (`issue_tag`)
+5. Keep module and port names stable.
+6. Return synthesizable SystemVerilog only.

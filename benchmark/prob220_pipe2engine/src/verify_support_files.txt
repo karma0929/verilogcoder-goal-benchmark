@@ -1,0 +1,2 @@
+# Empty on purpose:
+# this benchmark expects helper modules to be generated as candidate files.

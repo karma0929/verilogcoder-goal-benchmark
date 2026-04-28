@@ -1,0 +1,276 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob240_area/base/4_cts.odb
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+pin_access
+[INFO DRT-0149] Reading tech and libs.
+
+Units:                2000
+Number of layers:     21
+Number of macros:     135
+Number of vias:       33
+Number of viarulegen: 19
+
+[INFO DRT-0150] Reading design.
+
+Design:                   prob240_area
+Die area:                 ( 0 0 ) ( 200000 200000 )
+Number of track patterns: 20
+Number of DEF vias:       0
+Number of components:     186
+Number of terminals:      44
+Number of snets:          2
+Number of nets:           92
+
+[INFO DRT-0167] List of default vias:
+  Layer via2
+    default via: via2_5
+  Layer via3
+    default via: via3_2
+  Layer via4
+    default via: via4_0
+  Layer via5
+    default via: via5_0
+  Layer via6
+    default via: via6_0
+  Layer via7
+    default via: via7_0
+  Layer via8
+    default via: via8_0
+  Layer via9
+    default via: via9_0
+[INFO DRT-0162] Library cell analysis.
+[INFO DRT-0163] Instance analysis.
+[INFO DRT-0164] Number of unique instances = 24.
+[INFO DRT-0168] Init region query.
+[INFO DRT-0024]   Complete active.
+[INFO DRT-0024]   Complete Fr_VIA.
+[INFO DRT-0024]   Complete metal1.
+[INFO DRT-0024]   Complete via1.
+[INFO DRT-0024]   Complete metal2.
+[INFO DRT-0024]   Complete via2.
+[INFO DRT-0024]   Complete metal3.
+[INFO DRT-0024]   Complete via3.
+[INFO DRT-0024]   Complete metal4.
+[INFO DRT-0024]   Complete via4.
+[INFO DRT-0024]   Complete metal5.
+[INFO DRT-0024]   Complete via5.
+[INFO DRT-0024]   Complete metal6.
+[INFO DRT-0024]   Complete via6.
+[INFO DRT-0024]   Complete metal7.
+[INFO DRT-0024]   Complete via7.
+[INFO DRT-0024]   Complete metal8.
+[INFO DRT-0024]   Complete via8.
+[INFO DRT-0024]   Complete metal9.
+[INFO DRT-0024]   Complete via9.
+[INFO DRT-0024]   Complete metal10.
+[INFO DRT-0033] active shape region query size = 0.
+[INFO DRT-0033] FR_VIA shape region query size = 0.
+[INFO DRT-0033] metal1 shape region query size = 1890.
+[INFO DRT-0033] via1 shape region query size = 258.
+[INFO DRT-0033] metal2 shape region query size = 172.
+[INFO DRT-0033] via2 shape region query size = 258.
+[INFO DRT-0033] metal3 shape region query size = 172.
+[INFO DRT-0033] via3 shape region query size = 258.
+[INFO DRT-0033] metal4 shape region query size = 98.
+[INFO DRT-0033] via4 shape region query size = 90.
+[INFO DRT-0033] metal5 shape region query size = 40.
+[INFO DRT-0033] via5 shape region query size = 90.
+[INFO DRT-0033] metal6 shape region query size = 38.
+[INFO DRT-0033] via6 shape region query size = 36.
+[INFO DRT-0033] metal7 shape region query size = 21.
+[INFO DRT-0033] via7 shape region query size = 0.
+[INFO DRT-0033] metal8 shape region query size = 0.
+[INFO DRT-0033] via8 shape region query size = 0.
+[INFO DRT-0033] metal9 shape region query size = 0.
+[INFO DRT-0033] via9 shape region query size = 0.
+[INFO DRT-0033] metal10 shape region query size = 0.
+[INFO DRT-0165] Start pin access.
+[INFO DRT-0078]   Complete 107 pins.
+[INFO DRT-0081]   Complete 24 unique inst patterns.
+[INFO DRT-0084]   Complete 67 groups.
+#scanned instances     = 186
+#unique  instances     = 24
+#stdCellGenAp          = 510
+#stdCellValidPlanarAp  = 0
+#stdCellValidViaAp     = 359
+#stdCellPinNoAp        = 0
+#stdCellPinCnt         = 170
+#instTermValidViaApCnt = 0
+#macroGenAp            = 0
+#macroValidPlanarAp    = 0
+#macroValidViaAp       = 0
+#macroNoAp             = 0
+[INFO DRT-0166] Complete pin access.
+[INFO DRT-0267] cpu time = 00:00:01, elapsed time = 00:00:00, memory = 135.20 (MB), peak = 134.08 (MB)
+global_route -congestion_report_file ./reports/nangate45/prob240_area/base/congestion.rpt -congestion_iterations 30 -congestion_report_iter_step 5 -verbose
+[INFO GRT-0020] Min routing layer: metal2
+[INFO GRT-0021] Max routing layer: metal10
+[INFO GRT-0022] Global adjustment: 0%
+[INFO GRT-0023] Grid origin: (0, 0)
+[INFO GRT-0088] Layer metal1  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1350
+[INFO GRT-0088] Layer metal2  Track-Pitch = 0.1900  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal3  Track-Pitch = 0.1400  line-2-Via Pitch: 0.1400
+[INFO GRT-0088] Layer metal4  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal5  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal6  Track-Pitch = 0.2800  line-2-Via Pitch: 0.2800
+[INFO GRT-0088] Layer metal7  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal8  Track-Pitch = 0.8000  line-2-Via Pitch: 0.8000
+[INFO GRT-0088] Layer metal9  Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0088] Layer metal10 Track-Pitch = 1.6000  line-2-Via Pitch: 1.6000
+[INFO GRT-0003] Macros: 0
+[INFO GRT-0004] Blockages: 0
+[INFO GRT-0019] Found 4 clock nets.
+[INFO GRT-0001] Minimum degree: 2
+[INFO GRT-0002] Maximum degree: 9
+
+[INFO GRT-0053] Routing resources analysis:
+          Routing      Original      Derated      Resource
+Layer     Direction    Resources     Resources    Reduction (%)
+---------------------------------------------------------------
+metal1     Horizontal          0             0          0.00%
+metal2     Vertical        17602          8279          52.97%
+metal3     Horizontal      24187         11877          50.90%
+metal4     Vertical        11941          8456          29.19%
+metal5     Horizontal      12092          8533          29.43%
+metal6     Vertical        12117          8556          29.39%
+metal7     Horizontal       3796          2690          29.14%
+metal8     Vertical         4216          3026          28.23%
+metal9     Horizontal       2108          1190          43.55%
+metal10    Vertical         2108          1190          43.55%
+---------------------------------------------------------------
+
+[INFO GRT-0197] Via related to pin nodes: 365
+[INFO GRT-0198] Via related Steiner nodes: 1
+[INFO GRT-0199] Via filling finished.
+[INFO GRT-0111] Final number of vias: 462
+[INFO GRT-0112] Final usage 3D: 1743
+
+[INFO GRT-0096] Final congestion report:
+Layer         Resource        Demand        Usage (%)    Max H / Max V / Total Overflow
+---------------------------------------------------------------------------------------
+metal1               0             0            0.00%             0 /  0 /  0
+metal2            8279           151            1.82%             0 /  0 /  0
+metal3           11877            95            0.80%             0 /  0 /  0
+metal4            8456             7            0.08%             0 /  0 /  0
+metal5            8533            91            1.07%             0 /  0 /  0
+metal6            8556            13            0.15%             0 /  0 /  0
+metal7            2690             0            0.00%             0 /  0 /  0
+metal8            3026             0            0.00%             0 /  0 /  0
+metal9            1190             0            0.00%             0 /  0 /  0
+metal10           1190             0            0.00%             0 /  0 /  0
+---------------------------------------------------------------------------------------
+Total            53797           357            0.66%             0 /  0 /  0
+
+[INFO GRT-0018] Total wirelength: 1333 um
+[INFO GRT-0014] Routed nets: 77
+[INFO GRT-0303] Global routing runtime = 00:00:00
+estimate_parasitics -global_routing
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |        92
+       10 |     +0.0% |       0 |       0 |             0 |        82
+       20 |     +0.0% |       0 |       0 |             0 |        72
+[WARNING RSZ-0104] Net _17_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _25_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _26_ only has one pin. Check if it is intended to be dangling.
+       30 |     +0.0% |       0 |       0 |             0 |        62
+[WARNING RSZ-0104] Net _27_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _28_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _29_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _30_ only has one pin. Check if it is intended to be dangling.
+       40 |     +0.0% |       0 |       0 |             0 |        52
+[WARNING RSZ-0104] Net _31_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _18_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _19_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _20_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _21_ only has one pin. Check if it is intended to be dangling.
+       50 |     +0.0% |       0 |       0 |             0 |        42
+[WARNING RSZ-0104] Net _22_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _23_ only has one pin. Check if it is intended to be dangling.
+[WARNING RSZ-0104] Net _24_ only has one pin. Check if it is intended to be dangling.
+       60 |     +0.0% |       0 |       0 |             0 |        32
+       70 |     +0.0% |       0 |       0 |             0 |        22
+       80 |     +0.0% |       0 |       0 |             0 |        12
+       90 |     +0.0% |       0 |       0 |             0 |         2
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0005] Max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+Movements Summary
+---------------------------------------
+Total cells:                      74
+Diamond Move Success:             74 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL             958.8 u
+legalized HPWL            958.8 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file ./reports/nangate45/prob240_area/base/congestion_post_repair_design.rpt
+Repair setup and hold violations...
+estimate_parasitics -global_routing
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -verbose
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove BufferMove CloneMove SplitLoadMove 
+[INFO RSZ-0098] No setup violations found
+[INFO RSZ-0033] No hold violations found.
+global_route -start_incremental
+detailed_placement
+[INFO DPL-0005] Max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+Movements Summary
+---------------------------------------
+Total cells:                      74
+Diamond Move Success:             74 (100.00%)
+Diamond Move Failure:              0
+Rip-up and replace Success:        0 (  0.00% of diamond failures)
+Rip-up and replace Failure:        0
+Total Placement Failures:          0
+---------------------------------------
+Placement Analysis
+---------------------------------
+total displacement          0.0 u
+average displacement        0.0 u
+max displacement            0.0 u
+original HPWL             958.8 u
+legalized HPWL            958.8 u
+delta HPWL                    0 %
+
+global_route -end_incremental -congestion_report_file ./reports/nangate45/prob240_area/base/congestion_post_repair_timing.rpt
+global_route -start_incremental
+global_route -end_incremental -congestion_report_file ./reports/nangate45/prob240_area/base/congestion_post_recover_power.rpt
+Repair antennas...
+[WARNING GRT-0246] No diode with LEF class CORE ANTENNACELL found.
+[INFO ANT-0002] Found 0 net violations.
+[INFO ANT-0001] Found 0 pin violations.
+Estimate parasitics...
+estimate_parasitics -global_routing
+Report metrics stage 5, global route...
+
+==========================================================================
+global route report_design_area
+--------------------------------------------------------------------------
+Design area 154 um^2 2% utilization.
+[INFO FLW-0007] clock core_clock period 5.000000
+[INFO FLW-0008] Clock core_clock period 0.265
+[INFO FLW-0009] Clock core_clock slack 4.721
+[INFO FLW-0011] Path endpoint path count 39
+write_db ./results/nangate45/prob240_area/base/5_1_grt.odb
+write_sdc -no_timestamp ./results/nangate45/prob240_area/base/5_1_grt.sdc
+Elapsed time: 0:01.28[h:]min:sec. CPU time: user 2.49 sys 0.08 (200%). Peak memory: 313128KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+5_1_grt                            1            305 e925e391788ec8330e94

@@ -1,0 +1,8 @@
+Implement the same functionality and interface as original.txt.
+
+Optimization direction: performance-first.
+- keep the datapath shallow
+- preserve exact functionality and 1-cycle pipeline timing
+
+Return synthesizable SystemVerilog for TopModule only.
+

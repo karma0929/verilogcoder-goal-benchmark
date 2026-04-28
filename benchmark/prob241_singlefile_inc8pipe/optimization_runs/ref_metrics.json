@@ -1,0 +1,13 @@
+{
+  "candidate_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob241_singlefile_inc8pipe/src/top_ref_synth.sv"
+  ],
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob241_singlefile_inc8pipe",
+  "run_orfs": false,
+  "status": "skipped_reference_baseline_disabled",
+  "support_rtl_files": [],
+  "version": "ref"
+}

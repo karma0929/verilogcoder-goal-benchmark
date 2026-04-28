@@ -1,0 +1,2 @@
+# Empty on purpose:
+# ORFS candidate synthesis should use generated candidate files only for this benchmark.

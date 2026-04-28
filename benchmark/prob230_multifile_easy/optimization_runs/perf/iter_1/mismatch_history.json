@@ -1,0 +1,29 @@
+{
+  "mismatch_history": [
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 3,
+      "simulation_attempt": 0
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 2,
+      "simulation_attempt": 1
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 2,
+      "simulation_attempt": 2
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 2,
+      "simulation_attempt": 0
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 2,
+      "simulation_attempt": 1
+    }
+  ]
+}

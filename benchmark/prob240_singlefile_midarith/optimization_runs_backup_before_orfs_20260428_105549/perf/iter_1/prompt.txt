@@ -1,0 +1,20 @@
+Implement the same functionality and interface as original.txt.
+
+Optimization direction: performance-first.
+- reduce critical combinational depth
+- keep valid/tag timing clean
+- preserve exact 1-cycle pipeline behavior
+
+Return synthesizable SystemVerilog for TopModule only.
+
+[Optimization Feedback]
+{
+  "best_metrics_so_far": {},
+  "guidance": "Previous candidate did not pass functional verification. Preserve the required behavior, fix the functional bug first, and avoid changing the module interface.\nVerification feedback excerpt:\n[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nFirst mismatch occurred at time 75000.\nOutput 'out_y' mismatched.\nMismatches: 10\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv:151: $finish called at 205000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+  "iteration": 1,
+  "previous_functional_success": false,
+  "previous_metrics": {},
+  "reference_baseline_enabled": false,
+  "reference_metrics": {},
+  "target_optimization_mode": "perf"
+}

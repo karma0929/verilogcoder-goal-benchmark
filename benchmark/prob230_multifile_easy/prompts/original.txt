@@ -1,0 +1,28 @@
+Design a synthesizable SystemVerilog module named `TopModule` with this exact interface.
+
+```systemverilog
+module TopModule (
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       valid,
+    input  logic [7:0] a,
+    input  logic [7:0] b,
+    input  logic [1:0] op,
+    output logic [7:0] y,
+    output logic       done
+);
+```
+
+Required behavior:
+1. Keep the exact port names and widths. Do not rename ports.
+2. `TopModule` must be clocked by `posedge clk`.
+3. If `reset==1`, set `y<=8'h00` and `done<=1'b0`.
+4. Else if `valid==1`, compute result from `a/b/op` and set `done<=1'b1`.
+5. Else hold `y` and set `done<=1'b0`.
+6. Arithmetic behavior:
+   - `op==2'b00`: `a + b`
+   - `op==2'b01`: `a ^ b`
+   - `op==2'b10`: `a & b`
+   - `op==2'b11`: `a - b`
+7. A helper module `core_ops` exists in benchmark support files. You may instantiate it.
+8. Return only synthesizable SystemVerilog.

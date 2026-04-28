@@ -1,0 +1,14 @@
+{
+  "candidate_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob241_singlefile_inc8pipe/optimization_runs/power/iter_0/rtl.sv"
+  ],
+  "error": "Design dir not found: /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob241_power",
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob241_singlefile_inc8pipe",
+  "run_orfs": false,
+  "status": "skipped_openroad_missing_design_dir",
+  "support_rtl_files": [],
+  "version": "power"
+}

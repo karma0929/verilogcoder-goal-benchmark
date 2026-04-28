@@ -9,6 +9,34 @@ from typing import Any, Callable, Dict, List, Literal, Optional, Tuple, Type, Ty
 from hardware_agent.tools_utility import get_tools_descriptions, create_tool_tbl
 from autogen.coding import DockerCommandLineCodeExecutor, LocalCommandLineCodeExecutor
 
+def _primary_model_name(config_list: Dict[str, Any]) -> str:
+    if isinstance(config_list, list) and len(config_list) > 0 and isinstance(config_list[0], dict):
+        model = config_list[0].get("model", "")
+        if isinstance(model, str):
+            return model.lower()
+    return ""
+
+
+def _supports_custom_sampling(config_list: Dict[str, Any]) -> bool:
+    model = _primary_model_name(config_list)
+    return not model.startswith("gpt-5")
+
+
+def make_llm_config(config_list: Dict[str, Any],
+                    cache_seed=None,
+                    temperature: Optional[float] = None,
+                    top_p: Optional[float] = None,
+                    timeout: Optional[int] = None) -> Dict[str, Any]:
+    cfg: Dict[str, Any] = {"config_list": config_list, "cache_seed": cache_seed}
+    if timeout is not None:
+        cfg["timeout"] = timeout
+    if _supports_custom_sampling(config_list):
+        if temperature is not None:
+            cfg["temperature"] = temperature
+        if top_p is not None:
+            cfg["top_p"] = top_p
+    return cfg
+
 def get_plan_graph_retrieval_agent_config(config_list: Dict[str, Any], opensource_model=False):
     if opensource_model:
         assistance_agent = "OS_AssistantAgent"
@@ -36,7 +64,7 @@ def get_plan_graph_retrieval_agent_config(config_list: Dict[str, Any], opensourc
         {'type': assistance_agent,
          'tools': ['retrieve_additional_plan_information_tool'],
          'base_agent_config': {'name': 'verilog_engineer',
-                               'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0,  "top_p": 1},
+                               'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0, top_p=1),
                                'description': "verilog engineer extract the signal and signal transition into the json format.",
                                'is_termination_msg': lambda x: x.get("content", "") and x.get("content", "").rstrip().endswith("TERMINATE"),
                                'max_consecutive_auto_reply': 20,
@@ -60,7 +88,7 @@ def get_verilog_completion_agent_config(config_list: Dict[str, Any], opensource_
     # For more than 3 agents
     verilog_writer_group_chat_configs = {'group_chat': {'speaker_selection_method': "round_robin",
                                                         'messages': [],
-                                                        'max_round': 100},
+                                                        'max_round': 14},
                                          'chat_manager': {
                                              'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
                                                                                                             "").rstrip().endswith(
@@ -77,7 +105,7 @@ def get_verilog_completion_agent_config(config_list: Dict[str, Any], opensource_
                                'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
                                                                                               "").rstrip().endswith(
                                    "TERMINATE"),
-                               'max_consecutive_auto_reply': 20,
+                               'max_consecutive_auto_reply': 8,
                                # 'code_execution_config': False,
                                'code_execution_config': {"executor": code_executor},
                                }
@@ -87,13 +115,12 @@ def get_verilog_completion_agent_config(config_list: Dict[str, Any], opensource_
          'transform_message': {'method': ['HistoryLimit'],
                                'args': [{'max_messages': 3}]},
          'base_agent_config': {'name': 'verilog_engineer',
-                               'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0.1,
-                                              "top_p": 1},
+                               'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0.1, top_p=1),
                                'description': "Verilog engineer who write the verilog code and complete the task.",
                                'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
                                                                                               "").rstrip().endswith(
                                    "TERMINATE"),
-                               'max_consecutive_auto_reply': 20,
+                               'max_consecutive_auto_reply': 8,
                                # the default system message of the AssistantAgent is overwritten here
                                'system_message': "You are a verilog RTL designer. You write and complete the verilog code "
                                                  "given the module description and the task. You need to follow the "
@@ -106,13 +133,12 @@ def get_verilog_completion_agent_config(config_list: Dict[str, Any], opensource_
          'transform_message': {'method': ['HistoryLimit'],
                                'args': [{'max_messages': 3}]},
          'base_agent_config': {'name': 'verilog_verification_assistant',
-                               'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0,
-                                              "top_p": 1},
+                               'llm_config': make_llm_config(config_list=config_list, cache_seed=None, temperature=0, top_p=1),
                                'description': "Assistant who verify the written verilog code and the task definition.",
                                'is_termination_msg': lambda x: x.get("content", "") and x.get("content",
                                                                                               "").rstrip().endswith(
                                    "TERMINATE"),
-                               'max_consecutive_auto_reply': 20,
+                               'max_consecutive_auto_reply': 8,
                                # the default system message of the AssistantAgent is overwritten here
                                'system_message': "You are a verilog verification assistance. You verify the subtasks and written verilog code from verilog_engineer."
                                                  " Identify the mismatches of the module description, sub task and written verilog code. Suggest "
@@ -174,14 +200,13 @@ def get_verilog_waveform_debug_agent_config(config_list: Dict[str, Any],opensour
                                'max_consecutive_auto_reply': 40,
                                'system_message': "You are a Verilog RTL designer that only writes verilog top_module using correct "
                                                  "Verilog syntax based on the plan. Use the provided tools to solve the task. Reply TERMINATE when the Function Check Success.",
-                               # 'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0.1, "top_p": 1},
-                               'llm_config': {
-                                   "temperature": 0.2,
-                                   "top_p": 1,
-                                   "timeout": 600,
-                                   # "cache_seed": 42,
-                                   "config_list": config_list,
-                               },
+                               'llm_config': make_llm_config(
+                                   config_list=config_list,
+                                   cache_seed=None,
+                                   temperature=0.2,
+                                   top_p=1,
+                                   timeout=600,
+                               ),
                                },
          },
     ]
@@ -237,14 +262,13 @@ def get_verilog_debug_agent_config(config_list: Dict[str, Any], opensource_model
                                'max_consecutive_auto_reply': 40,
                                'system_message': "You are a Verilog RTL designer that only writes verilog top_module using correct "
                                                  "Verilog syntax based on the plan. Use the provided tools to solve the task. Reply TERMINATE when the Function Check Success.",
-                               # 'llm_config': {"config_list": config_list, "cache_seed": None, "temperature": 0.1, "top_p": 1},
-                               'llm_config': {
-                                   "temperature": 0.2,
-                                   "top_p": 1,
-                                   "timeout": 600,
-                                   # "cache_seed": 42,
-                                   "config_list": config_list,
-                               },
+                               'llm_config': make_llm_config(
+                                   config_list=config_list,
+                                   cache_seed=None,
+                                   temperature=0.2,
+                                   top_p=1,
+                                   timeout=600,
+                               ),
                                },
          }
     ]

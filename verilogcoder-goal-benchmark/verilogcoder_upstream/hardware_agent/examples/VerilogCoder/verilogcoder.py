@@ -19,11 +19,12 @@ from hardware_agent.examples.VerilogCoder.task_planner import TaskPlanAgent
 from hardware_agent.output_parser_util import verilog_output_parse, validate_correct_parse
 from hardware_agent.task import Task, BaseTaskFlowManager
 from hardware_agent.knowledge_circuit_graph import KnowledgeGraphToolKits
-from hardware_agent.examples.VerilogCoder.verilog_agent_configs import tool_usage_prompt
+from hardware_agent.examples.VerilogCoder.verilog_agent_configs import tool_usage_prompt, make_llm_config
 import copy as cp
 import json
 import time
 import re
+import hashlib
 
 # Example for LLM
 from hardware_agent.examples.VerilogCoder.ICL_examples import GeneralExample
@@ -49,7 +50,7 @@ class VerilogCoder:
 
         # Toolkit initialization
         self.kg_plan_tool = KnowledgeGraphToolKits(
-            llm_config={"config_list": kg_llm_config, "cache_seed": None, "temperature": 0.0, "top_p": 1})
+            llm_config=make_llm_config(config_list=kg_llm_config, cache_seed=None, temperature=0.0, top_p=1))
         tool_workdir = verilog_tmp_dir if os.path.isabs(verilog_tmp_dir) else os.path.join(os.getcwd(), verilog_tmp_dir)
         self.verilog_tools = VerilogToolKits(workdir=tool_workdir)
 
@@ -96,6 +97,7 @@ class VerilogCoder:
                                          tool_configs=code_debug_tool_configs,
                                          group_chat_kwargs=code_debug_group_config)
         self.last_debug_artifacts = {}
+        self._syntax_check_seen_hashes: Dict[str, int] = {}
         print("[Info]: Finish initializing agents")
 
     # Default tool: Can be extended further
@@ -123,6 +125,16 @@ class VerilogCoder:
     def setup_verilog_completion_tool(self):
         def verilog_syntax_check_tool(
                 completed_verilog: Annotated[str, "The completed verilog module code implementation"]) -> str:
+            rtl = (completed_verilog or "").strip()
+            rtl_hash = hashlib.sha256(rtl.encode("utf-8")).hexdigest()
+            seen = self._syntax_check_seen_hashes.get(rtl_hash, 0)
+            if seen >= 1:
+                return (
+                    "[Compiled Success Verilog Module]:\n"
+                    "Repeated syntax check on identical RTL already passed.\n"
+                    "Please stop re-checking and TERMINATE this completion step."
+                )
+            self._syntax_check_seen_hashes[rtl_hash] = seen + 1
             return self.verilog_tools.verilog_syntax_check_tool(completed_verilog=completed_verilog)
 
         verilog_completion_tool_configs = [
@@ -187,10 +199,12 @@ class VerilogCoder:
                              completed_module: str="",
                              have_plans: bool = False,
                              skip_kg_plan: bool = False,
-                             have_completed_code: bool = False):
+                             have_completed_code: bool = False,
+                             benchmark_support_rtl_paths: Optional[List[str]] = None):
         self.last_debug_artifacts = {}
         self.verilog_tools.load_test_bench(task_id=cur_task_id, spec=spec,
-                                           test_bench=golden_test_bench, write_file=True)
+                                           test_bench=golden_test_bench, write_file=True,
+                                           extra_compile_verilog_paths=benchmark_support_rtl_paths)
 
         if not have_plans:
             # Load plan from JSON file to dictionary
@@ -277,6 +291,62 @@ class VerilogCoder:
         rtl = re.sub(r"\s+", "", rtl)
         return rtl.strip()
 
+    def _normalize_structured_rtl_text(self, rtl: str) -> str:
+        if "FILE:" not in rtl:
+            return rtl
+        file_block_pattern = re.compile(
+            r"(?ms)^\s*FILE:\s*([A-Za-z0-9_.\-/]+)\s*\n(.*?)(?=^\s*FILE:\s*[A-Za-z0-9_.\-/]+\s*$|\Z)"
+        )
+        extracted_blocks: List[str] = []
+        for match in file_block_pattern.finditer(rtl):
+            body = match.group(2).strip()
+            fenced_match = re.match(r"(?is)^```(?:systemverilog|verilog)?\s*\n(.*)\n```$", body)
+            if fenced_match:
+                body = fenced_match.group(1).strip()
+            if body:
+                extracted_blocks.append(body)
+        if len(extracted_blocks) == 0:
+            return rtl
+        return "\n\n".join(extracted_blocks).strip()
+
+    def _extract_module_blocks(self, rtl: str) -> Dict[str, str]:
+        module_blocks: Dict[str, str] = {}
+        pattern = re.compile(r"(?is)\bmodule\s+([A-Za-z_][A-Za-z0-9_]*)\b.*?\bendmodule\b")
+        for match in pattern.finditer(rtl):
+            module_name = match.group(1)
+            module_blocks[module_name] = match.group(0).strip()
+        return module_blocks
+
+    def _merge_rtl_candidates(self, base_rtl: str, new_rtl: str) -> str:
+        base_norm = self._normalize_structured_rtl_text(base_rtl or "").strip()
+        new_norm = self._normalize_structured_rtl_text(new_rtl or "").strip()
+        if new_norm == "":
+            return base_norm
+        if base_norm == "":
+            return new_norm
+
+        base_modules = self._extract_module_blocks(base_norm)
+        new_modules = self._extract_module_blocks(new_norm)
+
+        if len(new_modules) == 0:
+            return base_norm
+        if len(base_modules) == 0:
+            return new_norm
+
+        merged_modules: Dict[str, str] = dict(base_modules)
+        for module_name, module_text in new_modules.items():
+            merged_modules[module_name] = module_text
+        return "\n\n".join(merged_modules.values()).strip()
+
+    def _collect_task_output_rtl(self, task_completed_results: List[Dict[str, Any]]) -> str:
+        merged_rtl = ""
+        for task_result in task_completed_results:
+            task_output = task_result.get("task_output")
+            if not isinstance(task_output, str) or task_output.strip() == "":
+                continue
+            merged_rtl = self._merge_rtl_candidates(merged_rtl, task_output)
+        return merged_rtl.strip()
+
     def _extract_last_mismatch_count(self, debug_attempts: List[Dict[str, Any]]) -> Optional[int]:
         mismatch_counts = [attempt.get("mismatch_count") for attempt in debug_attempts if attempt.get("mismatch_count") is not None]
         if len(mismatch_counts) == 0:
@@ -349,7 +419,9 @@ class VerilogCoder:
                     }
                 )
 
-            submitted_rtl = (self.verilog_tools.completed_verilog or current_rtl).strip()
+            submitted_raw_rtl = (self.verilog_tools.completed_verilog or current_rtl).strip()
+            submitted_rtl = self._merge_rtl_candidates(current_rtl, submitted_raw_rtl)
+            self.verilog_tools.completed_verilog = submitted_rtl
             last_mismatch_count = self._extract_last_mismatch_count(session_attempts)
             stagnated = any(session_attempt.get("stop_due_to_stagnation") for session_attempt in session_attempts)
             current_signature = {
@@ -428,6 +500,9 @@ class VerilogCoder:
             return False, "FAILED_FILE", "FAILED_FILE"
 
         task_completed_results = task_manager.execute_task_flows(pseudo=False)
+        merged_task_rtl = self._collect_task_output_rtl(task_completed_results)
+        if merged_task_rtl != "":
+            self.verilog_tools.completed_verilog = merged_task_rtl
         current_rtl = (self.verilog_tools.completed_verilog or "").strip()
         debug_success = False
         if current_rtl != "":

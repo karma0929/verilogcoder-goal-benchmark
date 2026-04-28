@@ -1,0 +1,8 @@
+Implement the same functionality and interface as original.txt.
+
+Optimization direction: area-first.
+- minimize logic duplication
+- keep control simple
+- preserve 1-cycle valid/tag behavior and exact arithmetic behavior
+
+Return synthesizable SystemVerilog for TopModule only.

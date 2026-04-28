@@ -1,0 +1,133 @@
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  reset
+ - output done
+ - output signature       (32 bits)
+ - output dbg_x3          (32 bits)
+ - output dbg_x4          (32 bits)
+ - output dbg_x5          (32 bits)
+ - output dbg_x6          (32 bits)
+ - output dbg_x7          (32 bits)
+ - output dbg_mem2        (32 bits)
+ - output dbg_mem3        (32 bits)
+ - output dbg_commit_count (8 bits)
+
+The module should implement a simplified, self-contained, 5-stage pipelined
+RISC-V-like processor benchmark. The goal is not a full industrial CPU. The
+goal is a structured benchmark with enough datapath and control logic to make
+area / performance / power tradeoffs observable.
+
+Required microarchitecture:
+ - 5 pipeline stages: IF / ID / EX / MEM / WB.
+ - Explicit pipeline registers between stages.
+ - 8 architectural registers x0..x7, each 32 bits.
+ - x0 is hardwired to zero.
+ - A small built-in instruction ROM.
+ - A small built-in 16-word data memory.
+ - Branches are resolved in EX.
+ - Implement simplified forwarding from older pipeline stages into EX.
+ - Implement a one-cycle stall for a load-use hazard when the instruction in ID
+   depends on the destination register of a load currently in EX.
+ - On a taken branch, flush the wrong-path instruction currently in ID and
+   redirect the PC.
+
+Use this custom 32-bit instruction format:
+ - instr[31:28] = opcode
+ - instr[27:25] = rd
+ - instr[24:22] = rs1
+ - instr[21:19] = rs2
+ - instr[18:16] = unused / reserved
+ - instr[15:0]  = signed immediate
+
+Use this instruction subset:
+ - 4'h0 : NOP
+ - 4'h1 : ADD   rd = rs1 + rs2
+ - 4'h2 : SUB   rd = rs1 - rs2
+ - 4'h3 : AND   rd = rs1 & rs2
+ - 4'h4 : OR    rd = rs1 | rs2
+ - 4'h5 : XOR   rd = rs1 ^ rs2
+ - 4'h6 : ADDI  rd = rs1 + imm
+ - 4'h7 : LW    rd = dmem[rs1 + imm]
+ - 4'h8 : SW    dmem[rs1 + imm] = rs2
+ - 4'h9 : BEQ   if (rs1 == rs2) pc = pc + imm
+ - 4'hf : HALT
+
+Addressing simplification:
+ - Treat the data-memory address as a word index, not a byte address.
+ - Only the low 4 bits of the computed address need to be used for the 16-word
+   data memory.
+
+Reset behavior:
+ - reset is synchronous and active high.
+ - On reset, clear the pipeline, set PC to 0, clear all architectural
+   registers except x0, clear done, and initialize data memory as:
+   - dmem[0] = 32'd3
+   - dmem[1] = 32'd7
+   - dmem[2] = 32'd0
+   - dmem[3] = 32'd0
+   - all other locations = 32'd0
+
+Built-in program ROM:
+ - PC  0: ADDI x1, x0, 5
+ - PC  1: ADDI x2, x0, 9
+ - PC  2: ADD  x3, x1, x2
+ - PC  3: SW   x3, 2(x0)
+ - PC  4: LW   x4, 2(x0)
+ - PC  5: ADDI x5, x4, 3
+ - PC  6: SUB  x6, x5, x1
+ - PC  7: XOR  x7, x6, x2
+ - PC  8: BEQ  x7, x1, +2
+ - PC  9: ADDI x3, x0, 0        // wrong-path instruction, must be skipped
+ - PC 10: AND  x3, x7, x2
+ - PC 11: OR   x4, x3, x6
+ - PC 12: SW   x4, 3(x0)
+ - PC 13: LW   x5, 3(x0)
+ - PC 14: ADD  x6, x5, x3
+ - PC 15: HALT
+
+Architectural intent of the program:
+ - It exercises arithmetic instructions.
+ - It creates a load-use hazard after LW at PC=4.
+ - It includes a taken BEQ at PC=8.
+ - It includes both store and load memory traffic.
+
+The visible outputs must be:
+ - done:
+   goes high and stays high after HALT reaches WB and commits.
+ - dbg_x3, dbg_x4, dbg_x5, dbg_x6, dbg_x7:
+   current architectural register values x3..x7.
+ - dbg_mem2, dbg_mem3:
+   current values of dmem[2] and dmem[3].
+ - dbg_commit_count:
+   number of architecturally visible state updates completed so far.
+   Count both:
+   - register writebacks to x1..x7
+   - stores committed to data memory
+ - signature:
+   signature =
+     dbg_x3 ^
+     (dbg_x4 << 1) ^
+     (dbg_x5 << 2) ^
+     (dbg_x6 << 3) ^
+     (dbg_x7 << 4) ^
+     (dbg_mem2 << 5) ^
+     (dbg_mem3 << 6) ^
+     {24'b0, dbg_commit_count}
+
+Functional constraints:
+ - Keep the required 5-stage pipeline structure.
+ - Keep the same instruction semantics and same deterministic built-in program.
+ - Keep the same observable outputs and reset behavior.
+ - Keep the branch flush and load-use stall behavior valid.
+ - Forwarding may be implemented in any clean way, but functionality must match
+   the specified pipeline behavior.
+
+Coding constraints:
+ - Return only synthesizable SystemVerilog code for TopModule.
+ - Do not generate a testbench.
+ - Do not use $display or $finish in the module.
+ - Do not change the module interface.
+ - Prefer clear, structured RTL over unnecessary cleverness.

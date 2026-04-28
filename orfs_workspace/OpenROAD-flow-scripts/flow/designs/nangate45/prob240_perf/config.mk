@@ -1,0 +1,9 @@
+export DESIGN_NICKNAME = prob240_perf
+export DESIGN_NAME     = prob240_perf
+export PLATFORM        = nangate45
+export VERILOG_FILES   = designs/nangate45/prob240_perf/wrapper.sv
+export SDC_FILE        = designs/nangate45/prob240_perf/constraint.sdc
+export DIE_AREA        = 0 0 100 100
+export CORE_AREA       = 10 10 90 90
+export EQUIVALENCE_CHECK = 0
+export LEC_CHECK         = 0

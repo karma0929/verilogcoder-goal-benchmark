@@ -1,0 +1,11 @@
+Implement the same interface and behavior as `original.txt`.
+
+Power-first optimization goals:
+- reduce switching when `valid==0`
+- keep idle behavior quiet and simple
+- avoid unnecessary activity in datapath/control
+
+Rules:
+- Keep exact ports and widths from `original.txt`.
+- Keep functionality identical.
+- Return synthesizable SystemVerilog only.

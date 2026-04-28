@@ -1,0 +1,64 @@
+{
+  "history": [
+    {
+      "candidate_files": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+      ],
+      "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv",
+      "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0",
+      "iteration": 0,
+      "metrics": {},
+      "openroad_eval": {
+        "candidate_rtl_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+        ],
+        "error": "Design dir not found: /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob240_power",
+        "metrics": {},
+        "metrics_may_be_stale": false,
+        "primary_top_module": "TopModule",
+        "problem_name": "prob240_singlefile_midarith",
+        "run_orfs": false,
+        "status": "skipped_openroad_missing_design_dir",
+        "support_rtl_files": [],
+        "version": "power"
+      },
+      "stop_reason": "max_iterations",
+      "verification": {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_0/rtl.sv",
+        "compile_argv": [
+          "iverilog",
+          "-Wall",
+          "-Winfloop",
+          "-Wno-timescale",
+          "-g2012",
+          "-s",
+          "tb",
+          "-o",
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.vpp",
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv"
+        ],
+        "compiled_success": true,
+        "failure_category": "pass",
+        "functional_success": true,
+        "generation_parse": {
+          "contract_mode": "single",
+          "error": "",
+          "expected_files": [
+            "rtl.sv"
+          ],
+          "parse_mode": "single",
+          "parse_success": true
+        },
+        "generation_success": true,
+        "module_available": true,
+        "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nPASS\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv:151: $finish called at 205000 (1ps)\n",
+        "support_files": []
+      }
+    }
+  ],
+  "problem_name": "prob240_singlefile_midarith",
+  "target": "power"
+}

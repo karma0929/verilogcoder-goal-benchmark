@@ -15,6 +15,7 @@ from hardware_agent.examples.VerilogCoder.openroad_eval import OpenROADEvaluator
 from hardware_agent.examples.VerilogCoder.optimization_loop import (
     OptimizationLoopConfig,
     OptimizationLoopController,
+    SUPPORTED_TARGETS,
 )
 from hardware_agent.examples.VerilogCoder.verilogcoder import VerilogCoder
 
@@ -71,14 +72,48 @@ def main() -> None:
     parser.add_argument("--orfs-flow-dir", default=str(workspace_root / "orfs_workspace" / "OpenROAD-flow-scripts" / "flow"))
     parser.add_argument("--oai-config-list", default=str(upstream_root / "OAI_CONFIG_LIST"))
     parser.add_argument("--max-iterations", type=int, default=3)
+    parser.add_argument(
+        "--baseline-max-iterations",
+        type=int,
+        default=3,
+        help=(
+            "Maximum baseline iterations. "
+            "Use >1 to allow baseline functional self-repair instead of a single-shot attempt."
+        ),
+    )
+    parser.add_argument(
+        "--targets",
+        default="area,perf,power",
+        help=(
+            "Comma-separated optimization targets. "
+            f"Supported: {', '.join(SUPPORTED_TARGETS)}"
+        ),
+    )
     parser.add_argument("--no-improvement-limit", type=int, default=1)
     parser.add_argument("--functional-failure-limit", type=int, default=2)
+    parser.add_argument(
+        "--disable-reference-baseline",
+        action="store_true",
+        help=(
+            "Disable reference-based baseline comparison/evaluation. "
+            "Optimization decisions are made only from iteration-to-iteration candidate metrics."
+        ),
+    )
     parser.add_argument(
         "--parse-saved-runs-only",
         action="store_true",
         help="Do not launch ORFS. Parse existing saved_runs only.",
     )
     args = parser.parse_args()
+    requested_targets = [target.strip().lower() for target in args.targets.split(",") if target.strip()]
+    if not requested_targets:
+        raise ValueError("No valid --targets provided.")
+    invalid_targets = [target for target in requested_targets if target not in SUPPORTED_TARGETS]
+    if invalid_targets:
+        raise ValueError(
+            f"Unsupported targets in --targets: {invalid_targets}. "
+            f"Supported: {SUPPORTED_TARGETS}"
+        )
 
     benchmark_root = Path(args.benchmark_root).expanduser().resolve()
     problem_dir = benchmark_root / args.problem
@@ -89,9 +124,11 @@ def main() -> None:
     evaluator = OpenROADEvaluator(orfs_flow_dir=args.orfs_flow_dir)
     loop_config = OptimizationLoopConfig(
         max_iterations=args.max_iterations,
+        baseline_max_iterations=args.baseline_max_iterations,
         no_improvement_limit=args.no_improvement_limit,
         functional_failure_limit=args.functional_failure_limit,
         run_openroad=not args.parse_saved_runs_only,
+        use_reference_baseline=not args.disable_reference_baseline,
     )
     controller = OptimizationLoopController(
         coder=coder,
@@ -100,7 +137,7 @@ def main() -> None:
         dataset_root=args.dataset_root,
         config=loop_config,
     )
-    summary = controller.run_problem(problem_name=args.problem)
+    summary = controller.run_problem(problem_name=args.problem, targets=requested_targets)
     print(f"Wrote optimization summary to {problem_dir / 'optimization_runs' / 'summary.json'}")
     print(f"Wrote benchmark-level summary copy to {problem_dir / 'summary.json'}")
     print(f"Targets completed: {', '.join(summary['targets'].keys())}")

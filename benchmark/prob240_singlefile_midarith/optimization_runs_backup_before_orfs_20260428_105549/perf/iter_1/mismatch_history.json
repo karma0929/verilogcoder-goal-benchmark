@@ -1,0 +1,54 @@
+{
+  "mismatch_history": [
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 10,
+      "simulation_attempt": 0
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 20,
+      "simulation_attempt": 1
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 13,
+      "simulation_attempt": 2
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 1,
+      "simulation_attempt": 3
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 14,
+      "simulation_attempt": 4
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 19,
+      "simulation_attempt": 5
+    },
+    {
+      "debug_attempt": 0,
+      "mismatch_count": 19,
+      "simulation_attempt": 6
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 19,
+      "simulation_attempt": 0
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 13,
+      "simulation_attempt": 1
+    },
+    {
+      "debug_attempt": 1,
+      "mismatch_count": 13,
+      "simulation_attempt": 2
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "compiled_success": true,
+  "functional_success": false,
+  "generation_success": false,
+  "module_available": true,
+  "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nVCD warning: $dumpvars: Package ($unit) is not dumpable with VCD.\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob200_pipe5cpu/optimization_runs/_internal/tmp/test.sv:188: $finish called at 261 (1ps)\nHint: Output 'done' has 10 mismatches. First mismatch occurred at time 210.\nHint: Output 'signature' has 43 mismatches. First mismatch occurred at time 50.\nHint: Output 'dbg_x3' has 39 mismatches. First mismatch occurred at time 70.\nHint: Output 'dbg_x4' has 35 mismatches. First mismatch occurred at time 90.\nHint: Output 'dbg_x5' has 33 mismatches. First mismatch occurred at time 100.\nHint: Output 'dbg_x6' has 31 mismatches. First mismatch occurred at time 110.\nHint: Output 'dbg_x7' has 23 mismatches. First mismatch occurred at time 120.\nHint: Output 'dbg_mem2' has 33 mismatches. First mismatch occurred at time 100.\nHint: Output 'dbg_mem3' has 11 mismatches. First mismatch occurred at time 210.\nHint: Output 'dbg_commit_count' has 43 mismatches. First mismatch occurred at time 50.\nHint: Total mismatched samples is 43 out of 47 samples\nSimulation finished at 261 ps\nMismatches: 43 in 47 samples\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!"
+}

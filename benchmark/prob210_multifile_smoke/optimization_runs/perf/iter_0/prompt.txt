@@ -1,0 +1,11 @@
+Design `TopModule` with the exact interface and functional behavior from `original.txt`.
+
+Optimization goal: performance-first.
+- Keep combinational depth short between input sampling and `y` update.
+- Keep sequential control clear and timing-friendly.
+- Avoid long mux trees or unnecessary logic levels.
+
+Keep these strict constraints:
+1. Instantiate external `core_impl` (do not redefine `core_impl` in the generated RTL).
+2. Preserve exact functionality and interface.
+3. Return only synthesizable SystemVerilog for `TopModule`.

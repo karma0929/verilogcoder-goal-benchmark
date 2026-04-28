@@ -1,0 +1,63 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob240_perf/base/6_1_fill.odb
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+write_db ./results/nangate45/prob240_perf/base/6_final.odb
+Deleted 0 routing obstructions
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation prob240_perf (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 202 rc segments
+[INFO RCX-0439] Coupling Cap extraction prob240_perf ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 59% of 361 wires extracted
+[INFO RCX-0442] 100% of 361 wires extracted
+[INFO RCX-0045] Extract 92 nets, 279 rsegs, 279 caps, 193 ccs
+[INFO RCX-0443] 92 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 1.40e-05 W
+Supply voltage   : 1.10e+00 V
+Worstcase voltage: 1.10e+00 V
+Average voltage  : 1.10e+00 V
+Average IR drop  : 3.15e-05 V
+Worstcase IR drop: 2.56e-04 V
+Percentage drop  : 0.02 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 1.40e-05 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 2.35e-04 V
+Average voltage  : 2.21e-05 V
+Average IR drop  : 2.21e-05 V
+Worstcase IR drop: 2.35e-04 V
+Percentage drop  : 0.02 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               893    6102.57
+  Tap cell                                112      29.79
+  Clock buffer                              3       3.99
+  Timing Repair Buffer                      8       6.38
+  Sequential cell                          16      72.35
+  Multi-Input combinational cell           47      41.23
+  Total                                  1079    6256.32
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 154 um^2 2% utilization.
+[WARNING GUI-0076] QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-'
+Elapsed time: 0:01.89[h:]min:sec. CPU time: user 1.81 sys 0.11 (102%). Peak memory: 236368KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+6_report                           1            230                  N/A

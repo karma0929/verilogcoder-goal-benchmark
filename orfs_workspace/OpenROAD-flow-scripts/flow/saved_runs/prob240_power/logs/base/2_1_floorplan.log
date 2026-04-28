@@ -1,0 +1,52 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob240_power/base/1_synth.odb
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+
+==========================================================================
+Floorplan check_setup
+--------------------------------------------------------------------------
+Warning: There are 8 output ports missing set_output_delay.
+Warning: There are 8 unconstrained endpoints.
+number instances in verilog is 66
+[WARNING IFP-0028] Core area lower left (10.000, 10.000) snapped to (10.070, 11.200).
+[INFO IFP-0001] Added 56 rows of 420 site FreePDK45_38x28_10R_NP_162NW_34O.
+[INFO IFP-0100] Die BBox:  (  0.000  0.000 ) ( 100.000 100.000 ) um
+[INFO IFP-0101] Core BBox: ( 10.070 11.200 ) ( 89.870 89.600 ) um
+[INFO IFP-0102] Core area:                         6256.320 um^2
+[INFO IFP-0103] Total instances area:               124.488 um^2
+[INFO IFP-0104] Effective utilization:                0.020
+[INFO IFP-0105] Number of instances:                     66
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/make_tracks.tcl
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/fastroute.tcl
+Repair tie lo fanout...
+[INFO RSZ-0042] Inserted 32 tie LOGIC0_X1 instances.
+Repair tie hi fanout...
+[INFO RSZ-0042] Inserted 1 tie LOGIC1_X1 instances.
+repair_timing -setup_margin 0 -hold_margin 0 -repair_tns 100 -setup -skip_last_gasp -sequence unbuffer,sizeup,swap,vt_swap -verbose
+[WARNING EST-0027] no estimated parasitics. Using wire load models.
+[INFO RSZ-0100] Repair move sequence: UnbufferMove SizeUpMove SwapPinsMove 
+[INFO RSZ-0098] No setup violations found
+Default units for flow
+ time 1ns
+ capacitance 1fF
+ resistance 1kohm
+ voltage 1v
+ current 1mA
+ power 1nW
+ distance 1um
+Report metrics stage 2, floorplan final...
+
+==========================================================================
+floorplan final report_design_area
+--------------------------------------------------------------------------
+Design area 141 um^2 2% utilization.
+write_db ./results/nangate45/prob240_power/base/2_1_floorplan.odb
+write_sdc -no_timestamp ./results/nangate45/prob240_power/base/2_1_floorplan.sdc
+Elapsed time: 0:00.70[h:]min:sec. CPU time: user 0.67 sys 0.06 (104%). Peak memory: 164468KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+2_1_floorplan                      0            160 beb64efa5b0ed3d02428

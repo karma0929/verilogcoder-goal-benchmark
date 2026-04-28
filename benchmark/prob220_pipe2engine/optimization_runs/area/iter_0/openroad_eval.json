@@ -1,0 +1,15 @@
+{
+  "candidate_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/compute_core.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/control_fsm.sv"
+  ],
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob220_pipe2engine",
+  "run_orfs": false,
+  "status": "skipped_functional_failure",
+  "support_rtl_files": [],
+  "version": "area"
+}

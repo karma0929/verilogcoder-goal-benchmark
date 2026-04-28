@@ -1,0 +1,11 @@
+Implement the same interface and behavior as `original.txt`.
+
+Performance-first optimization goals:
+- reduce combinational depth from inputs to `y`
+- keep the critical path timing-clean
+- simplify valid-to-done control timing
+
+Rules:
+- Keep exact ports and widths from `original.txt`.
+- Keep functionality identical.
+- Return synthesizable SystemVerilog only.

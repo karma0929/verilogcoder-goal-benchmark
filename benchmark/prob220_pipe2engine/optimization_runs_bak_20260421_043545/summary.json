@@ -1,0 +1,331 @@
+{
+  "benchmark_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine",
+  "candidate_contract": {
+    "enforce_structured_output": true,
+    "files": [
+      {
+        "module": "TopModule",
+        "name": "TopModule.sv",
+        "primary_top": true,
+        "required": true
+      },
+      {
+        "module": "compute_core",
+        "name": "compute_core.sv",
+        "primary_top": false,
+        "required": true
+      },
+      {
+        "module": "control_fsm",
+        "name": "control_fsm.sv",
+        "primary_top": false,
+        "required": true
+      }
+    ],
+    "mode": "multi",
+    "primary_top_file": "TopModule.sv",
+    "top_module": "TopModule"
+  },
+  "config": {
+    "functional_failure_limit": 1,
+    "max_iterations": 1,
+    "min_area_improvement_um2": 1.0,
+    "min_power_proxy_improvement_um2": 0.5,
+    "min_slack_improvement_ns": 0.01,
+    "no_improvement_limit": 1,
+    "run_openroad": false
+  },
+  "final_candidates": {
+    "area": {
+      "best_iteration": null,
+      "locally_optimal": false,
+      "metrics": null,
+      "stop_reason": null
+    },
+    "perf": {
+      "best_iteration": null,
+      "locally_optimal": false,
+      "metrics": null,
+      "stop_reason": null
+    },
+    "power": {
+      "best_iteration": null,
+      "locally_optimal": false,
+      "metrics": null,
+      "stop_reason": null
+    }
+  },
+  "optimization_root": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs",
+  "problem_name": "prob220_pipe2engine",
+  "reference": {
+    "candidate_rtl_files": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/src/top_ref_synth.sv"
+    ],
+    "copied_metric_artifacts": {
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "copied_snapshot_artifacts": {
+      "design_config": null,
+      "design_wrapper": null,
+      "generated_config": null,
+      "generated_src": null,
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "metric_source_files": {
+      "global_place_rpt": null,
+      "place_log": null,
+      "synth_stat": null
+    },
+    "metrics": {
+      "final_hpwl_um": null,
+      "place_area_um2": null,
+      "synth_area_um2": null,
+      "tns_ns": null,
+      "worst_slack_ns": null
+    },
+    "metrics_may_be_stale": false,
+    "orfs_cmd": null,
+    "orfs_cwd": null,
+    "orfs_returncode": null,
+    "orfs_stderr_tail": "",
+    "orfs_stdout_tail": "",
+    "orfs_verilog_files": [],
+    "pre_orfs_validation": {
+      "checks": {
+        "config_exists": true,
+        "constraint_exists": true,
+        "design_dir_exists": true,
+        "design_name_present": true,
+        "klayout_available": false,
+        "openroad_available": false,
+        "opensta_available": false,
+        "rtl_defines_topmodule": true,
+        "rtl_file_discovered": true,
+        "sdc_clk_port_is_clk": true,
+        "sdc_current_design_matches_design_name": true,
+        "sdc_has_create_clock": true,
+        "wrapper_exists": true,
+        "wrapper_has_clk_port": true,
+        "wrapper_instantiates_topmodule": true,
+        "wrapper_module_matches_design_name": true,
+        "yosys_available": true,
+        "yosys_synth_sanity": true
+      },
+      "config_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob220_ref/config.mk",
+      "constraint_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob220_ref/constraint.sdc",
+      "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob220_ref",
+      "design_name": "prob220_ref",
+      "failure_messages": [
+        "Missing OPENROAD_EXE. Install OpenROAD and export OPENROAD_EXE to the openroad binary.",
+        "Missing OPENSTA_EXE. Install OpenSTA or provide the sta binary from an OpenROAD install.",
+        "Missing KLAYOUT_CMD. Install KLayout and export KLAYOUT_CMD to the klayout executable."
+      ],
+      "problem_name": "prob220_pipe2engine",
+      "requested_top_module": "TopModule",
+      "resolved_rtl_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/src/top_ref_synth.sv",
+      "resolved_rtl_paths": [
+        "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/src/top_ref_synth.sv"
+      ],
+      "sdc_clk_port": "clk",
+      "sdc_current_design": "prob220_ref",
+      "success": false,
+      "tool_paths": {
+        "DOCKER_EXE": "/Applications/Docker.app/Contents/Resources/bin/docker",
+        "KLAYOUT_CMD": null,
+        "OPENROAD_EXE": null,
+        "OPENSTA_EXE": null,
+        "YOSYS_EXE": "/opt/homebrew/Cellar/yosys/0.60/bin/yosys"
+      },
+      "version": "ref",
+      "wrapper_instantiated_module": "TopModule",
+      "wrapper_module_name": "prob220_ref",
+      "wrapper_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob220_ref/wrapper.sv",
+      "yosys_cmd": [
+        "/opt/homebrew/Cellar/yosys/0.60/bin/yosys",
+        "-p",
+        "read_verilog -sv /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob220_ref/wrapper.sv /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/src/top_ref_synth.sv; hierarchy -check -top prob220_ref; proc; opt; stat"
+      ],
+      "yosys_returncode": 0,
+      "yosys_stderr_tail": "",
+      "yosys_stdout_tail": "ells or wires in module \\prob220_ref..\nRemoved 17 unused cells and 51 unused wires.\n<suppressed ~23 debug messages>\n\n5.8. Executing OPT_EXPR pass (perform const folding).\nOptimizing module TopModule.\nOptimizing module compute_core.\nOptimizing module control_fsm.\nOptimizing module prob220_ref.\n\n5.9. Rerunning OPT passes. (Maybe there is more to do..)\n\n5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).\nRunning muxtree optimizer on module \\TopModule..\n  Creating internal representation of mux trees.\n  No muxes found in this module.\nRunning muxtree optimizer on module \\compute_core..\n  Creating internal representation of mux trees.\n  Evaluating internal representation of mux trees.\n  Analyzing evaluation results.\nRunning muxtree optimizer on module \\control_fsm..\n  Creating internal representation of mux trees.\n  No muxes found in this module.\nRunning muxtree optimizer on module \\prob220_ref..\n  Creating internal representation of mux trees.\n  No muxes found in this module.\nRemoved 0 multiplexer ports.\n<suppressed ~2 debug messages>\n\n5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).\n  Optimizing cells in module \\TopModule.\n  Optimizing cells in module \\compute_core.\n  Optimizing cells in module \\control_fsm.\n  Optimizing cells in module \\prob220_ref.\nPerformed a total of 0 changes.\n\n5.12. Executing OPT_MERGE pass (detect identical cells).\nFinding identical cells in module `\\TopModule'.\nFinding identical cells in module `\\compute_core'.\nFinding identical cells in module `\\control_fsm'.\nFinding identical cells in module `\\prob220_ref'.\nRemoved a total of 0 cells.\n\n5.13. Executing OPT_DFF pass (perform DFF optimizations).\n\n5.14. Executing OPT_CLEAN pass (remove unused cells and wires).\nFinding unused cells or wires in module \\TopModule..\nFinding unused cells or wires in module \\compute_core..\nFinding unused cells or wires in module \\control_fsm..\nFinding unused cells or wires in module \\prob220_ref..\n\n5.15. Executing OPT_EXPR pass (perform const folding).\nOptimizing module TopModule.\nOptimizing module compute_core.\nOptimizing module control_fsm.\nOptimizing module prob220_ref.\n\n5.16. Finished fast OPT passes. (There is nothing left to do.)\n\n6. Printing statistics.\n\n=== TopModule ===\n\n        +----------Local Count, excluding submodules.\n        | \n       16 wires\n      161 wire bits\n       16 public wires\n      161 public wire bits\n        9 ports\n       78 port bits\n        7 cells\n        1   $sdff\n        6   $sdffe\n        2 submodules\n        1   compute_core\n        1   control_fsm\n\n=== compute_core ===\n\n        +----------Local Count, excluding submodules.\n        | \n       11 wires\n      197 wire bits\n        4 public wires\n       66 public wire bits\n        4 ports\n       66 port bits\n        8 cells\n        2   $add\n        2   $eq\n        1   $logic_not\n        1   $mul\n        1   $pmux\n        1   $xor\n\n=== control_fsm ===\n\n        +----------Local Count, excluding submodules.\n        | \n        8 wires\n       29 wire bits\n        7 public wires\n       21 public wire bits\n        5 ports\n       12 port bits\n        3 cells\n        1   $add\n        1   $sdff\n        1   $sdffe\n\n=== prob220_ref ===\n\n        +----------Local Count, excluding submodules.\n        | \n        1 wires\n        1 wire bits\n        1 public wires\n        1 public wire bits\n        1 ports\n        1 port bits\n\n=== design hierarchy ===\n\n        +----------Count including submodules.\n        | \n        - prob220_ref\n\n        +----------Count including submodules.\n        | \n        1 wires\n        1 wire bits\n        1 public wires\n        1 public wire bits\n        1 ports\n        1 port bits\n        - memories\n        - memory bits\n        - processes\n        - cells\n\nEnd of script. Logfile hash: e2170c7775, CPU: user 0.02s system 0.01s, MEM: 13.11 MB peak\nYosys 0.60 (git sha1 5bafeb77dc71e054fa331ab9efa613e6fb0a1c49, clang++ 17.0.0 -fPIC -O3)\nTime spent: 32% 4x opt_expr (0 sec), 17% 2x opt_dff (0 sec), ...\n"
+    },
+    "prepared_design": {},
+    "primary_top_module": "TopModule",
+    "problem_key": "prob220",
+    "problem_name": "prob220_pipe2engine",
+    "run_orfs": false,
+    "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob220_ref",
+    "saved_run_existed_before": false,
+    "saved_run_exists": false,
+    "stale_metrics_from_saved_run": false,
+    "support_rtl_files": [],
+    "tool_paths": {},
+    "version": "ref"
+  },
+  "reference_usage": {
+    "openroad_reference_files": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/src/top_ref_synth.sv"
+    ],
+    "required_for_functional_verification": false,
+    "required_for_generation": false,
+    "used_for_openroad_baseline": true
+  },
+  "targets": {
+    "area": {
+      "best_result": null,
+      "iteration_history": [
+        {
+          "candidate_files": [],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0",
+          "iteration": 0,
+          "metrics": {},
+          "openroad_eval": {
+            "candidate_rtl_files": [],
+            "metrics": {},
+            "metrics_may_be_stale": false,
+            "primary_top_module": "TopModule",
+            "problem_name": "prob220_pipe2engine",
+            "run_orfs": false,
+            "status": "skipped_functional_failure",
+            "support_rtl_files": [],
+            "version": "area"
+          },
+          "stop_reason": "functional_failure_limit",
+          "verification": {
+            "candidate_files": [],
+            "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/area/iter_0/generated/TopModule.sv",
+            "compile_argv": [
+              "iverilog",
+              "-Wall",
+              "-Winfloop",
+              "-Wno-timescale",
+              "-g2012",
+              "-s",
+              "tb",
+              "-o",
+              "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.vpp",
+              "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv"
+            ],
+            "compiled_success": false,
+            "functional_success": false,
+            "generation_parse": {
+              "contract_mode": "multi",
+              "error": "Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+              "expected_files": [
+                "TopModule.sv",
+                "compute_core.sv",
+                "control_fsm.sv"
+              ],
+              "parse_mode": "file_blocks_required",
+              "parse_success": false
+            },
+            "generation_success": false,
+            "module_available": true,
+            "raw_report": "Generated RTL could not be parsed into the expected candidate file set. Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+            "support_files": []
+          }
+        }
+      ],
+      "locally_optimal": false
+    },
+    "perf": {
+      "best_result": null,
+      "iteration_history": [
+        {
+          "candidate_files": [],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/TopModule.sv",
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0",
+          "iteration": 0,
+          "metrics": {},
+          "openroad_eval": {
+            "candidate_rtl_files": [],
+            "metrics": {},
+            "metrics_may_be_stale": false,
+            "primary_top_module": "TopModule",
+            "problem_name": "prob220_pipe2engine",
+            "run_orfs": false,
+            "status": "skipped_functional_failure",
+            "support_rtl_files": [],
+            "version": "perf"
+          },
+          "stop_reason": "functional_failure_limit",
+          "verification": {
+            "candidate_files": [],
+            "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/TopModule.sv",
+            "compile_argv": [],
+            "compiled_success": false,
+            "functional_success": false,
+            "generation_parse": {
+              "contract_mode": "multi",
+              "error": "Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+              "expected_files": [
+                "TopModule.sv",
+                "compute_core.sv",
+                "control_fsm.sv"
+              ],
+              "parse_mode": "file_blocks_required",
+              "parse_success": false
+            },
+            "generation_success": false,
+            "module_available": false,
+            "raw_report": "No completed RTL was available after the VerilogCoder run.",
+            "support_files": []
+          }
+        }
+      ],
+      "locally_optimal": false
+    },
+    "power": {
+      "best_result": null,
+      "iteration_history": [
+        {
+          "candidate_files": [],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/power/iter_0/generated/TopModule.sv",
+          "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/power/iter_0",
+          "iteration": 0,
+          "metrics": {},
+          "openroad_eval": {
+            "candidate_rtl_files": [],
+            "metrics": {},
+            "metrics_may_be_stale": false,
+            "primary_top_module": "TopModule",
+            "problem_name": "prob220_pipe2engine",
+            "run_orfs": false,
+            "status": "skipped_functional_failure",
+            "support_rtl_files": [],
+            "version": "power"
+          },
+          "stop_reason": "functional_failure_limit",
+          "verification": {
+            "candidate_files": [],
+            "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/power/iter_0/generated/TopModule.sv",
+            "compile_argv": [],
+            "compiled_success": false,
+            "functional_success": false,
+            "generation_parse": {
+              "contract_mode": "multi",
+              "error": "Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+              "expected_files": [
+                "TopModule.sv",
+                "compute_core.sv",
+                "control_fsm.sv"
+              ],
+              "parse_mode": "file_blocks_required",
+              "parse_success": false
+            },
+            "generation_success": false,
+            "module_available": false,
+            "raw_report": "No completed RTL was available after the VerilogCoder run.",
+            "support_files": []
+          }
+        }
+      ],
+      "locally_optimal": false
+    }
+  }
+}

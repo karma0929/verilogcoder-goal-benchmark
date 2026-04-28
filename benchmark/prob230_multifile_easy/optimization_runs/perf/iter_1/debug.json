@@ -1,0 +1,28 @@
+{
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+  ],
+  "exception": "",
+  "functional_success": false,
+  "module_tb_detected": true,
+  "paths_used": {
+    "extra_compile_verilog_paths": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+    ],
+    "test_sv": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+    "test_vpp": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+    "verilog": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.v",
+    "wave": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/wave.vcd",
+    "workdir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp"
+  }
+}

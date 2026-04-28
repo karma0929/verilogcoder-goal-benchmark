@@ -1,0 +1,98 @@
+I would like you to implement a module named TopModule with the following
+interface. All input and output ports are one bit unless otherwise
+specified.
+
+ - input  clk
+ - input  reset
+ - output done
+ - output signature       (32 bits)
+ - output dbg_x3          (32 bits)
+ - output dbg_x4          (32 bits)
+ - output dbg_x5          (32 bits)
+ - output dbg_x6          (32 bits)
+ - output dbg_x7          (32 bits)
+ - output dbg_mem2        (32 bits)
+ - output dbg_mem3        (32 bits)
+ - output dbg_commit_count (8 bits)
+
+The module should implement a simplified, self-contained, 5-stage pipelined
+RISC-V-like processor benchmark with IF / ID / EX / MEM / WB stages, a small
+instruction ROM, a small 16-word data memory, forwarding, a one-cycle load-use
+stall, and EX-stage branch resolution / flush.
+
+Functional specification:
+ - 8 architectural registers x0..x7, each 32 bits, with x0 hardwired to zero.
+ - Custom instruction format:
+   - instr[31:28] = opcode
+   - instr[27:25] = rd
+   - instr[24:22] = rs1
+   - instr[21:19] = rs2
+   - instr[18:16] = unused
+   - instr[15:0]  = signed immediate
+ - Instruction subset:
+   - 4'h0 : NOP
+   - 4'h1 : ADD
+   - 4'h2 : SUB
+   - 4'h3 : AND
+   - 4'h4 : OR
+   - 4'h5 : XOR
+   - 4'h6 : ADDI
+   - 4'h7 : LW
+   - 4'h8 : SW
+   - 4'h9 : BEQ
+   - 4'hf : HALT
+ - Data memory uses word indexing and only low 4 address bits.
+ - reset is synchronous active high.
+ - On reset:
+   - pc = 0
+   - pipeline cleared
+   - x1..x7 = 0
+   - done = 0
+   - dmem[0] = 3, dmem[1] = 7, dmem[2] = 0, dmem[3] = 0, others = 0
+ - Built-in program ROM:
+   - PC  0: ADDI x1, x0, 5
+   - PC  1: ADDI x2, x0, 9
+   - PC  2: ADD  x3, x1, x2
+   - PC  3: SW   x3, 2(x0)
+   - PC  4: LW   x4, 2(x0)
+   - PC  5: ADDI x5, x4, 3
+   - PC  6: SUB  x6, x5, x1
+   - PC  7: XOR  x7, x6, x2
+   - PC  8: BEQ  x7, x1, +2
+   - PC  9: ADDI x3, x0, 0
+   - PC 10: AND  x3, x7, x2
+   - PC 11: OR   x4, x3, x6
+   - PC 12: SW   x4, 3(x0)
+   - PC 13: LW   x5, 3(x0)
+   - PC 14: ADD  x6, x5, x3
+   - PC 15: HALT
+ - done goes high after HALT commits in WB and stays high.
+ - dbg_x3..dbg_x7 expose architectural register values x3..x7.
+ - dbg_mem2 / dbg_mem3 expose dmem[2] / dmem[3].
+ - dbg_commit_count counts register writebacks and committed stores.
+ - signature =
+   dbg_x3 ^
+   (dbg_x4 << 1) ^
+   (dbg_x5 << 2) ^
+   (dbg_x6 << 3) ^
+   (dbg_x7 << 4) ^
+   (dbg_mem2 << 5) ^
+   (dbg_mem3 << 6) ^
+   {24'b0, dbg_commit_count}
+
+Primary objective: reduce unnecessary switching activity and keep inactive paths quiet.
+
+Power-focused structural guidance:
+ - Keep the same functionality and visible outputs.
+ - Prefer explicit enable-style updates for pipeline registers so stalled or invalid stages hold state instead of needlessly rewriting it.
+ - Drive bubble / invalid stage control and data signals toward stable zero values where practical.
+ - Avoid gratuitous toggling in forwarding, branch, signature-support, and writeback selection logic.
+ - Avoid writing registers or memory when the operation is inactive.
+ - Prefer simple hold behavior and conditional updates over aggressive performance-oriented recomputation.
+ - Do not add speculative activity just to improve timing.
+
+Coding constraints:
+ - Return only synthesizable SystemVerilog code for TopModule.
+ - Do not generate a testbench.
+ - Do not use $display or $finish in the module.
+ - Do not change the module interface.

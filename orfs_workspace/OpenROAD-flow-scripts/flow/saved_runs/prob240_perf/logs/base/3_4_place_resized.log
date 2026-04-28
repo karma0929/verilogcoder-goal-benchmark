@@ -1,0 +1,37 @@
+OpenROAD 26Q1-1788-gdc4da4fafa 
+Features included (+) or not (-): +GPU +GUI +Python
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 10 thread(s).
+read_liberty /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_db ./results/nangate45/prob240_perf/base/3_3_place_gp.odb
+source /Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+estimate_parasitics -placement
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |        89
+       10 |     +0.0% |       0 |       0 |             0 |        79
+       20 |     +0.0% |       0 |       0 |             0 |        69
+       30 |     +0.0% |       0 |       0 |             0 |        59
+       40 |     +0.0% |       0 |       0 |             0 |        49
+       50 |     +0.0% |       0 |       0 |             0 |        39
+       60 |     +0.0% |       0 |       0 |             0 |        29
+       70 |     +0.0% |       0 |       0 |             0 |        19
+       80 |     +0.0% |       0 |       0 |             0 |         9
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 150 um^2 2% utilization.
+Instance count before 183, after 183
+Pin count before 164, after 164
+write_db ./results/nangate45/prob240_perf/base/3_4_place_resized.odb
+Elapsed time: 0:00.69[h:]min:sec. CPU time: user 0.63 sys 0.07 (102%). Peak memory: 164132KB.
+Log                        Elapsed/s Peak Memory/MB  sha1sum .odb [0:20)
+3_4_place_resized                  0            160 dd4f5b4d72d4ca2040cf

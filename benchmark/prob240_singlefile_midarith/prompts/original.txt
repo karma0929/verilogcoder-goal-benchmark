@@ -1,0 +1,27 @@
+Implement a module named TopModule with the following interface:
+
+- input  logic        clk
+- input  logic        reset
+- input  logic        in_valid
+- input  logic [15:0] in_a
+- input  logic [15:0] in_b
+- input  logic [1:0]  in_mode
+- output logic        out_valid
+- output logic [31:0] out_y
+- output logic [7:0]  out_tag
+
+Behavior requirements:
+1. Use a 1-cycle pipeline from accepted input to output.
+2. When in_valid is 1 at cycle N, out_valid must be 1 at cycle N+1 and out_y/out_tag must match that input.
+3. When in_valid is 0 at cycle N, out_valid must be 0 at cycle N+1.
+4. out_tag is an issue tag that starts from 0 after reset and increments by 1 for every accepted input (in_valid=1).
+5. Computation function (32-bit out_y):
+   - mode 2'b00: zero-extended add:      {16'd0, in_a} + {16'd0, in_b}
+   - mode 2'b01: zero-extended multiply: {16'd0, in_a} * {16'd0, in_b}
+   - mode 2'b10: zero-extended xor:      {16'd0, in_a} ^ {16'd0, in_b}
+   - mode 2'b11: weighted sum:           ({16'd0, in_a} << 1) + ({16'd0, in_b} << 2)
+
+Implementation constraints:
+- Keep the module synthesizable.
+- Use only TopModule in this single-file benchmark.
+- Do not instantiate RefModule.

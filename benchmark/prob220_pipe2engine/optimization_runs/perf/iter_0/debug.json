@@ -1,0 +1,30 @@
+{
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/compute_core.sv",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/control_fsm.sv"
+  ],
+  "exception": "",
+  "functional_success": false,
+  "module_tb_detected": true,
+  "paths_used": {
+    "extra_compile_verilog_paths": [
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/compute_core.sv",
+      "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/perf/iter_0/generated/control_fsm.sv"
+    ],
+    "test_sv": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.sv",
+    "test_vpp": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.vpp",
+    "verilog": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/test.v",
+    "wave": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp/wave.vcd",
+    "workdir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob220_pipe2engine/optimization_runs/_internal/tmp"
+  }
+}

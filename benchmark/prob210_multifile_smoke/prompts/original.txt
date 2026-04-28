@@ -1,0 +1,28 @@
+Design a synthesizable SystemVerilog module named `TopModule` with this exact interface:
+
+```systemverilog
+module TopModule (
+    input  logic       clk,
+    input  logic       reset,
+    input  logic       valid,
+    input  logic [7:0] a,
+    input  logic [7:0] b,
+    input  logic [1:0] op,
+    output logic [7:0] y,
+    output logic       done
+);
+```
+
+Behavior requirements:
+1. `TopModule` must instantiate external helper module `core_impl` (provided in a separate source file).
+2. `core_impl` computes combinational result `core_y` from `a/b/op`:
+   - `op==2'b00`: `a + b`
+   - `op==2'b01`: `a ^ b`
+   - `op==2'b10`: `a & b`
+   - `op==2'b11`: `a - b`
+3. Sequential behavior on `posedge clk`:
+   - if `reset==1`: `y <= 8'h00`, `done <= 1'b0`
+   - else if `valid==1`: `y <= core_y`, `done <= 1'b1`
+   - else: hold `y`, and set `done <= 1'b0`
+4. Do not change the interface names or widths.
+5. Return only SystemVerilog code for `TopModule`.

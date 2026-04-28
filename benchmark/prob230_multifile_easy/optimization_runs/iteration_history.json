@@ -1,0 +1,377 @@
+{
+  "problem_name": "prob230_multifile_easy",
+  "targets": {
+    "area": [
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0",
+        "iteration": 0,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "area"
+        },
+        "stop_reason": "functional_retry",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_0/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 1\nHint: Total mismatched samples is 1 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      },
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1",
+        "iteration": 1,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "area"
+        },
+        "stop_reason": "functional_failure_limit",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/area/iter_1/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=10 a=12 b=10 got_y=22 exp_y=8 done=1\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 2\nHint: Total mismatched samples is 2 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      }
+    ],
+    "perf": [
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0",
+        "iteration": 0,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "perf"
+        },
+        "stop_reason": "functional_retry",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_0/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 1\nHint: Total mismatched samples is 1 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      },
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1",
+        "iteration": 1,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "perf"
+        },
+        "stop_reason": "functional_failure_limit",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=10 a=12 b=10 got_y=0 exp_y=8 done=1\nMismatch when valid=1: op=11 a=22 b=9 got_y=0 exp_y=13 done=1\nMismatches: 2\nHint: Total mismatched samples is 2 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      }
+    ],
+    "power": [
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0",
+        "iteration": 0,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "power"
+        },
+        "stop_reason": "functional_retry",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_0/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 1\nHint: Total mismatched samples is 1 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      },
+      {
+        "candidate_files": [
+          "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1/rtl.sv"
+        ],
+        "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1/rtl.sv",
+        "iter_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1",
+        "iteration": 1,
+        "metrics": {},
+        "openroad_eval": {
+          "candidate_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1/rtl.sv"
+          ],
+          "metrics": {},
+          "metrics_may_be_stale": false,
+          "primary_top_module": "TopModule",
+          "problem_name": "prob230_multifile_easy",
+          "run_orfs": false,
+          "status": "skipped_functional_failure",
+          "support_rtl_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "version": "power"
+        },
+        "stop_reason": "functional_failure_limit",
+        "verification": {
+          "candidate_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1/rtl.sv"
+          ],
+          "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/power/iter_1/rtl.sv",
+          "compile_argv": [
+            "iverilog",
+            "-Wall",
+            "-Winfloop",
+            "-Wno-timescale",
+            "-g2012",
+            "-s",
+            "tb",
+            "-o",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.vpp",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv",
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ],
+          "compiled_success": true,
+          "functional_success": false,
+          "generation_parse": {
+            "contract_mode": "single",
+            "error": "",
+            "expected_files": [
+              "rtl.sv"
+            ],
+            "parse_mode": "single",
+            "parse_success": true
+          },
+          "generation_success": false,
+          "module_available": true,
+          "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nMismatch when valid=1: op=10 a=12 b=10 got_y=22 exp_y=8 done=1\nMismatch when valid=1: op=11 a=22 b=9 got_y=31 exp_y=13 done=1\nMismatches: 2\nHint: Total mismatched samples is 2 out of 13 samples\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/_internal/tmp/test.sv:107: $finish called at 146000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+          "support_files": [
+            "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+          ]
+        }
+      }
+    ]
+  }
+}

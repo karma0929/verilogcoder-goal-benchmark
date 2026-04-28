@@ -1,0 +1,11 @@
+Design `TopModule` with the exact interface and functional behavior from `original.txt`.
+
+Optimization goal: area-first.
+- Minimize logic/register overhead.
+- Keep control simple.
+- Avoid redundant datapath logic.
+
+Keep these strict constraints:
+1. Instantiate external `core_impl` (do not redefine `core_impl` in the generated RTL).
+2. Preserve exact functionality and interface.
+3. Return only synthesizable SystemVerilog for `TopModule`.

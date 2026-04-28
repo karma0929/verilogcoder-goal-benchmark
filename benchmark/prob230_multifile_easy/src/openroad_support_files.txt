@@ -1,0 +1,2 @@
+# Helper RTL files required when candidate TopModule instantiates support modules.
+src/core_ops.sv

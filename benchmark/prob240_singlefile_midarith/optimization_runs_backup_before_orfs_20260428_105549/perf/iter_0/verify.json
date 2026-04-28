@@ -1,0 +1,34 @@
+{
+  "candidate_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/perf/iter_0/rtl.sv"
+  ],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/perf/iter_0/rtl.sv",
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv"
+  ],
+  "compiled_success": true,
+  "failure_category": "pass",
+  "functional_success": true,
+  "generation_parse": {
+    "contract_mode": "single",
+    "error": "",
+    "expected_files": [
+      "rtl.sv"
+    ],
+    "parse_mode": "single",
+    "parse_success": true
+  },
+  "generation_success": true,
+  "module_available": true,
+  "raw_report": "[Compiled Success]\n[Function Check Success]\nVCD info: dumpfile wave.vcd opened for output.\nPASS\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv:151: $finish called at 205000 (1ps)\n",
+  "support_files": []
+}

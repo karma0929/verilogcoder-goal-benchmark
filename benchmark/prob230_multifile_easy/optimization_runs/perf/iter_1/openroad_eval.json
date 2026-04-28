@@ -1,0 +1,15 @@
+{
+  "candidate_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/optimization_runs/perf/iter_1/rtl.sv"
+  ],
+  "metrics": {},
+  "metrics_may_be_stale": false,
+  "primary_top_module": "TopModule",
+  "problem_name": "prob230_multifile_easy",
+  "run_orfs": false,
+  "status": "skipped_functional_failure",
+  "support_rtl_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob230_multifile_easy/src/core_ops.sv"
+  ],
+  "version": "perf"
+}

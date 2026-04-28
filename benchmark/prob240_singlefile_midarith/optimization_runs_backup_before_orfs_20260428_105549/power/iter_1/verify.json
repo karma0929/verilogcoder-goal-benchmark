@@ -1,0 +1,33 @@
+{
+  "candidate_files": [
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_1/rtl.sv"
+  ],
+  "candidate_primary_top_file": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/power/iter_1/rtl.sv",
+  "compile_argv": [
+    "iverilog",
+    "-Wall",
+    "-Winfloop",
+    "-Wno-timescale",
+    "-g2012",
+    "-s",
+    "tb",
+    "-o",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.vpp",
+    "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv"
+  ],
+  "compiled_success": true,
+  "functional_success": false,
+  "generation_parse": {
+    "contract_mode": "single",
+    "error": "",
+    "expected_files": [
+      "rtl.sv"
+    ],
+    "parse_mode": "single",
+    "parse_success": true
+  },
+  "generation_success": false,
+  "module_available": true,
+  "raw_report": "[Compiled Success]\n[Function Check Failed]\n==Tool Output==\nVCD info: dumpfile wave.vcd opened for output.\nFirst mismatch occurred at time 45000.\nOutput 'out_tag' mismatched.\nMismatches: 12\n/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/benchmark/prob240_singlefile_midarith/optimization_runs/_internal/tmp/test.sv:151: $finish called at 205000 (1ps)\n==Tool Output End==\n\nThought: input above tool output into waveform_trace_tool as `function_check_output` to debug the failed signals starts with trace_level=2!",
+  "support_files": []
+}

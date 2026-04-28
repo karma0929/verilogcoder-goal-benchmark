@@ -18,7 +18,7 @@ def extract_verilog_code_blocks(text):
         list: A list of code blocks found in the text.
     """
     # Regular expression to match code blocks enclosed in triple backticks
-    pattern = re.compile(r'```verilog(.*?)```', re.DOTALL)
+    pattern = re.compile(r'```(?:verilog|systemverilog)(.*?)```', re.DOTALL)
 
     # Find all matches of the pattern in the text
     code_blocks = pattern.findall(text)
@@ -40,6 +40,8 @@ def verilog_output_parse(response: ChatResult) -> str:
         chat_content = chat.get("content")
         if not isinstance(chat_content, str) or not chat_content:
             continue
+        if "FILE:" in chat_content and "```" in chat_content:
+            return chat_content
         content = extract_verilog_code_blocks(chat_content)
         if len(content) > 0:
             result = content[-1]

@@ -1,0 +1,96 @@
+{
+  "copied_metric_artifacts": {
+    "global_place_rpt": null,
+    "place_log": null,
+    "synth_stat": null
+  },
+  "copied_snapshot_artifacts": {
+    "design_config": null,
+    "design_wrapper": null,
+    "generated_config": null,
+    "generated_src": null,
+    "global_place_rpt": null,
+    "place_log": null,
+    "synth_stat": null
+  },
+  "metric_source_files": {
+    "global_place_rpt": null,
+    "place_log": null,
+    "synth_stat": null
+  },
+  "metrics": {
+    "final_hpwl_um": null,
+    "place_area_um2": null,
+    "synth_area_um2": null,
+    "tns_ns": null,
+    "worst_slack_ns": null
+  },
+  "metrics_may_be_stale": false,
+  "orfs_cmd": null,
+  "orfs_cwd": null,
+  "orfs_returncode": null,
+  "orfs_stderr_tail": "",
+  "orfs_stdout_tail": "",
+  "pre_orfs_validation": {
+    "checks": {
+      "config_exists": false,
+      "constraint_exists": false,
+      "design_dir_exists": false,
+      "design_name_present": false,
+      "klayout_available": false,
+      "openroad_available": false,
+      "opensta_available": false,
+      "rtl_defines_topmodule": false,
+      "rtl_file_discovered": false,
+      "sdc_clk_port_is_clk": false,
+      "sdc_current_design_matches_design_name": false,
+      "sdc_has_create_clock": false,
+      "wrapper_exists": false,
+      "wrapper_has_clk_port": false,
+      "wrapper_instantiates_topmodule": false,
+      "wrapper_module_matches_design_name": false,
+      "yosys_available": true,
+      "yosys_synth_sanity": false
+    },
+    "config_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob210_ref/config.mk",
+    "constraint_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob210_ref/constraint.sdc",
+    "design_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob210_ref",
+    "design_name": null,
+    "failure_messages": [
+      "Missing OPENROAD_EXE. Install OpenROAD and export OPENROAD_EXE to the openroad binary.",
+      "Missing OPENSTA_EXE. Install OpenSTA or provide the sta binary from an OpenROAD install.",
+      "Missing KLAYOUT_CMD. Install KLayout and export KLAYOUT_CMD to the klayout executable.",
+      "Yosys failed the wrapper+RTL sanity synthesis step. Inspect yosys_stdout_tail and yosys_stderr_tail."
+    ],
+    "problem_name": "prob210_multifile_smoke",
+    "resolved_rtl_path": null,
+    "sdc_clk_port": null,
+    "sdc_current_design": null,
+    "success": false,
+    "tool_paths": {
+      "DOCKER_EXE": "/Applications/Docker.app/Contents/Resources/bin/docker",
+      "KLAYOUT_CMD": null,
+      "OPENROAD_EXE": null,
+      "OPENSTA_EXE": null,
+      "YOSYS_EXE": "/opt/homebrew/Cellar/yosys/0.60/bin/yosys"
+    },
+    "version": "ref",
+    "wrapper_instantiated_module": null,
+    "wrapper_module_name": null,
+    "wrapper_path": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/designs/nangate45/prob210_ref/wrapper.sv",
+    "yosys_cmd": null,
+    "yosys_returncode": null,
+    "yosys_stderr_tail": "",
+    "yosys_stdout_tail": ""
+  },
+  "prepared_design": {},
+  "problem_key": "prob210",
+  "problem_name": "prob210_multifile_smoke",
+  "run_orfs": false,
+  "saved_run_dir": "/Users/huang/Desktop/verilogcoder-goal-benchmark-copy/orfs_workspace/OpenROAD-flow-scripts/flow/saved_runs/prob210_ref",
+  "saved_run_existed_before": false,
+  "saved_run_exists": false,
+  "stale_metrics_from_saved_run": false,
+  "tool_paths": {},
+  "version": "ref"
+}

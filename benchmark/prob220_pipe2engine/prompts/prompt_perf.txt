@@ -1,0 +1,8 @@
+Implement the same functionality and interface as `original.txt`.
+
+Optimization direction: performance-first.
+- reduce combinational depth in datapath
+- keep critical timing path short between stage registers
+- keep valid/tag control timing-clean
+
+Keep behavior identical and keep required module split (`TopModule`, `compute_core`, `control_fsm`).

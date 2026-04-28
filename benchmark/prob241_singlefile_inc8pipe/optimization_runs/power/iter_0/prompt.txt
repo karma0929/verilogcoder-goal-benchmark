@@ -1,0 +1,40 @@
+Implement the same functionality and interface as original.txt.
+
+Optimization direction: power-first.
+- reduce unnecessary switching when in_valid=0
+- keep idle behavior quiet
+- preserve exact functionality and 1-cycle pipeline timing
+
+Return synthesizable SystemVerilog for TopModule only.
+
+[Resolved Original Specification]
+Implement a module named TopModule with the following interface:
+
+- input  logic       clk
+- input  logic       reset
+- input  logic       in_valid
+- input  logic [7:0] in
+- output logic       out_valid
+- output logic [7:0] out
+
+Behavior requirements:
+1. Use a 1-cycle pipeline from accepted input to output.
+2. When in_valid is 1 at cycle N, out_valid must be 1 at cycle N+1 and out must equal (in + 8'd1) from cycle N.
+3. When in_valid is 0 at cycle N, out_valid must be 0 at cycle N+1.
+4. reset is active-high synchronous and clears all output registers.
+
+Implementation constraints:
+- Keep the module synthesizable.
+- Use only TopModule in this single-file benchmark.
+- Do not instantiate RefModule.
+- Keep exact port names and widths.
+
+[Strict Interface Contract]
+Your generated TopModule must keep the exact port names and widths below.
+Do not rename ports. Do not add/remove ports. Do not change bit-widths.
+- clk: 1-bit
+- in: [7:0]
+- in_valid: 1-bit
+- out: [7:0]
+- out_valid: 1-bit
+- reset: 1-bit

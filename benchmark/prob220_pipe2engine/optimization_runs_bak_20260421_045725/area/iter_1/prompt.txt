@@ -1,0 +1,38 @@
+Implement the same functionality and interface as `original.txt`.
+
+Optimization direction: area-first.
+- minimize datapath/control duplication
+- keep register/control logic compact
+- avoid unnecessary signals and mux logic
+
+Keep behavior identical and keep required module split (`TopModule`, `compute_core`, `control_fsm`).
+
+[Candidate Output Contract]
+You are generating a multi-file candidate RTL implementation.
+Return all required files in this exact machine-readable format:
+FILE: <filename>
+```verilog
+<content>
+```
+Use exactly these filenames:
+- TopModule.sv
+- compute_core.sv
+- control_fsm.sv
+Do not omit any required file. Do not add unexpected filenames.
+
+[Optimization Feedback]
+{
+  "best_metrics_so_far": {},
+  "guidance": "Previous candidate did not pass functional verification. Preserve the required behavior, fix the functional bug first, and avoid changing the module interface.\nVerification feedback excerpt:\nGenerated RTL could not be parsed into the expected candidate file set. Expected FILE: <filename> structured multi-file output, but no file blocks were found.",
+  "iteration": 1,
+  "previous_functional_success": false,
+  "previous_metrics": {},
+  "reference_metrics": {
+    "final_hpwl_um": null,
+    "place_area_um2": null,
+    "synth_area_um2": null,
+    "tns_ns": null,
+    "worst_slack_ns": null
+  },
+  "target_optimization_mode": "area"
+}

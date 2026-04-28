@@ -1,0 +1,9 @@
+export DESIGN_NICKNAME = prob240_power
+export DESIGN_NAME     = prob240_power
+export PLATFORM        = nangate45
+export VERILOG_FILES    = designs/nangate45/prob240_power/wrapper.sv designs/nangate45/prob240_power/generated_candidate/candidate_00_rtl.sv
+export SDC_FILE        = designs/nangate45/prob240_power/constraint.sdc
+export DIE_AREA        = 0 0 100 100
+export CORE_AREA       = 10 10 90 90
+export EQUIVALENCE_CHECK = 0
+export LEC_CHECK         = 0

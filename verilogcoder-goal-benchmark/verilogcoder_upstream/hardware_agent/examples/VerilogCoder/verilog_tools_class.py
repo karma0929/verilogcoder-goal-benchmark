@@ -30,11 +30,15 @@ def check_functionality(vvp_output:str):
             break
 
     print('mismatches = ', mismatches)
-    assert(mismatches is not None)
-    if mismatches > 0:
-        return False
-    else:
+    if mismatches is not None:
+        return mismatches == 0
+
+    # Some benches only print PASS/FAIL and do not print an explicit mismatch count.
+    if re.search(r"(^|\n)\s*PASS\s*($|\n)", vvp_output, flags=re.IGNORECASE):
         return True
+
+    # Conservative fallback when no structured pass token is found.
+    return False
 
 def logic_checker_tool(logic_term: Annotated[str, "boolean logic"],
                        boolean_variables: Annotated[str, "boolean variables in the logic_term with space between two values"],
@@ -139,6 +143,9 @@ class VerilogToolKits:
         # temp data
         self.cur_graph_verilog = "" # used to update the AST graph_tracer
         self.completed_verilog = ""
+        self.extra_compile_verilog_paths: List[str] = []
+        self.last_compile_argv: List[str] = []
+        self.last_compile_returncode: Optional[int] = None
         self.spec = "" # store the spec
         self.graph_tracer = None
         self.debug_session_active = False
@@ -184,6 +191,8 @@ class VerilogToolKits:
             hint_match = re.match(r"^Hint: Total mismatched samples is\s+(\d+)", line)
             if hint_match:
                 return int(hint_match.group(1))
+        if re.search(r"(^|\n)\s*PASS\s*($|\n)", vvp_output, flags=re.IGNORECASE):
+            return 0
         return None
 
     def _record_debug_attempt(self, completed_verilog: str, mismatch_count: Optional[int], functional_success: bool):
@@ -219,6 +228,23 @@ class VerilogToolKits:
             self.debug_session_stop_reason = ",".join(reasons)
         return attempt
 
+    def _normalize_completed_verilog_input(self, completed_verilog: str) -> str:
+        if "FILE:" not in completed_verilog:
+            return completed_verilog
+        file_block_pattern = re.compile(
+            r"(?ms)^\s*FILE:\s*([A-Za-z0-9_.\-/]+)\s*\n(.*?)(?=^\s*FILE:\s*[A-Za-z0-9_.\-/]+\s*$|\Z)"
+        )
+        extracted_blocks: List[str] = []
+        for match in file_block_pattern.finditer(completed_verilog):
+            body = match.group(2).strip()
+            fenced_match = re.match(r"(?is)^```(?:systemverilog|verilog)?\s*\n(.*)\n```$", body)
+            if fenced_match:
+                body = fenced_match.group(1).strip()
+            extracted_blocks.append(body)
+        if len(extracted_blocks) == 0:
+            return completed_verilog
+        return "\n\n".join(extracted_blocks).strip()
+
     def _print_compile_failure_debug(self) -> None:
         os.makedirs(self.workdir, exist_ok=True)
         test_sv_exists = os.path.exists(self.verilog_file_path)
@@ -252,9 +278,12 @@ class VerilogToolKits:
             self.test_vpp_file_path,
             self.verilog_file_path,
         ]
+        argv.extend(self.extra_compile_verilog_paths)
+        self.last_compile_argv = list(argv)
         print("[VerilogToolKits] resolved workdir =", self.workdir)
         print("[VerilogToolKits] test.sv =", self.verilog_file_path)
         print("[VerilogToolKits] test.vpp =", self.test_vpp_file_path)
+        print("[VerilogToolKits] extra compile rtl =", self.extra_compile_verilog_paths)
         print("[VerilogToolKits] iverilog argv =", argv)
         proc = subprocess.run(
             argv,
@@ -265,6 +294,7 @@ class VerilogToolKits:
             check=False,
         )
         outputs = proc.stdout.splitlines()
+        self.last_compile_returncode = proc.returncode
         print(outputs)
         return outputs
 
@@ -272,21 +302,43 @@ class VerilogToolKits:
         return {'workdir': self.workdir,
                 'verilog': self.completed_verilog_file_path,
                 'test_sv': self.verilog_file_path,
-                'wave': self.wave_vcd_file_path}
+                'wave': self.wave_vcd_file_path,
+                'extra_compile_verilog_paths': self.extra_compile_verilog_paths,
+                'last_compile_argv': self.last_compile_argv,
+                'last_compile_returncode': self.last_compile_returncode}
 
     def reset(self):
         self.test_bench = ""
         self.spec = ""
         self.cur_graph_verilog = ""
         self.completed_verilog = ""
+        self.extra_compile_verilog_paths = []
+        self.last_compile_argv = []
+        self.last_compile_returncode = None
         self.graph_tracer = None
         self.debug_session_active = False
         self.debug_session_attempts = []
         self.debug_session_stop_reason = ""
 
-    def load_test_bench(self, task_id: str, spec: str, test_bench:str, write_file: bool=False):
+    def load_test_bench(
+        self,
+        task_id: str,
+        spec: str,
+        test_bench: str,
+        write_file: bool = False,
+        extra_compile_verilog_paths: Optional[List[str]] = None,
+    ):
         self.spec = spec
         self.test_bench = test_bench
+        resolved_extra_paths: List[str] = []
+        for raw_path in extra_compile_verilog_paths or []:
+            if raw_path is None:
+                continue
+            candidate_path = os.path.abspath(raw_path)
+            if candidate_path in resolved_extra_paths:
+                continue
+            resolved_extra_paths.append(candidate_path)
+        self.extra_compile_verilog_paths = resolved_extra_paths
         assert(self.test_bench != "")
         if not write_file:
             return
@@ -329,6 +381,7 @@ class VerilogToolKits:
         # initialize the pathes
         assert(self.test_bench != "")
         os.makedirs(self.workdir, exist_ok=True)
+        completed_verilog = self._normalize_completed_verilog_input(completed_verilog)
         
         if "endmodule" not in completed_verilog:
             example_verilog_code = completed_verilog + " endmodule"
@@ -338,7 +391,7 @@ class VerilogToolKits:
         verilog_file = self._write_work_files(completed_verilog)
         outputs = self._run_iverilog_compile()
         # Compile failed
-        if len(outputs) != 0:
+        if (self.last_compile_returncode or 0) != 0:
             self._print_compile_failure_debug()
             # compile error parameters
             error_line_window = 5
@@ -401,6 +454,7 @@ class VerilogToolKits:
         # initialize the pathes
         assert(self.test_bench != "")
         os.makedirs(self.workdir, exist_ok=True)
+        completed_verilog = self._normalize_completed_verilog_input(completed_verilog)
         
         if "endmodule" not in completed_verilog:
             example_verilog_code = completed_verilog + " endmodule"
@@ -410,7 +464,7 @@ class VerilogToolKits:
         verilog_file = self._write_work_files(completed_verilog)
         outputs = self._run_iverilog_compile()
         # Compile failed
-        if len(outputs) != 0:
+        if (self.last_compile_returncode or 0) != 0:
             self._print_compile_failure_debug()
             # compile error parameters
             error_line_window = 5
@@ -483,7 +537,16 @@ class VerilogToolKits:
         if os.path.exists(local_wave_vcd):
             shutil.move(local_wave_vcd, self.wave_vcd_file_path)
 
-        function_success = check_functionality(outputs)
+        try:
+            function_success = check_functionality(outputs)
+        except Exception as exc:
+            return (
+                "[Compiled Success]\n[Function Check Failed]\n"
+                "==Tool Output==\n"
+                + outputs
+                + "==Tool Output End==\n\n"
+                + f"[Parser Error] check_functionality raised: {exc}\n"
+            )
         mismatch_count = self._extract_mismatch_count(outputs)
         if self.debug_session_active:
             attempt = self._record_debug_attempt(
@@ -549,7 +612,14 @@ class VerilogToolKits:
         if check_functionality(function_check_output):
             print("No mismatched signals")
             return "[Waveform Tracer]: No mismatched signals!"
-        mismatch_columns, offset = parse_mismatch(test_output=function_check_output)
+        try:
+            mismatch_columns, offset = parse_mismatch(test_output=function_check_output)
+        except Exception as exc:
+            return (
+                "[Waveform Tracer Parse Error] Failed to parse mismatched signal/time from function_check_output.\n"
+                f"Reason: {exc}\n"
+                "Fallback suggestion: inspect the first mismatch lines in simulation report and validate interface/compile status first."
+            )
 
         # 3. trace more signals
         print("Trace graph signal...")
